@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Creamies Gallery</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../style.css">
+
+    <!--Favicon Stuff-->
+    <link rel="shortcut icon" href="../icons/metamask.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
+    <link rel="manifest" href="../icons/site.webmanifest">
+    <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+
+    <!----------------------MENU------------------------>
+    <div id="menu">
+        <div id="menu-bar">
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+        <nav class="nav" id="nav">
+            <ul>
+                <li><a href="../">Home</a></li>
+                <li><a target="_blank"
+                        href="https://soonaverse.com/space/0xa8e2122d528809861a925d90e5edff5c685825df/collections">Buy</a>
+                </li>
+                <li><a href="../hall">Hall of Fame</a></li>
+                <li><a href="."><b>Gallery</b></a></li>
+                <li><a href="../profile">Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="menu-bg" id="menu-bg"></div>
+    <!----------------------MENU END------------------------>
+
+    <a target="_blank" href="https://twitter.com/iotacreamies"><img src="../assets/twitter.png"
+            data-src="../assets/twitter.png" id="twitter"></a>
+
+    <div id="main">
+        <br>
+        <h1>Creamies Gallery</h1>
+        <div id="loader"></div>
+        <br>
+        <span id="loaderText"></span>
+        <div id="selectContainer">
+            <div>
+                Flavor
+                <br>
+                <select id="selectFlavor">
+                    <option value="0" id="allflavor">All (use with caution)</option>
+                    <option value="1" id="Strawberry">Strawberry</option>
+                    <option value="2" id="Vanilla">Vanilla</option>
+                    <option value="3" id="Chocolate">Chocolate</option>
+                    <option value="4" id="Lemon">Lemon</option>
+                    <option value="5" id="Yoghurt">Yoghurt</option>
+                    <option value="6" id="Cherry">Cherry</option>
+                    <option value="7" id="Mango">Mango</option>
+                    <option value="8" id="Blueberry">Blueberry</option>
+                    <option value="9" id="Cookies & Cream">Cookies & Cream</option>
+                    <option value="10" id="Coffee">Coffee</option>
+                    <option value="11" id="Caramel">Caramel</option>
+                    <option value="12" id="Pistachio">Pistachio</option>
+                    <option value="13" id="Mint">Mint</option>
+                    <option value="14" id="Chocolate Chip">Chocolate Chip</option>
+                    <option value="15" id="Strawberry Cream">Strawberry & Cream</option>
+                    <option value="16" id="Cookie Dough">Cookie Dough</option>
+                    <option value="17" id="Smurf">Smurf</option>
+                    <option value="18" id="Liquorice">Liquorice</option>
+                    <option value="19" id="Dark Chocolate Almond">Dark Chocolate Almond</option>
+                    <option value="20" id="Dark Chocolate Cracks">Dark Chocolate Cracks</option>
+                    <option value="21" id="White Chocolate Almond">White Chocolate Almond</option>
+                    <option value="22" id="White Chocolate Cracks">White Chocolate Cracks</option>
+                    <option value="23" id="Gold">Gold</option>
+                    <option value="24" id="Silver">Silver</option>
+                    <option value="25" id="Rose gold">Rose Gold</option>
+                </select>
+            </div>
+            <div>
+                Expression
+                <br>
+                <select id="selectExpression">
+                    <option value="0" id="allexpression">All</option>
+                    <option value="1" id="Happy">Happy</option>
+                    <option value="2" id="Villain">Villain</option>
+                    <option value="3" id="Joyful">Joyful</option>
+                    <option value="4" id="Nervous">Nervous</option>
+                    <option value="5" id="Angry">Angry</option>
+                    <option value="6" id="Poop">Poop</option>
+                    <option value="7" id="Relaxed">Relaxed</option>
+                    <option value="8" id="Smiling">Smiling</option>
+                    <option value="9" id="Nasty">Nasty</option>
+                    <option value="10" id="Glad">Glad</option>
+                    <option value="11" id="Whistle">Whistle</option>
+                    <option value="12" id="Tweety">Tweety</option>
+                    <option value="13" id="Sad">Sad</option>
+                    <option value="14" id="Depressed">Depressed</option>
+                    <option value="15" id="Regretful">Regretful</option>
+                    <option value="16" id="Serious">Serious</option>
+                    <option value="17" id="Desperate">Desperate</option>
+                    <option value="18" id="Shocked">Shocked</option>
+                </select>
+            </div>
+
+            <div>
+                IOTA
+                <br>
+                <select id="selectIota">
+                    <option value="0" id="alliota">All</option>
+                    <option value="1" id="IOTA White">IOTA White</option>
+                    <option value="2" id="IOTA Dark">IOTA Dark</option>
+                    <option value="3" id="IOTA Colored">IOTA Colored</option>
+                    <option value="3" id="IOTA Diamonds">IOTA Diamonds</option>
+                </select>
+            </div>
+
+            <div>
+                Accessory
+                <br>
+                <select id="selectAccessory">
+                    <option value="0" id="allaccessory">All</option>
+                    <option value="1" id="Whipped">Whipped Cream</option>
+                    <option value="2" id="Glasses">Tangle 3D Glasses</option>
+                    <option value="3" id="Whipped Glasses">Both</option>
+                    <option value="4" id="Crown">Crown</option>
+                </select>
+            </div>
+            <div>
+                Waffle
+                <br>
+                <select id="selectWaffle">
+                    <option value="0" id="allwaffle">All</option>
+                    <option value="1" id="White">White</option>
+                    <option value="2" id="Dark">Dark</option>
+                </select>
+            </div>
+            <div>
+                Number
+                <br>
+                <input type="number" id="typeNumber" min="0" max="2104"></input>
+            </div>
+        </div>
+        <br>
+        <span id="filterDescription">You can filter the entire NFT collection by using the settings above.</span>
+        <br>
+        <br>
+        <br>
+        <div id="countercontainer"><span id="counter">2104</span> / 2104</div>
+        <div id="additionalButtonsContainer">
+            <div id="sortbyContainer"><button type="button" id="sortby" title="Sort by number, tier or random">Number
+                    ▴</button></div>
+            <div id="availableContainer"><button type="button" id="available" title="Hide sold NFTs or show all">All
+                    NFTs</button></div>
+        </div>
+        <div class="grid">
+            <div class="item" number="" tier="" flavor="" iota="" waffle="" expression="" accessory="" available="">
+                <div class="item-content">
+                    <img class="nftimage" data-src="">
+                    <span class="nftnumber"></span>
+                    <div class="nftownedcontainer"><span class="nftowned">SOLD</span></div>
+                    <div class="nftinfo" onclick="">
+                        <span class="nftinfotext"></span>
+                        <a target="_blank" href="" class="buyLink"><button class="mintButton"
+                                role="button">Go</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div id="powered">
+            powered by
+            <br>
+            <img id="iotalogo" src="../assets/Iota_logo.png" data-src="../assets/Iota_logo.png">
+        </div>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <!--Scripts-->
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="muuri.min.js"></script>
+    <script type="text/javascript" src="web-animations.min.js"></script>
+</body>
+
+</html>
