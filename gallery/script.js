@@ -54,11 +54,12 @@ async function getNFTs(type, uids = [uid_1, uid_2, uid_3, uid_4]) {
     for (const uid of uids) {
         let length = 100, response, data, join = [];
         let url = "https://api.build5.com/api/getMany?collection=nft&fieldName=" + type + "&fieldValue=" + uid;
+        let publicToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIweDU1MWZkMmM3YzdiZjM1NmJhYzE5NDU4N2RhYjJmY2Q0NjQyMDA1NGIiLCJwcm9qZWN0IjoiMHg0NjIyM2VkZDQxNTc2MzVkZmM2Mzk5MTU1NjA5ZjMwMWRlY2JmZDg4IiwiaWF0IjoxNzAwMDAyODkwfQ.IYZvBRuCiN0uYORKnVJ0SzT_1H_2o5xyDBG20VmnTQ0";
 
         //Solange bis Liste aller NFTs in der Collection empfangen sind, do this.
         //Wenn weniger als 100 empfangen werden, dann ist es die letze Page in der API
         while (length == 100) {
-            response = await fetch(url);
+            response = await fetch(url, { headers: { Authorization: 'Bearer ' + publicToken } });
             data = await response.json();
 
             if (url.search("startAfter") == -1) {
