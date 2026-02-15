@@ -1,0 +1,64 @@
+export type Delegator = {
+  address: string;
+  activationEpoch: number;
+  value: number;
+};
+
+export type Creamies = {
+  address: string;
+  owner: string;
+};
+
+export type GraphQLReturnStakes = {
+  data: {
+    objects: {
+      pageInfo: {
+        hasNextPage: boolean;
+        endCursor: string;
+      };
+      nodes: [
+        {
+          address: string;
+          owner?: {
+            owner: {
+              address: string;
+            };
+          };
+          asMoveObject: {
+            contents: {
+              json: {
+                id: string;
+                pool_id: string;
+                stake_activation_epoch: string;
+                principal: {
+                  value: string;
+                };
+              };
+            };
+          };
+        },
+      ];
+    };
+  };
+};
+
+export type GraphQLReturnCreamies = {
+  data: {
+    objects: {
+      pageInfo: {
+        hasNextPage: boolean;
+        endCursor: string;
+      };
+      nodes: [
+        {
+          address: string;
+          owner?: {
+            owner: {
+              address: string;
+            };
+          };
+        },
+      ];
+    };
+  };
+};

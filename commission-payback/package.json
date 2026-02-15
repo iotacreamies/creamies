@@ -1,0 +1,22 @@
+{
+  "name": "commission-payback",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "tsx script.ts",
+    "build": "tsc",
+    "start": "node dist/script.js"
+  },
+  "author": "iotacreamies (Cream)",
+  "license": "UNLICENSED",
+  "type": "module",
+  "private": true,
+  "description": "This job will run a daily payback of staking commissions for the IOTA Cream validator for everyone who holds Creamies NFTs",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@iota/iota-sdk": "^1.10.1"
+  }
+}
