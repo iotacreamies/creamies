@@ -8,20 +8,12 @@ on:
 jobs:
   run-commission-payback:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./commission-payback
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v6.2.0
-
-      - name: Go to script folder
-        run: cd commission-payback
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build project
-        run: npm run build
-
-      - name: Run script
-        run: npm run start
+      - uses: actions/setup-node@v6.2.0
+      - run: npm ci
+      - run: npm run build
+      - run: npm run start
