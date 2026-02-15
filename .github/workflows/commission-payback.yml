@@ -1,0 +1,13 @@
+name: Cream Commission Payback
+
+on:
+  schedule:
+    - cron: '0 9 * * *'
+  workflow_dispatch: # Allows you to run it manually for testing
+
+jobs:
+  run-task:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        run: echo "It's 9am-ish in Europe!"
