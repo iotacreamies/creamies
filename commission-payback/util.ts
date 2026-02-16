@@ -1,10 +1,10 @@
 import { IotaClient } from "@iota/iota-sdk/client";
 import { graphQueryStakes, graphURL, stakingPoolId } from "./const.js";
-import type { Delegator, GraphQLReturnStakes } from "./types.ts";
+import type { Delegation, GraphQLReturnStakes } from "./types.ts";
 import { creamiesAddresses } from "./creamies.js";
 
 export const getAllDelegations = async () => {
-  const delegations: Delegator[] = [];
+  const delegations: Delegation[] = [];
   let cursor = null;
   let hasNextPage = true;
 
