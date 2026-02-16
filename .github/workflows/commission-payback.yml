@@ -8,6 +8,8 @@ on:
 jobs:
   run-commission-payback:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     defaults:
       run:
         working-directory: ./commission-payback
@@ -18,7 +20,7 @@ jobs:
       - run: npm run build
       - run: npm run start
       - run: |
-          git config --global user.name "iotacreamies (automated)"
+          git config --global user.name "iotacreamies[bot]"
           git config --global user.email "iotacreamies@proton.me"
           git add data.json
           git commit -m "Update epoch staking data" || echo "No changes to commit"
