@@ -1,4 +1,15 @@
-export type Delegator = {
+type Epoch = string;
+export type JSONData = Record<Epoch, Payback>;
+
+export type Payback = Record<
+  string,
+  {
+    delegation: Delegation;
+    didReceivePayback: boolean;
+  }
+>;
+
+export type Delegation = {
   address: string;
   activationEpoch: number;
   value: number;
