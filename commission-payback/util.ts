@@ -10,7 +10,7 @@ export const getAllDelegations = async () => {
 
   console.log("Starting delegator retrieval...");
   while (hasNextPage) {
-    const response = await fetch(graphURL, {
+    const response: Response = await fetch(graphURL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
