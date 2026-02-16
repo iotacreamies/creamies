@@ -17,3 +17,9 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm run start
+      - run: |
+          git config --global user.name "iotacreamies (automated)"
+          git config --global user.email "iotacreamies@proton.me"
+          git add data.json
+          git commit -m "Update epoch staking data" || echo "No changes to commit"
+          git push
