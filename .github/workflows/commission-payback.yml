@@ -3,11 +3,17 @@ name: Cream Commission Payback
 on:
   schedule:
     - cron: '0 9 * * *'
-  workflow_dispatch: # Allows you to run it manually for testing
+  workflow_dispatch:
 
 jobs:
-  run-task:
+  run-commission-payback:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./commission-payback
     steps:
-      - name: Test
-        run: echo "It's 9am-ish in Europe!"
+      - uses: actions/checkout@v6.0.2
+      - uses: actions/setup-node@v6.2.0
+      - run: npm ci
+      - run: npm run build
+      - run: npm run start
