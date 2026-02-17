@@ -32,5 +32,39 @@
       },
       "didReceivePayback": true
     }
+  },
+  "288": {
+    "0xe802cb52614dcd2692bef1e89a458ea2f89adfd2d0a1caa2368021ac9e2287af": {
+      "delegation": {
+        "address": "0xe802cb52614dcd2692bef1e89a458ea2f89adfd2d0a1caa2368021ac9e2287af",
+        "activationEpoch": 212,
+        "value": 14000000000
+      },
+      "didReceivePayback": true
+    },
+    "0x8273ce5a6969348f393d7089f12d7e378a0e992a2d586e04ca2084e58e8ebc30": {
+      "delegation": {
+        "address": "0x8273ce5a6969348f393d7089f12d7e378a0e992a2d586e04ca2084e58e8ebc30",
+        "activationEpoch": 224,
+        "value": 430914000000000
+      },
+      "didReceivePayback": true
+    },
+    "0xb429bcaaca330508b2cdc1a12b06c7c16e46de3b32e43952d3db77422f360118": {
+      "delegation": {
+        "address": "0xb429bcaaca330508b2cdc1a12b06c7c16e46de3b32e43952d3db77422f360118",
+        "activationEpoch": 213,
+        "value": 2400000000000
+      },
+      "didReceivePayback": true
+    },
+    "0xa556ad31b93e7810f93c768d2b9ad389a173680891e6effcd10bcd72c951ba92": {
+      "delegation": {
+        "address": "0xa556ad31b93e7810f93c768d2b9ad389a173680891e6effcd10bcd72c951ba92",
+        "activationEpoch": 215,
+        "value": 320000000000
+      },
+      "didReceivePayback": true
+    }
   }
 }
