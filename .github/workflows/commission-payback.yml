@@ -2,7 +2,7 @@ name: Cream Commission Payback
 
 on:
   schedule:
-    - cron: '0 9 * * *'
+    - cron: '40 8 * * *'
   workflow_dispatch:
 
 jobs:
