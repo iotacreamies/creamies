@@ -5,6 +5,10 @@ export type Payback = Record<
   string,
   {
     delegation: Delegation;
+    reward: number;
+    formattedReward: string;
+    commission: number;
+    formattedCommission: string;
     didReceivePayback: boolean;
   }
 >;
@@ -13,6 +17,7 @@ export type Delegation = {
   address: string;
   activationEpoch: number;
   value: number;
+  formattedValue: string;
 };
 
 export type Creamies = {

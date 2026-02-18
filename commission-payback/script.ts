@@ -1,63 +1,65 @@
-import { IotaClient, getFullnodeUrl } from "@iota/iota-sdk/client";
-import { getAllDelegations, getCreamiesOwners } from "./util.js";
-import { validatorAddress } from "./const.js";
+import {
+  calculateRewardsAndCommission,
+  getAllDelegations,
+  getDataFromSystemState,
+  getNFTCollectionOwners,
+} from "./util.js";
 import { readFile, writeFile } from "fs/promises";
-import type { JSONData, Payback } from "./types.js";
-
-const iota = new IotaClient({ url: getFullnodeUrl("mainnet") });
+import type { JSONData } from "./types.js";
 
 async function run() {
   try {
-    //Get current epoch
-    const state = await iota.getLatestIotaSystemState();
+    //Get necessary data from IOTA system state
+    const { currentEpoch, validator } = await getDataFromSystemState();
+    if (!validator) {
+      console.error("Couldn't find validator");
+      return;
+    }
+    console.log(`Current epoch: ${currentEpoch}`);
+    console.log(`Validator: ${validator.name}`);
 
-    //Get all Cream delegations
+    //Get all delegations from validator
     const delegations = await getAllDelegations();
-    console.log(`Cream has ${delegations.length} delegations.`);
+    console.log(`Validator has ${delegations.length} delegations.`);
 
     //Filter for eligible delegations (those who have staked during the entire previous epoch)
     const eligibleDelegations = delegations.filter(
-      (d) => d.activationEpoch < parseInt(state.epoch) - 1,
+      (d) => d.activationEpoch < currentEpoch - 1,
     );
     console.log(
-      `Cream has ${eligibleDelegations.length} eligible delegations.`,
+      `Validator has ${eligibleDelegations.length} eligible delegations.`,
     );
 
-    //Get all Creamies owners
-    const owners = await getCreamiesOwners(iota);
-    console.log(`Found ${owners.length} unique Creamies owners.`);
+    //Get all NFT collection owners
+    const owners = await getNFTCollectionOwners();
+    console.log(`Found ${owners.length} unique owners of NFT collection.`);
 
-    //Filter eligible delegations for Creamies owners
-    const delegationsWithCreamies = eligibleDelegations.filter((delegation) =>
+    //Filter eligible delegations for NFT owners
+    const delegationsWithNFTs = eligibleDelegations.filter((delegation) =>
       owners.some((owner) => owner === delegation.address),
     );
     console.log(
-      `${delegationsWithCreamies.length} of ${eligibleDelegations.length} delegations have Creamies and are eligible for commission payback.`,
+      `${delegationsWithNFTs.length} of ${eligibleDelegations.length} delegators own one or more of the desired NFTs and are therefore eligible for commission payback.`,
     );
 
-    //Calculate commission payback for addresses
-    const commissionForCream =
-      parseFloat(
-        state.activeValidators.find((v) => v.iotaAddress === validatorAddress)!
-          .commissionRate,
-      ) / 100;
-
-    //Read data.json and write new epoch entries
+    //Reading data from data.json
     console.log("Reading data file...");
-    const data: JSONData = JSON.parse(await readFile("./data.json", "utf8"));
-    if (!data[state.epoch]) data[state.epoch] = {};
+    let data: JSONData = {};
+    const fileContent = await readFile("./data.json", "utf8");
+    if (fileContent.length > 0) data = JSON.parse(fileContent);
+    if (!data[currentEpoch]) data[currentEpoch] = {};
 
-    delegationsWithCreamies.forEach(async (dwc) => {
-      console.log(`Adding delegation entry ${dwc.address}`);
-      data[state.epoch]![dwc.address] = {
-        delegation: dwc,
-        didReceivePayback: true,
-      };
-    });
+    //Calculate commission payback for previous epoch
+    await calculateRewardsAndCommission(
+      validator,
+      currentEpoch,
+      delegationsWithNFTs,
+      data,
+    );
 
+    //Write new epoch data into data.json
     console.log("Saving epoch data...");
     await writeFile("data.json", JSON.stringify(data, null, 2), "utf8");
-
     console.log("SUCCESS");
   } catch (error) {
     console.error("Error executing script:", error);
