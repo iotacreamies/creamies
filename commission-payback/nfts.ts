@@ -1,4 +1,4 @@
-export const creamiesAddresses = [
+export const NFTCollection = [
   "0xbb22b55a5e14810e86dcd148c50bffe752b7546b6fd88e347febc9285565036a",
   "0x31bb0b7a7976b33def5f490c1ce99c194a5ede2872e995fd381b749a1f45a8f5",
   "0x3986855a5e2fb0f6bfc38ba877a25c8b9e8d2a6c469007f96e6dae514057aec6",

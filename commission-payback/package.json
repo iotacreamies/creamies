@@ -10,7 +10,7 @@
   "license": "UNLICENSED",
   "type": "module",
   "private": true,
-  "description": "This job will run a daily payback of staking commissions for the IOTA Cream validator for everyone who holds Creamies NFTs",
+  "description": "Fetches a validator's delegators, identifies those holding specific NFTs, and automates staking commission refunds for the previous epoch.",
   "devDependencies": {
     "@types/node": "^25.2.3",
     "ts-node": "^10.9.2",
