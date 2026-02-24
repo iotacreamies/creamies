@@ -4,9 +4,16 @@ import {
   type IotaValidatorSummary,
 } from "@iota/iota-sdk/client";
 import { graphURL, network, stakingPoolId, validatorAddress } from "./const.js";
-import type { Delegation, GraphQLReturnStakes, JSONData } from "./types.ts";
+import type {
+  Delegation,
+  GraphQLReturnStakes,
+  JSONData,
+  PaybackEntry,
+} from "./types.ts";
 import { NFTCollection } from "./nfts.js";
 import { graphQueryStakes } from "./graphql.js";
+import { Ed25519Keypair } from "@iota/iota-sdk/keypairs/ed25519";
+import { Transaction } from "@iota/iota-sdk/transactions";
 
 const iota = new IotaClient({ url: getFullnodeUrl(network) });
 
@@ -23,8 +30,11 @@ export const getAllDelegations = async () => {
   const delegations: Delegation[] = [];
   let cursor = null;
   let hasNextPage = true;
-
-  console.log("Starting delegator retrieval...");
+  console.log("Starting delegator retrieval");
+  const intervalId = setInterval(
+    () => console.log(`Delegations found: ${delegations.length}`),
+    2000,
+  );
   while (hasNextPage) {
     const response: Response = await fetch(graphURL, {
       method: "POST",
@@ -58,26 +68,23 @@ export const getAllDelegations = async () => {
             }).format(parseInt(amount) / 1000000000)} IOTA`,
           };
           delegations.push(newDelegation);
-          console.log(`Delegations found: ${delegations.length}`);
         }
       }
     });
     cursor = pageInfo.endCursor;
     hasNextPage = pageInfo.hasNextPage;
   }
+  clearInterval(intervalId);
   return delegations;
 };
 
 export const getNFTCollectionOwners = async () => {
   const owners: string[] = [];
   const batchSize = 50;
-  console.log(`Starting retrieval for ${NFTCollection.length} NFTs...`);
+  console.log(`Starting retrieval of ${NFTCollection.length} NFTs`);
 
   for (let i = 0; i < NFTCollection.length; i += batchSize) {
     const batchIds = NFTCollection.slice(i, i + batchSize);
-    console.log(
-      `Fetching NFTs: ${i} to ${Math.min(i + batchSize, NFTCollection.length)}...`,
-    );
     const response = await iota.multiGetObjects({
       ids: batchIds,
       options: { showOwner: true },
@@ -89,6 +96,9 @@ export const getNFTCollectionOwners = async () => {
         owners.push(ownerAddr);
       }
     });
+    console.log(
+      `Fetched ${Math.min(i + batchSize, NFTCollection.length)} NFTs`,
+    );
   }
   return owners;
 };
@@ -122,7 +132,7 @@ export const calculateRewardsAndCommission = async (
   const growthFactor = exchangeRateNow / exchangeRatePrev;
 
   for (const dwc of delegationsWithNFTs) {
-    console.log(`Adding entry for ${dwc.address}`);
+    console.log(`New entry for epoch ${currentEpoch} ${dwc.address}`);
     let rateAtActivation = activationRateCache.get(dwc.activationEpoch);
     if (!rateAtActivation) {
       rateAtActivation = await getPoolRate(
@@ -153,5 +163,56 @@ export const calculateRewardsAndCommission = async (
       }).format(commission / 1000000000)} IOTA`,
       didReceivePayback: false,
     };
+  }
+};
+
+export const executePayback = async (jsonData: JSONData) => {
+  const secretKey = process.env.IOTA_PRIVATE_KEY!;
+  const keypair = Ed25519Keypair.fromSecretKey(secretKey);
+  const tx = new Transaction();
+
+  const paidDelegations: PaybackEntry[] = [];
+  Object.keys(jsonData).forEach((epoch) => {
+    console.log(`Checking epoch ${epoch} for unpaid entries`);
+    const epochData = jsonData[epoch];
+    if (epochData) {
+      Object.keys(epochData).forEach((address) => {
+        const delegation = epochData[address]!;
+        const { commission, didReceivePayback } = delegation;
+        if (didReceivePayback) {
+          console.log(`Already paid: ${address}`);
+          return;
+        }
+        if (commission === 0) {
+          console.log(`No commission entry: ${address}`);
+          delegation.didReceivePayback = true;
+        } else if (commission > 0) {
+          console.log(`Unpaid entry! Adding to transaction: ${address}`);
+          const amountInNanos = Math.floor(commission);
+          const [coin] = tx.splitCoins(tx.gas, [tx.pure.u64(amountInNanos)]);
+          tx.transferObjects([coin!], tx.pure.address(address));
+          paidDelegations.push(delegation);
+        }
+      });
+    }
+  });
+  const iotaDevnet = new IotaClient({ url: getFullnodeUrl("devnet") });
+  if (paidDelegations.length > 0) {
+    try {
+      console.log(`Executing ${paidDelegations.length} paybacks...`);
+      const result = await iotaDevnet.signAndExecuteTransaction({
+        signer: keypair,
+        transaction: tx,
+        options: { showEffects: true },
+      });
+      if (result.effects?.status.status === "success") {
+        console.log(`Transaction successful: ${result.digest}`);
+        paidDelegations.forEach((d) => (d.didReceivePayback = true));
+      } else {
+        console.error(`Transaction failed: ${result.digest}`);
+      }
+    } catch (error) {
+      console.error("Blockchain execution failed:", error);
+    }
   }
 };
