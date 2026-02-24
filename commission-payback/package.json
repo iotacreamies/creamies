@@ -2,12 +2,12 @@
   "name": "commission-payback",
   "version": "1.0.0",
   "scripts": {
-    "dev": "tsx script.ts",
+    "dev": "tsx --env-file=.env script.ts",
     "build": "tsc",
     "start": "node dist/script.js"
   },
-  "author": "iotacreamies (Cream)",
-  "license": "UNLICENSED",
+  "author": "iotacreamies",
+  "license": "MIT",
   "type": "module",
   "private": true,
   "description": "Fetches a validator's delegators, identifies those holding specific NFTs, and automates staking commission refunds for the previous epoch.",

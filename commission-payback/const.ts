@@ -1,4 +1,4 @@
-export const network = "mainnet";
+export const network = "devnet";
 export const graphURL = "https://graphql.mainnet.iota.cafe/";
 export const validatorAddress =
   "0x7d49a79ca16e3986b2221ee7bf93d9a34e2192517c7efea995b34f69615ee053";
