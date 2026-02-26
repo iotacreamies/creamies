@@ -120,7 +120,8 @@ export const calculateRewardsAndCommission = async (
   jsonData: JSONData,
 ) => {
   const activationRateCache = new Map();
-  const commissionRateDecimal = parseFloat(validator.commissionRate) / 10000;
+  const previousEpochCommission = jsonData[currentEpoch - 1]?.epochCommission;
+  const commissionRateDecimal = previousEpochCommission ?? 0 / 100;
   const exchangeRateNow = await getPoolRate(
     validator.exchangeRatesId,
     currentEpoch,
@@ -147,7 +148,7 @@ export const calculateRewardsAndCommission = async (
     const commission = Math.floor(
       (reward * commissionRateDecimal) / (1 - commissionRateDecimal),
     );
-    jsonData[currentEpoch]![dwc.address] = {
+    jsonData[currentEpoch]!.paybackData[dwc.address] = {
       delegation: dwc,
       reward: reward,
       formattedReward: `${new Intl.NumberFormat("en-US", {
@@ -176,8 +177,8 @@ export const executePayback = async (jsonData: JSONData) => {
     console.log(`Checking epoch ${epoch} for unpaid entries`);
     const epochData = jsonData[epoch];
     if (epochData) {
-      Object.keys(epochData).forEach((address) => {
-        const delegation = epochData[address]!;
+      Object.keys(epochData.paybackData).forEach((address) => {
+        const delegation = epochData.paybackData[address]!;
         const { commission, didReceivePayback } = delegation;
         if (didReceivePayback) {
           console.log(`Already paid: ${address}`);

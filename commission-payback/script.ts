@@ -39,7 +39,13 @@ async function run() {
     }
 
     console.log("NEW EPOCH FOUND! Running data retrieval mechanism now");
-    data[currentEpoch] = {};
+    data[currentEpoch] = {
+      epochCommission: Math.max(
+        parseFloat(validator.votingPower) / 100,
+        parseFloat(validator.commissionRate) / 100,
+      ),
+      paybackData: {},
+    };
 
     //Get all delegations from validator
     const delegations = await getAllDelegations();
