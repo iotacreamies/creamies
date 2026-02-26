@@ -1,5 +1,8 @@
 type Epoch = string;
-export type JSONData = Record<Epoch, Payback>;
+export type JSONData = Record<
+  Epoch,
+  { epochCommission: number; paybackData: Payback }
+>;
 
 export type PaybackEntry = {
   delegation: Delegation;
