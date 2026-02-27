@@ -121,7 +121,7 @@ export const calculateRewardsAndCommission = async (
 ) => {
   const activationRateCache = new Map();
   const previousEpochCommission = jsonData[currentEpoch - 1]?.epochCommission;
-  const commissionRateDecimal = previousEpochCommission ?? 0 / 10000;
+  const commissionRateDecimal = (previousEpochCommission ?? 0) / 100;
   const exchangeRateNow = await getPoolRate(
     validator.exchangeRatesId,
     currentEpoch,
