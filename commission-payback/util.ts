@@ -197,11 +197,10 @@ export const executePayback = async (jsonData: JSONData) => {
       });
     }
   });
-  const iotaDevnet = new IotaClient({ url: getFullnodeUrl("devnet") });
   if (paidDelegations.length > 0) {
     try {
       console.log(`Executing ${paidDelegations.length} paybacks...`);
-      const result = await iotaDevnet.signAndExecuteTransaction({
+      const result = await iota.signAndExecuteTransaction({
         signer: keypair,
         transaction: tx,
         options: { showEffects: true },
