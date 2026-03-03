@@ -1,8 +1,8 @@
 {
   "295": {
     "epochCommission": 0,
-    "paybackData": {
-      "0xe802cb52614dcd2692bef1e89a458ea2f89adfd2d0a1caa2368021ac9e2287af": {
+    "paybackData": [
+      {
         "delegation": {
           "address": "0xe802cb52614dcd2692bef1e89a458ea2f89adfd2d0a1caa2368021ac9e2287af",
           "activationEpoch": 212,
@@ -15,7 +15,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0x8273ce5a6969348f393d7089f12d7e378a0e992a2d586e04ca2084e58e8ebc30": {
+      {
         "delegation": {
           "address": "0x8273ce5a6969348f393d7089f12d7e378a0e992a2d586e04ca2084e58e8ebc30",
           "activationEpoch": 224,
@@ -28,7 +28,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0xb429bcaaca330508b2cdc1a12b06c7c16e46de3b32e43952d3db77422f360118": {
+      {
         "delegation": {
           "address": "0xb429bcaaca330508b2cdc1a12b06c7c16e46de3b32e43952d3db77422f360118",
           "activationEpoch": 213,
@@ -41,7 +41,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0xa556ad31b93e7810f93c768d2b9ad389a173680891e6effcd10bcd72c951ba92": {
+      {
         "delegation": {
           "address": "0xa556ad31b93e7810f93c768d2b9ad389a173680891e6effcd10bcd72c951ba92",
           "activationEpoch": 215,
@@ -54,7 +54,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0x710fd8a0ea744fa18c9eaa486bf83046412d346c158f0411b8eb8790a1e9ac88": {
+      {
         "delegation": {
           "address": "0x710fd8a0ea744fa18c9eaa486bf83046412d346c158f0411b8eb8790a1e9ac88",
           "activationEpoch": 291,
@@ -67,12 +67,12 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       }
-    }
+    ]
   },
   "296": {
     "epochCommission": 0,
-    "paybackData": {
-      "0xe802cb52614dcd2692bef1e89a458ea2f89adfd2d0a1caa2368021ac9e2287af": {
+    "paybackData": [
+      {
         "delegation": {
           "address": "0xe802cb52614dcd2692bef1e89a458ea2f89adfd2d0a1caa2368021ac9e2287af",
           "activationEpoch": 212,
@@ -85,7 +85,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0x8273ce5a6969348f393d7089f12d7e378a0e992a2d586e04ca2084e58e8ebc30": {
+      {
         "delegation": {
           "address": "0x8273ce5a6969348f393d7089f12d7e378a0e992a2d586e04ca2084e58e8ebc30",
           "activationEpoch": 224,
@@ -98,7 +98,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0xb429bcaaca330508b2cdc1a12b06c7c16e46de3b32e43952d3db77422f360118": {
+      {
         "delegation": {
           "address": "0xb429bcaaca330508b2cdc1a12b06c7c16e46de3b32e43952d3db77422f360118",
           "activationEpoch": 213,
@@ -111,7 +111,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0xa556ad31b93e7810f93c768d2b9ad389a173680891e6effcd10bcd72c951ba92": {
+      {
         "delegation": {
           "address": "0xa556ad31b93e7810f93c768d2b9ad389a173680891e6effcd10bcd72c951ba92",
           "activationEpoch": 215,
@@ -124,7 +124,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0x710fd8a0ea744fa18c9eaa486bf83046412d346c158f0411b8eb8790a1e9ac88": {
+      {
         "delegation": {
           "address": "0x710fd8a0ea744fa18c9eaa486bf83046412d346c158f0411b8eb8790a1e9ac88",
           "activationEpoch": 291,
@@ -137,12 +137,12 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       }
-    }
+    ]
   },
   "297": {
     "epochCommission": 0.92,
-    "paybackData": {
-      "0xe802cb52614dcd2692bef1e89a458ea2f89adfd2d0a1caa2368021ac9e2287af": {
+    "paybackData": [
+      {
         "delegation": {
           "address": "0xe802cb52614dcd2692bef1e89a458ea2f89adfd2d0a1caa2368021ac9e2287af",
           "activationEpoch": 212,
@@ -155,7 +155,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0x8273ce5a6969348f393d7089f12d7e378a0e992a2d586e04ca2084e58e8ebc30": {
+      {
         "delegation": {
           "address": "0x8273ce5a6969348f393d7089f12d7e378a0e992a2d586e04ca2084e58e8ebc30",
           "activationEpoch": 224,
@@ -168,7 +168,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0xb429bcaaca330508b2cdc1a12b06c7c16e46de3b32e43952d3db77422f360118": {
+      {
         "delegation": {
           "address": "0xb429bcaaca330508b2cdc1a12b06c7c16e46de3b32e43952d3db77422f360118",
           "activationEpoch": 213,
@@ -181,7 +181,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0xa556ad31b93e7810f93c768d2b9ad389a173680891e6effcd10bcd72c951ba92": {
+      {
         "delegation": {
           "address": "0xa556ad31b93e7810f93c768d2b9ad389a173680891e6effcd10bcd72c951ba92",
           "activationEpoch": 215,
@@ -194,7 +194,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0x710fd8a0ea744fa18c9eaa486bf83046412d346c158f0411b8eb8790a1e9ac88": {
+      {
         "delegation": {
           "address": "0x710fd8a0ea744fa18c9eaa486bf83046412d346c158f0411b8eb8790a1e9ac88",
           "activationEpoch": 291,
@@ -207,12 +207,12 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       }
-    }
+    ]
   },
   "298": {
     "epochCommission": 1.02,
-    "paybackData": {
-      "0xe802cb52614dcd2692bef1e89a458ea2f89adfd2d0a1caa2368021ac9e2287af": {
+    "paybackData": [
+      {
         "delegation": {
           "address": "0xe802cb52614dcd2692bef1e89a458ea2f89adfd2d0a1caa2368021ac9e2287af",
           "activationEpoch": 212,
@@ -225,7 +225,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0x8273ce5a6969348f393d7089f12d7e378a0e992a2d586e04ca2084e58e8ebc30": {
+      {
         "delegation": {
           "address": "0x8273ce5a6969348f393d7089f12d7e378a0e992a2d586e04ca2084e58e8ebc30",
           "activationEpoch": 224,
@@ -238,7 +238,7 @@
         "formattedCommission": "1.28 IOTA",
         "didReceivePayback": true
       },
-      "0xb429bcaaca330508b2cdc1a12b06c7c16e46de3b32e43952d3db77422f360118": {
+      {
         "delegation": {
           "address": "0xb429bcaaca330508b2cdc1a12b06c7c16e46de3b32e43952d3db77422f360118",
           "activationEpoch": 213,
@@ -251,7 +251,7 @@
         "formattedCommission": "0.01 IOTA",
         "didReceivePayback": true
       },
-      "0xa556ad31b93e7810f93c768d2b9ad389a173680891e6effcd10bcd72c951ba92": {
+      {
         "delegation": {
           "address": "0xa556ad31b93e7810f93c768d2b9ad389a173680891e6effcd10bcd72c951ba92",
           "activationEpoch": 215,
@@ -264,7 +264,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0x710fd8a0ea744fa18c9eaa486bf83046412d346c158f0411b8eb8790a1e9ac88": {
+      {
         "delegation": {
           "address": "0x710fd8a0ea744fa18c9eaa486bf83046412d346c158f0411b8eb8790a1e9ac88",
           "activationEpoch": 291,
@@ -277,12 +277,12 @@
         "formattedCommission": "0.03 IOTA",
         "didReceivePayback": true
       }
-    }
+    ]
   },
   "299": {
     "epochCommission": 1.03,
-    "paybackData": {
-      "0xe802cb52614dcd2692bef1e89a458ea2f89adfd2d0a1caa2368021ac9e2287af": {
+    "paybackData": [
+      {
         "delegation": {
           "address": "0xe802cb52614dcd2692bef1e89a458ea2f89adfd2d0a1caa2368021ac9e2287af",
           "activationEpoch": 212,
@@ -295,7 +295,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0x8273ce5a6969348f393d7089f12d7e378a0e992a2d586e04ca2084e58e8ebc30": {
+      {
         "delegation": {
           "address": "0x8273ce5a6969348f393d7089f12d7e378a0e992a2d586e04ca2084e58e8ebc30",
           "activationEpoch": 224,
@@ -308,7 +308,7 @@
         "formattedCommission": "1.54 IOTA",
         "didReceivePayback": true
       },
-      "0xb429bcaaca330508b2cdc1a12b06c7c16e46de3b32e43952d3db77422f360118": {
+      {
         "delegation": {
           "address": "0xb429bcaaca330508b2cdc1a12b06c7c16e46de3b32e43952d3db77422f360118",
           "activationEpoch": 213,
@@ -321,7 +321,7 @@
         "formattedCommission": "0.01 IOTA",
         "didReceivePayback": true
       },
-      "0xa556ad31b93e7810f93c768d2b9ad389a173680891e6effcd10bcd72c951ba92": {
+      {
         "delegation": {
           "address": "0xa556ad31b93e7810f93c768d2b9ad389a173680891e6effcd10bcd72c951ba92",
           "activationEpoch": 215,
@@ -334,7 +334,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0x710fd8a0ea744fa18c9eaa486bf83046412d346c158f0411b8eb8790a1e9ac88": {
+      {
         "delegation": {
           "address": "0x710fd8a0ea744fa18c9eaa486bf83046412d346c158f0411b8eb8790a1e9ac88",
           "activationEpoch": 291,
@@ -347,12 +347,12 @@
         "formattedCommission": "0.04 IOTA",
         "didReceivePayback": true
       }
-    }
+    ]
   },
   "300": {
     "epochCommission": 1.05,
-    "paybackData": {
-      "0xe802cb52614dcd2692bef1e89a458ea2f89adfd2d0a1caa2368021ac9e2287af": {
+    "paybackData": [
+      {
         "delegation": {
           "address": "0xe802cb52614dcd2692bef1e89a458ea2f89adfd2d0a1caa2368021ac9e2287af",
           "activationEpoch": 212,
@@ -365,7 +365,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0x8273ce5a6969348f393d7089f12d7e378a0e992a2d586e04ca2084e58e8ebc30": {
+      {
         "delegation": {
           "address": "0x8273ce5a6969348f393d7089f12d7e378a0e992a2d586e04ca2084e58e8ebc30",
           "activationEpoch": 224,
@@ -378,7 +378,7 @@
         "formattedCommission": "1.44 IOTA",
         "didReceivePayback": true
       },
-      "0xb429bcaaca330508b2cdc1a12b06c7c16e46de3b32e43952d3db77422f360118": {
+      {
         "delegation": {
           "address": "0xb429bcaaca330508b2cdc1a12b06c7c16e46de3b32e43952d3db77422f360118",
           "activationEpoch": 213,
@@ -391,7 +391,7 @@
         "formattedCommission": "0.01 IOTA",
         "didReceivePayback": true
       },
-      "0xa556ad31b93e7810f93c768d2b9ad389a173680891e6effcd10bcd72c951ba92": {
+      {
         "delegation": {
           "address": "0xa556ad31b93e7810f93c768d2b9ad389a173680891e6effcd10bcd72c951ba92",
           "activationEpoch": 215,
@@ -404,7 +404,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0x710fd8a0ea744fa18c9eaa486bf83046412d346c158f0411b8eb8790a1e9ac88": {
+      {
         "delegation": {
           "address": "0x710fd8a0ea744fa18c9eaa486bf83046412d346c158f0411b8eb8790a1e9ac88",
           "activationEpoch": 291,
@@ -417,7 +417,7 @@
         "formattedCommission": "0.04 IOTA",
         "didReceivePayback": true
       },
-      "0x7d49a79ca16e3986b2221ee7bf93d9a34e2192517c7efea995b34f69615ee053": {
+      {
         "delegation": {
           "address": "0x7d49a79ca16e3986b2221ee7bf93d9a34e2192517c7efea995b34f69615ee053",
           "activationEpoch": 298,
@@ -430,12 +430,12 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       }
-    }
+    ]
   },
   "301": {
     "epochCommission": 1.14,
-    "paybackData": {
-      "0x7d49a79ca16e3986b2221ee7bf93d9a34e2192517c7efea995b34f69615ee053": {
+    "paybackData": [
+      {
         "delegation": {
           "address": "0x7d49a79ca16e3986b2221ee7bf93d9a34e2192517c7efea995b34f69615ee053",
           "activationEpoch": 299,
@@ -448,7 +448,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0xe802cb52614dcd2692bef1e89a458ea2f89adfd2d0a1caa2368021ac9e2287af": {
+      {
         "delegation": {
           "address": "0xe802cb52614dcd2692bef1e89a458ea2f89adfd2d0a1caa2368021ac9e2287af",
           "activationEpoch": 212,
@@ -461,7 +461,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0x8273ce5a6969348f393d7089f12d7e378a0e992a2d586e04ca2084e58e8ebc30": {
+      {
         "delegation": {
           "address": "0x8273ce5a6969348f393d7089f12d7e378a0e992a2d586e04ca2084e58e8ebc30",
           "activationEpoch": 224,
@@ -474,7 +474,7 @@
         "formattedCommission": "1.5 IOTA",
         "didReceivePayback": true
       },
-      "0xb429bcaaca330508b2cdc1a12b06c7c16e46de3b32e43952d3db77422f360118": {
+      {
         "delegation": {
           "address": "0xb429bcaaca330508b2cdc1a12b06c7c16e46de3b32e43952d3db77422f360118",
           "activationEpoch": 213,
@@ -487,7 +487,7 @@
         "formattedCommission": "0.01 IOTA",
         "didReceivePayback": true
       },
-      "0xa556ad31b93e7810f93c768d2b9ad389a173680891e6effcd10bcd72c951ba92": {
+      {
         "delegation": {
           "address": "0xa556ad31b93e7810f93c768d2b9ad389a173680891e6effcd10bcd72c951ba92",
           "activationEpoch": 215,
@@ -500,7 +500,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0x710fd8a0ea744fa18c9eaa486bf83046412d346c158f0411b8eb8790a1e9ac88": {
+      {
         "delegation": {
           "address": "0x710fd8a0ea744fa18c9eaa486bf83046412d346c158f0411b8eb8790a1e9ac88",
           "activationEpoch": 291,
@@ -513,12 +513,12 @@
         "formattedCommission": "0.04 IOTA",
         "didReceivePayback": true
       }
-    }
+    ]
   },
   "302": {
     "epochCommission": 1.15,
-    "paybackData": {
-      "0x7d49a79ca16e3986b2221ee7bf93d9a34e2192517c7efea995b34f69615ee053": {
+    "paybackData": [
+      {
         "delegation": {
           "address": "0x7d49a79ca16e3986b2221ee7bf93d9a34e2192517c7efea995b34f69615ee053",
           "activationEpoch": 300,
@@ -531,7 +531,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0xe802cb52614dcd2692bef1e89a458ea2f89adfd2d0a1caa2368021ac9e2287af": {
+      {
         "delegation": {
           "address": "0xe802cb52614dcd2692bef1e89a458ea2f89adfd2d0a1caa2368021ac9e2287af",
           "activationEpoch": 212,
@@ -544,7 +544,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0x8273ce5a6969348f393d7089f12d7e378a0e992a2d586e04ca2084e58e8ebc30": {
+      {
         "delegation": {
           "address": "0x8273ce5a6969348f393d7089f12d7e378a0e992a2d586e04ca2084e58e8ebc30",
           "activationEpoch": 224,
@@ -557,7 +557,7 @@
         "formattedCommission": "1.59 IOTA",
         "didReceivePayback": true
       },
-      "0xb429bcaaca330508b2cdc1a12b06c7c16e46de3b32e43952d3db77422f360118": {
+      {
         "delegation": {
           "address": "0xb429bcaaca330508b2cdc1a12b06c7c16e46de3b32e43952d3db77422f360118",
           "activationEpoch": 213,
@@ -570,7 +570,7 @@
         "formattedCommission": "0.01 IOTA",
         "didReceivePayback": true
       },
-      "0xa556ad31b93e7810f93c768d2b9ad389a173680891e6effcd10bcd72c951ba92": {
+      {
         "delegation": {
           "address": "0xa556ad31b93e7810f93c768d2b9ad389a173680891e6effcd10bcd72c951ba92",
           "activationEpoch": 215,
@@ -583,7 +583,7 @@
         "formattedCommission": "0 IOTA",
         "didReceivePayback": true
       },
-      "0x710fd8a0ea744fa18c9eaa486bf83046412d346c158f0411b8eb8790a1e9ac88": {
+      {
         "delegation": {
           "address": "0x710fd8a0ea744fa18c9eaa486bf83046412d346c158f0411b8eb8790a1e9ac88",
           "activationEpoch": 291,
@@ -596,6 +596,6 @@
         "formattedCommission": "0.04 IOTA",
         "didReceivePayback": true
       }
-    }
+    ]
   }
 }

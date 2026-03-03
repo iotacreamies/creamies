@@ -44,7 +44,7 @@ async function run() {
         parseFloat(validator.votingPower) / 100,
         parseFloat(validator.commissionRate) / 100,
       ),
-      paybackData: {},
+      paybackData: [],
     };
 
     //Get all delegations from validator
