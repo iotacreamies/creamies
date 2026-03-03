@@ -64,7 +64,7 @@ export const getAllDelegations = async () => {
             formattedValue: `${new Intl.NumberFormat("en-US", {
               notation: "compact",
               compactDisplay: "short",
-              maximumFractionDigits: 2,
+              maximumFractionDigits: 4,
             }).format(parseInt(amount) / 1000000000)} IOTA`,
           };
           delegations.push(newDelegation);
@@ -148,22 +148,22 @@ export const calculateRewardsAndCommission = async (
     const commission = Math.floor(
       (reward * commissionRateDecimal) / (1 - commissionRateDecimal),
     );
-    jsonData[currentEpoch]!.paybackData[dwc.address] = {
+    jsonData[currentEpoch]!.paybackData.push({
       delegation: dwc,
       reward: reward,
       formattedReward: `${new Intl.NumberFormat("en-US", {
         notation: "compact",
         compactDisplay: "short",
-        maximumFractionDigits: 2,
+        maximumFractionDigits: 4,
       }).format(reward / 1000000000)} IOTA`,
       commission: commission,
       formattedCommission: `${new Intl.NumberFormat("en-US", {
         notation: "compact",
         compactDisplay: "short",
-        maximumFractionDigits: 2,
+        maximumFractionDigits: 4,
       }).format(commission / 1000000000)} IOTA`,
       didReceivePayback: false,
-    };
+    });
   }
 };
 
@@ -177,22 +177,32 @@ export const executePayback = async (jsonData: JSONData) => {
     console.log(`Checking epoch ${epoch} for unpaid entries`);
     const epochData = jsonData[epoch];
     if (epochData) {
-      Object.keys(epochData.paybackData).forEach((address) => {
-        const delegation = epochData.paybackData[address]!;
-        const { commission, didReceivePayback } = delegation;
+      epochData.paybackData.forEach((delegationEntry) => {
+        const {
+          commission,
+          didReceivePayback,
+          formattedCommission,
+          delegation,
+        } = delegationEntry;
         if (didReceivePayback) {
-          console.log(`Already paid: ${address}`);
+          console.log(
+            `Already paid: ${delegation.address} - ${formattedCommission}`,
+          );
           return;
         }
         if (commission === 0) {
-          console.log(`No commission entry: ${address}`);
-          delegation.didReceivePayback = true;
+          console.log(
+            `No commission entry: ${delegation.address} - ${formattedCommission}`,
+          );
+          delegationEntry.didReceivePayback = true;
         } else if (commission > 0) {
-          console.log(`Unpaid entry! Adding to transaction: ${address}`);
+          console.log(
+            `Unpaid entry! Adding to transaction: ${delegation.address} - ${formattedCommission}`,
+          );
           const amountInNanos = Math.floor(commission);
           const [coin] = tx.splitCoins(tx.gas, [tx.pure.u64(amountInNanos)]);
-          tx.transferObjects([coin!], tx.pure.address(address));
-          paidDelegations.push(delegation);
+          tx.transferObjects([coin!], tx.pure.address(delegation.address));
+          paidDelegations.push(delegationEntry);
         }
       });
     }
