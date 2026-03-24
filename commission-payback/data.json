@@ -4038,5 +4038,166 @@
         "didReceivePayback": true
       }
     ]
+  },
+  "323": {
+    "epochCommission": 1.89,
+    "paybackData": [
+      {
+        "delegation": {
+          "address": "0xe802cb52614dcd2692bef1e89a458ea2f89adfd2d0a1caa2368021ac9e2287af",
+          "activationEpoch": 212,
+          "value": 14000000000,
+          "formattedValue": "14 IOTA"
+        },
+        "reward": 4508888.386547784,
+        "formattedReward": "0.0045 IOTA",
+        "commission": 86859,
+        "formattedCommission": "0.0001 IOTA",
+        "didReceivePayback": true
+      },
+      {
+        "delegation": {
+          "address": "0xfe882dc9c7c53eac18d3d350cd9be3d6755114fd80796ee035b403e2736b3e28",
+          "activationEpoch": 319,
+          "value": 10840960987964,
+          "formattedValue": "10.841K IOTA"
+        },
+        "reward": 3373887268.3995914,
+        "formattedReward": "3.3739 IOTA",
+        "commission": 64994872,
+        "formattedCommission": "0.065 IOTA",
+        "didReceivePayback": true
+      },
+      {
+        "delegation": {
+          "address": "0x7d49a79ca16e3986b2221ee7bf93d9a34e2192517c7efea995b34f69615ee053",
+          "activationEpoch": 320,
+          "value": 2833000000000,
+          "formattedValue": "2.833K IOTA"
+        },
+        "reward": 881403087.0176989,
+        "formattedReward": "0.8814 IOTA",
+        "commission": 16979429,
+        "formattedCommission": "0.017 IOTA",
+        "didReceivePayback": true
+      },
+      {
+        "delegation": {
+          "address": "0x8273ce5a6969348f393d7089f12d7e378a0e992a2d586e04ca2084e58e8ebc30",
+          "activationEpoch": 224,
+          "value": 430914000000000,
+          "formattedValue": "430.914K IOTA"
+        },
+        "reward": 138229033149.094,
+        "formattedReward": "138.229 IOTA",
+        "commission": 2662856718,
+        "formattedCommission": "2.6629 IOTA",
+        "didReceivePayback": true
+      },
+      {
+        "delegation": {
+          "address": "0x7d49a79ca16e3986b2221ee7bf93d9a34e2192517c7efea995b34f69615ee053",
+          "activationEpoch": 321,
+          "value": 240293434426,
+          "formattedValue": "240.2934 IOTA"
+        },
+        "reward": 74736824.09441559,
+        "formattedReward": "0.0747 IOTA",
+        "commission": 1439737,
+        "formattedCommission": "0.0014 IOTA",
+        "didReceivePayback": true
+      },
+      {
+        "delegation": {
+          "address": "0xb429bcaaca330508b2cdc1a12b06c7c16e46de3b32e43952d3db77422f360118",
+          "activationEpoch": 213,
+          "value": 2400000000000,
+          "formattedValue": "2.4K IOTA"
+        },
+        "reward": 772719504.300579,
+        "formattedReward": "0.7727 IOTA",
+        "commission": 14885739,
+        "formattedCommission": "0.0149 IOTA",
+        "didReceivePayback": true
+      },
+      {
+        "delegation": {
+          "address": "0x68e0eb970fc80248b55ff605a303c9ac3d40157d2dceab04d15d09e6054bb489",
+          "activationEpoch": 301,
+          "value": 1276183000000000,
+          "formattedValue": "1.2762M IOTA"
+        },
+        "reward": 399410279212.9073,
+        "formattedReward": "399.4103 IOTA",
+        "commission": 7694276095,
+        "formattedCommission": "7.6943 IOTA",
+        "didReceivePayback": true
+      },
+      {
+        "delegation": {
+          "address": "0x68e0eb970fc80248b55ff605a303c9ac3d40157d2dceab04d15d09e6054bb489",
+          "activationEpoch": 308,
+          "value": 334188000000000,
+          "formattedValue": "334.188K IOTA"
+        },
+        "reward": 104363524622.10143,
+        "formattedReward": "104.3635 IOTA",
+        "commission": 2010468469,
+        "formattedCommission": "2.0105 IOTA",
+        "didReceivePayback": true
+      },
+      {
+        "delegation": {
+          "address": "0x68e0eb970fc80248b55ff605a303c9ac3d40157d2dceab04d15d09e6054bb489",
+          "activationEpoch": 305,
+          "value": 116327000000000,
+          "formattedValue": "116.327K IOTA"
+        },
+        "reward": 36361637132.443886,
+        "formattedReward": "36.3616 IOTA",
+        "commission": 700473898,
+        "formattedCommission": "0.7005 IOTA",
+        "didReceivePayback": true
+      },
+      {
+        "delegation": {
+          "address": "0xa556ad31b93e7810f93c768d2b9ad389a173680891e6effcd10bcd72c951ba92",
+          "activationEpoch": 215,
+          "value": 320000000000,
+          "formattedValue": "320 IOTA"
+        },
+        "reward": 102953618.74043424,
+        "formattedReward": "0.103 IOTA",
+        "commission": 1983307,
+        "formattedCommission": "0.002 IOTA",
+        "didReceivePayback": true
+      },
+      {
+        "delegation": {
+          "address": "0x710fd8a0ea744fa18c9eaa486bf83046412d346c158f0411b8eb8790a1e9ac88",
+          "activationEpoch": 291,
+          "value": 11000000000000,
+          "formattedValue": "11K IOTA"
+        },
+        "reward": 3453661408.97994,
+        "formattedReward": "3.4537 IOTA",
+        "commission": 66531648,
+        "formattedCommission": "0.0665 IOTA",
+        "didReceivePayback": true
+      },
+      {
+        "delegation": {
+          "address": "0xb429bcaaca330508b2cdc1a12b06c7c16e46de3b32e43952d3db77422f360118",
+          "activationEpoch": 309,
+          "value": 1980000000000,
+          "formattedValue": "1.98K IOTA"
+        },
+        "reward": 618142313.2196473,
+        "formattedReward": "0.6181 IOTA",
+        "commission": 11907949,
+        "formattedCommission": "0.0119 IOTA",
+        "didReceivePayback": true
+      }
+    ]
   }
 }
