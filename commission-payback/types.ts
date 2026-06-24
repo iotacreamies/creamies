@@ -1,8 +1,4 @@
-type Epoch = string;
-export type JSONData = Record<
-  Epoch,
-  { epochCommission: number; paybackData: PaybackEntry[] }
->;
+export type EpochData = { epochCommission: number; paybackData: PaybackEntry[] };
 
 export type PaybackEntry = {
   delegation: Delegation;
