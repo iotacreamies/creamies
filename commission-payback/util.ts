@@ -4,10 +4,12 @@ import {
   type IotaValidatorSummary,
 } from "@iota/iota-sdk/client";
 import { graphURL, network, stakingPoolId, validatorAddress } from "./const.js";
+import { mkdir, readdir, readFile, writeFile } from "fs/promises";
+import { join } from "path";
 import type {
   Delegation,
+  EpochData,
   GraphQLReturnStakes,
-  JSONData,
   PaybackEntry,
 } from "./types.ts";
 import { NFTCollection } from "./nfts.js";
@@ -117,11 +119,11 @@ export const calculateRewardsAndCommission = async (
   validator: IotaValidatorSummary,
   currentEpoch: number,
   delegationsWithNFTs: Delegation[],
-  jsonData: JSONData,
+  epochData: EpochData,
+  previousEpochCommission: number,
 ) => {
   const activationRateCache = new Map();
-  const previousEpochCommission = jsonData[currentEpoch - 1]?.epochCommission;
-  const commissionRateDecimal = (previousEpochCommission ?? 0) / 100;
+  const commissionRateDecimal = previousEpochCommission / 100;
   const exchangeRateNow = await getPoolRate(
     validator.exchangeRatesId,
     currentEpoch,
@@ -148,7 +150,7 @@ export const calculateRewardsAndCommission = async (
     const commission = Math.floor(
       (reward * commissionRateDecimal) / (1 - commissionRateDecimal),
     );
-    jsonData[currentEpoch]!.paybackData.push({
+    epochData.paybackData.push({
       delegation: dwc,
       reward: reward,
       formattedReward: `${new Intl.NumberFormat("en-US", {
@@ -167,46 +169,48 @@ export const calculateRewardsAndCommission = async (
   }
 };
 
-export const executePayback = async (jsonData: JSONData) => {
+export const executePayback = async (epochDir: string) => {
   const secretKey = process.env.IOTA_PRIVATE_KEY!;
   const keypair = Ed25519Keypair.fromSecretKey(secretKey);
   const tx = new Transaction();
 
   const paidDelegations: PaybackEntry[] = [];
-  Object.keys(jsonData).forEach((epoch) => {
+  const dirtyFiles = new Set<string>();
+
+  const files = (await readdir(epochDir))
+    .filter((f) => f.endsWith(".json"))
+    .sort();
+
+  const epochDataMap = new Map<string, EpochData>();
+  for (const file of files) {
+    const content = await readFile(join(epochDir, file), "utf8");
+    const epochData: EpochData = JSON.parse(content);
+    epochDataMap.set(file, epochData);
+
+    const epoch = file.replace(".json", "");
     console.log(`Checking epoch ${epoch} for unpaid entries`);
-    const epochData = jsonData[epoch];
-    if (epochData) {
-      epochData.paybackData.forEach((delegationEntry) => {
-        const {
-          commission,
-          didReceivePayback,
-          formattedCommission,
-          delegation,
-        } = delegationEntry;
-        if (didReceivePayback) {
-          console.log(
-            `Already paid: ${delegation.address} - ${formattedCommission}`,
-          );
-          return;
-        }
-        if (commission === 0) {
-          console.log(
-            `No commission entry: ${delegation.address} - ${formattedCommission}`,
-          );
-          delegationEntry.didReceivePayback = true;
-        } else if (commission > 0) {
-          console.log(
-            `Unpaid entry! Adding to transaction: ${delegation.address} - ${formattedCommission}`,
-          );
-          const amountInNanos = Math.floor(commission);
-          const [coin] = tx.splitCoins(tx.gas, [tx.pure.u64(amountInNanos)]);
-          tx.transferObjects([coin!], tx.pure.address(delegation.address));
-          paidDelegations.push(delegationEntry);
-        }
-      });
-    }
-  });
+    epochData.paybackData.forEach((delegationEntry) => {
+      const { commission, didReceivePayback, formattedCommission, delegation } =
+        delegationEntry;
+      if (didReceivePayback) {
+        console.log(`Already paid: ${delegation.address} - ${formattedCommission}`);
+        return;
+      }
+      if (commission === 0) {
+        console.log(`No commission entry: ${delegation.address} - ${formattedCommission}`);
+        delegationEntry.didReceivePayback = true;
+        dirtyFiles.add(file);
+      } else if (commission > 0) {
+        console.log(`Unpaid entry! Adding to transaction: ${delegation.address} - ${formattedCommission}`);
+        const amountInNanos = Math.floor(commission);
+        const [coin] = tx.splitCoins(tx.gas, [tx.pure.u64(amountInNanos)]);
+        tx.transferObjects([coin!], tx.pure.address(delegation.address));
+        paidDelegations.push(delegationEntry);
+        dirtyFiles.add(file);
+      }
+    });
+  }
+
   if (paidDelegations.length > 0) {
     try {
       console.log(`Executing ${paidDelegations.length} paybacks...`);
@@ -224,5 +228,15 @@ export const executePayback = async (jsonData: JSONData) => {
     } catch (error) {
       console.error("Blockchain execution failed:", error);
     }
+  }
+
+  await mkdir(epochDir, { recursive: true });
+  for (const file of dirtyFiles) {
+    await writeFile(
+      join(epochDir, file),
+      JSON.stringify(epochDataMap.get(file)!, null, 2),
+      "utf8",
+    );
+    console.log(`Saved ${file}`);
   }
 };
