@@ -83,6 +83,7 @@ a:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; }
 /* Header like on the apps (only the language switch here); it stays on top, so the legal close button goes below it */
 .cr-header { position: sticky; top: 0; }
 :root { --cr-close-top: 86px; }
+.cr-brand img { top: calc(var(--logo-h) * .134 - 3px); } /* CREAM logo a touch higher, so it lines up with DASHBOARD */
 
 /* Four big tiles (2×2) filling the whole space between header and footer: animation on top, text below. */
 .home { flex: 1; display: flex; width: 100%; padding: 16px; }
