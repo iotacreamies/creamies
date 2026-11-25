@@ -27961,4 +27961,4 @@
 .app-container > .cr-footer { position: absolute; left: 0; right: 0; bottom: 0; z-index: 5; }
 .legal-scroll { padding-bottom: 56px !important; box-sizing: border-box; }
 /* Card centred in the visible area above the footer: normal 40px + footer height */
-.statistics-flex { padding-bottom: 94px !important; box-sizing: border-box; }
+.statistics-flex { padding-top: 20px !important; padding-bottom: 94px !important; box-sizing: border-box; } /* top 20 px less than bottom: the card sits 10 px above the middle, looks centred */
