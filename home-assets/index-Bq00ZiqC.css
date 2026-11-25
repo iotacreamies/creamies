@@ -6,7 +6,7 @@
 .cr-footer a:hover, .cr-footer a:focus-visible { color: #fff; }
 .cr-footer a:focus-visible { outline: none; }
 .cr-footer { align-items: center; }
-.cr-powered { position: absolute; right: 24px; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; gap: 0; color: rgba(255, 255, 255, .78); font-size: 14px; } /* far right; links stay centred */
+.cr-powered { position: absolute; right: 24px; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; gap: 0; color: rgba(255, 255, 255, .78); font-size: 12px; } /* far right; links stay centred */
 @media (max-width: 560px) { /* no room for centred links + right block: links left, "powered by" right */
   .cr-footer:has(.cr-powered) { justify-content: flex-start; }
   .cr-powered { position: static; transform: none; margin-left: auto; }
