@@ -79,8 +79,9 @@ main { flex: 1; }
 .cr-footer { position: sticky; bottom: 0; z-index: 4; }
 a:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; }
 
-.top-right { position: absolute; top: 16px; right: 16px; z-index: 10; }
-.top-right.legal { position: fixed; right: max(16px, calc(28px - (100vw - 100%))); } /* privacy scrolls: stays in view like the close button; 28px from the window edge (overlay scrollbar), at least 16px from a classic one */
+/* Header like on the apps (only the language switch here); it stays on top, so the legal close button goes below it */
+.cr-header { position: sticky; top: 0; }
+:root { --cr-close-top: 86px; }
 
 .home { max-width: 1180px; margin: 0 auto; padding: 56px 24px 64px; text-align: center; }
 .home h1 { margin: 0; }
@@ -91,8 +92,7 @@ a:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; }
 .app { display: flex; flex-direction: column; overflow: hidden; border-radius: 22px; background: var(--panel); border: 1px solid var(--line); box-shadow: 0 10px 30px rgba(4, 30, 70, .22); color: #fff; text-decoration: none; transition: transform .18s, background .18s, box-shadow .18s; }
 a.app:hover { transform: translateY(-4px); background: var(--panel-hover); box-shadow: 0 16px 36px rgba(4, 30, 70, .3); }
 .app-art { position: relative; aspect-ratio: 1; overflow: hidden; background: radial-gradient(circle at 50% 40%, rgba(255, 255, 255, .34), rgba(255, 255, 255, .08) 70%); }
-.app-art img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
-.app-art.logo img { object-fit: contain; padding: 16%; filter: drop-shadow(0 10px 18px rgba(10, 40, 90, .3)); }
+.app-art .art { position: absolute; inset: 0; } /* animated scene fills the square */
 .app-text { flex: 1; padding: 16px 18px 6px; }
 .app-text h2 { margin: 0 0 6px; font-size: 19px; letter-spacing: -.01em; }
 .app-text p { margin: 0; color: var(--muted); }
@@ -100,7 +100,7 @@ a.app:hover { transform: translateY(-4px); background: var(--panel-hover); box-s
 
 /* Not released yet */
 .app.off { cursor: default; }
-.app.off .app-art img { filter: grayscale(1); opacity: .55; }
+.app.off .app-art .art { filter: grayscale(1); opacity: .55; }
 .app.off .app-text { opacity: .6; }
 .app.off .app-go { background: rgba(8, 40, 82, .32); color: var(--muted); box-shadow: none; border: 1px solid rgba(255, 255, 255, .16); }
 
@@ -127,4 +127,50 @@ a.app:hover { transform: translateY(-4px); background: var(--panel-hover); box-s
   .app-text p { font-size: 14px; }
   .app-go { justify-self: start; margin: 10px 14px 14px; padding: 5px 13px; font-size: 13px; }
   a.app:hover { transform: none; }
+}
+/* Animated tile scenes (Art.tsx). Elements rotate/scale around points in the 200×200 view box. */
+.art { display: block; width: 100%; height: 100%; transition: transform .35s ease; }
+.art * { transform-box: view-box; }
+.art-text { font: 800 10px ui-rounded, "SF Pro Rounded", system-ui, sans-serif; letter-spacing: .08em; }
+a.app:hover .art { transform: scale(1.05); }
+
+/* Kiosk: cones slide along the counter, the sale tag swings, coins hop */
+.k-cone { animation: k-slide 7.8s linear infinite; }
+@keyframes k-slide { from { transform: translateX(225px); } to { transform: translateX(-25px); } }
+.k-tag { transform-origin: 100px 60px; animation: k-swing 2.8s ease-in-out infinite; }
+@keyframes k-swing { 0%, 100% { transform: rotate(-9deg); } 50% { transform: rotate(9deg); } }
+.k-coin { animation: k-hop 2.4s ease-in-out infinite; }
+.k-coin2 { animation-delay: -1.2s; }
+@keyframes k-hop { 0%, 55%, 100% { transform: translateY(0); } 25% { transform: translateY(-18px); } }
+
+/* Validator: the node ring turns, nodes blink, the core sends waves and its check mark pops */
+.v-ring { transform-origin: 100px 104px; animation: v-turn 26s linear infinite; }
+@keyframes v-turn { to { transform: rotate(360deg); } }
+.v-blink { animation: v-blink 2.1s ease-in-out infinite; }
+@keyframes v-blink { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
+.v-wave { transform-origin: 100px 104px; animation: v-wave 2.6s ease-out infinite; }
+@keyframes v-wave { from { transform: scale(1); opacity: .7; } to { transform: scale(2.1); opacity: 0; } }
+.v-check { stroke-dasharray: 34; animation: v-check 3.2s ease-in-out infinite; }
+@keyframes v-check { 0% { stroke-dashoffset: 34; } 25%, 85% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -34; } }
+
+/* Meltdown: drips stretch, drops fall, transactions rush past, the TPS needle shakes in the red */
+.m-drip { transform-origin: 100px 78px; animation: m-drip 2.8s ease-in-out infinite; }
+@keyframes m-drip { 0%, 100% { transform: scaleY(.55); } 50% { transform: scaleY(1.25); } }
+.m-drop { animation: m-drop 1.8s ease-in infinite; }
+@keyframes m-drop { 0% { transform: translateY(0); opacity: 0; } 15% { opacity: 1; } 100% { transform: translateY(46px); opacity: 0; } }
+.m-streak { animation: m-streak 1.3s linear infinite; opacity: .8; }
+@keyframes m-streak { from { transform: translateX(215px); } to { transform: translateX(-40px); } }
+.m-needle { transform-origin: 100px 180px; animation: m-needle 3.4s ease-in-out infinite; }
+@keyframes m-needle {
+  0% { transform: rotate(-70deg); } 45% { transform: rotate(58deg); }
+  50% { transform: rotate(66deg); } 55% { transform: rotate(56deg); } 60% { transform: rotate(68deg); } 65% { transform: rotate(60deg); }
+  80% { transform: rotate(64deg); } 100% { transform: rotate(-70deg); }
+}
+
+/* Game: the two cones bob */
+.g-bob { animation: g-bob 1.2s ease-in-out infinite; }
+@keyframes g-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .art, .art * { animation: none !important; transition: none !important; }
 }
