@@ -618,7 +618,9 @@ header .header-start { grid-area: start; justify-self: start; }
 header h1 { grid-area: brand; justify-self: center; }
 header .header-actions { grid-area: actions; justify-self: end; }
 /* Menu below the header, centred above the content (scrolls with the page) */
-nav.tabs { align-self: center; width: max-content; max-width: calc(100% - 32px); box-sizing: border-box; margin: 20px auto 0; }
+nav.tabs { align-self: center; width: max-content; max-width: calc(100% - 32px); box-sizing: border-box; margin: 20px auto 0;
+  /* stays in view below the sticky header while the page scrolls; glass so cards behind stay readable */
+  position: sticky; top: calc(var(--header-h, 72px) + 10px); z-index: 4; background: rgba(19, 81, 155, .72); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2); box-shadow: 0 6px 18px rgba(4, 30, 70, .25); }
 /* Narrow: wallet and language get their own centred row */
 @media (max-width: 640px) {
   header { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); grid-template-areas: "start brand ." "actions actions actions"; }
@@ -805,7 +807,7 @@ dd { margin: 0; font-weight: 700; }
   .search, .search input { width: 100%; grid-column: 1 / -1; }
   header { padding: 10px 16px; position: static; }
   main { padding: 18px 16px 48px; }
-  nav.tabs { width: calc(100% - 32px); margin-top: 16px; }
+  nav.tabs { width: calc(100% - 32px); margin-top: 16px; top: 8px; } /* header scrolls away on phones, the menu stays */
   nav.tabs button { flex: 1; padding: 8px 6px; }
   .brand { --logo-h: 36px; }
   .brand { gap: 11px; }
