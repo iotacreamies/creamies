@@ -1,10 +1,10 @@
 /* Shared by the Creamies pages (Home, Kiosk, Validator, Meltdown) – used by all Creamies web apps through a symlink src/shared in each app. */
 
-/* Footer: no bar, just imprint and privacy as round glass buttons like the ones at the top */
-.cr-footer { display: flex; justify-content: center; gap: 10px; padding: 12px 16px; background: transparent; pointer-events: none; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; }
-.cr-footer a { pointer-events: auto; display: inline-flex; align-items: center; box-sizing: border-box; height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .45); background: rgba(255, 255, 255, .14); backdrop-filter: blur(10px) saturate(1.15); -webkit-backdrop-filter: blur(10px) saturate(1.15); color: #fff; text-decoration: none; font-size: 14px; font-weight: 600; transition: background .15s; }
-.cr-footer a:hover { background: rgba(255, 255, 255, .22); }
-.cr-footer a:focus-visible { outline: 2px solid #ffc2d6; outline-offset: 2px; }
+/* Footer */
+.cr-footer { display: flex; justify-content: center; gap: 4px; padding: 10px 16px; border-top: 1px solid rgba(255, 255, 255, .35); background: rgba(47, 159, 240, .45); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; }
+.cr-footer a { color: rgba(255, 255, 255, .78); text-decoration: none; padding: 5px 12px; font-size: 15px; transition: color .2s; }
+.cr-footer a:hover, .cr-footer a:focus-visible { color: #fff; }
+.cr-footer a:focus-visible { outline: none; }
 
 /* Imprint and privacy pages */
 .cr-legal { position: relative; box-sizing: border-box; width: 100%; padding: 64px 24px 40px; color: #fff; text-align: center; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; line-height: 1.55; }
