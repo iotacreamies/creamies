@@ -33,6 +33,11 @@
 .cr-lang-menu button { display: flex; align-items: center; gap: 10px; width: 100%; padding: 9px 12px; border: 0; border-radius: 10px; background: transparent; color: #fff; font: 600 15px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; text-align: left; cursor: pointer; }
 .cr-lang-menu button:hover { background: rgba(255, 255, 255, .12); }
 .cr-lang-menu button.on { background: rgba(255, 255, 255, .18); }
+
+/* Button back to the start page: same round glass as the language button */
+.cr-home { display: grid; place-items: center; flex: none; box-sizing: border-box; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .45); background: rgba(255, 255, 255, .14); color: #fff; text-decoration: none; transition: background .15s; }
+.cr-home:hover { background: rgba(255, 255, 255, .22); }
+.cr-home:focus-visible { outline: 2px solid #ffc2d6; outline-offset: 2px; }
 /* Creamies start page – same blue sky and pink candy as the Kiosk. */
 :root {
   --sky-top: #13519b; --sky-bot: #2f9ff0;
