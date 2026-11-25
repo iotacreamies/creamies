@@ -567,7 +567,7 @@
 }
 /* Very narrow: the app name next to the logo goes (the page title shows it), so logo and buttons fit in one row */
 @media (max-width: 420px) {
-  .cr-brand span:not(.cr-solo) { display: none; }
+  .cr-brand:has(.cr-home) span:not(.cr-solo) { display: none; } /* only when the start-page button needs the room */
 }
 /* Blue sky and pink candy, the colours of the Ice Arena game and the Creamies web pages.
    Layout: banner, header (title, tabs, wallet), stats, switch, filters, grid. Keep it that way. */
