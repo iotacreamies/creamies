@@ -637,7 +637,7 @@
   .cr-brand span:not(.cr-solo) { display: none; }
 }
 /* ─── Page ─────────────────────────────────────────────────────────────────── */
-._container_1w2ez_2 {
+._container_dj8t8_2 {
     position: absolute;
     inset: 0;
     background: linear-gradient(0deg, rgba(0, 174, 255, 1) 0%, rgba(0, 82, 153, 1) 100%);
@@ -649,14 +649,14 @@
     overflow: hidden;
 }
 
-._routesWrapper_1w2ez_14 {
+._routesWrapper_dj8t8_14 {
     flex: 1;
     overflow-y: auto;
 }
 
 
 /* ─── Wallet history ─────────────────────────────────────────────────────────── */
-._historyButton_1w2ez_21 {
+._historyButton_dj8t8_21 {
     width: 28px;
     height: 28px;
     border-radius: 50%;
@@ -672,12 +672,12 @@
     padding: 0;
 }
 
-._historyButton_1w2ez_21:hover {
+._historyButton_dj8t8_21:hover {
     background: rgba(255, 255, 255, 0.15);
     color: white;
 }
 
-._historyPanel_1w2ez_42 {
+._historyPanel_dj8t8_42 {
     position: absolute;
     top: calc(100% + 10px);
     right: 0;
@@ -694,7 +694,7 @@
     z-index: 50;
 }
 
-._historyHeader_1w2ez_59 {
+._historyHeader_dj8t8_59 {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -708,7 +708,7 @@
     flex-shrink: 0;
 }
 
-._historyClear_1w2ez_73 {
+._historyClear_dj8t8_73 {
     background: none;
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 6px;
@@ -722,12 +722,12 @@
     letter-spacing: 0;
 }
 
-._historyClear_1w2ez_73:hover {
+._historyClear_dj8t8_73:hover {
     border-color: rgba(255, 255, 255, 0.5);
     color: white;
 }
 
-._historyList_1w2ez_92 {
+._historyList_dj8t8_92 {
     overflow-y: auto;
     flex: 1;
     padding: 8px;
@@ -736,7 +736,7 @@
     gap: 6px;
 }
 
-._historyEmpty_1w2ez_101 {
+._historyEmpty_dj8t8_101 {
     padding: 20px;
     text-align: center;
     font-size: 12px;
@@ -744,7 +744,7 @@
     margin: 0;
 }
 
-._historyEntry_1w2ez_109 {
+._historyEntry_dj8t8_109 {
     background: rgba(255, 255, 255, 0.07);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -754,24 +754,24 @@
     gap: 5px;
 }
 
-._historyEntryCurrent_1w2ez_119 {
+._historyEntryCurrent_dj8t8_119 {
     border-color: rgba(255, 255, 255, 0.28);
     background: rgba(255, 255, 255, 0.12);
 }
 
-._historyEntryDate_1w2ez_124 {
+._historyEntryDate_dj8t8_124 {
     font-size: 10px;
     color: rgba(255, 255, 255, 0.45);
     margin-bottom: 2px;
 }
 
-._historyEntryRow_1w2ez_130 {
+._historyEntryRow_dj8t8_130 {
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-._historyEntryLabel_1w2ez_136 {
+._historyEntryLabel_dj8t8_136 {
     font-size: 9px;
     font-weight: 700;
     text-transform: uppercase;
@@ -781,7 +781,7 @@
     flex-shrink: 0;
 }
 
-._historyEntryValue_1w2ez_146 {
+._historyEntryValue_dj8t8_146 {
     font-size: 10px;
     font-family: 'Menlo', 'Courier New', monospace;
     color: rgba(255, 255, 255, 0.8);
@@ -792,18 +792,18 @@
     white-space: nowrap;
 }
 
-._content_1w2ez_157 {
+._content_dj8t8_157 {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100%;
-    padding: 40px 20px;
+    padding: 20px; /* the header sits above now; same gap at the top as above the footer */
     box-sizing: border-box;
 }
 
 /* ─── Title ──────────────────────────────────────────────────────────────────── */
-._titleWrapper_1w2ez_168 {
+._titleWrapper_dj8t8_168 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -814,13 +814,13 @@
     z-index: 1;
 }
 
-._titleMeltdown_1w2ez_179 {
+._titleMeltdown_dj8t8_179 {
     display: block;
     width: 100%;
     height: auto;
 }
 
-._titleLogo_1w2ez_185 {
+._titleLogo_dj8t8_185 {
     display: block;
     width: 50%;
     height: auto;
@@ -828,7 +828,7 @@
 }
 
 /* ─── Glass card ─────────────────────────────────────────────────────────────── */
-._card_1w2ez_193 {
+._card_dj8t8_193 {
     background: rgba(255, 255, 255, 0.18);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
@@ -843,7 +843,7 @@
 }
 
 /* ─── Confirm dialog ─────────────────────────────────────────────────────────── */
-._dialogOverlay_1w2ez_208 {
+._dialogOverlay_dj8t8_208 {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
@@ -857,7 +857,7 @@
     box-sizing: border-box;
 }
 
-._dialog_1w2ez_208 {
+._dialog_dj8t8_208 {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
     background: rgba(10, 18, 40, 0.97);
     backdrop-filter: blur(32px);
@@ -873,13 +873,13 @@
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
 }
 
-._dialogHeader_1w2ez_238 {
+._dialogHeader_dj8t8_238 {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-._dialogIcon_1w2ez_244 {
+._dialogIcon_dj8t8_244 {
     width: 30px;
     height: 30px;
     border-radius: 8px;
@@ -892,7 +892,7 @@
     color: rgb(251, 181, 60);
 }
 
-._dialogTitle_1w2ez_257 {
+._dialogTitle_dj8t8_257 {
     margin: 0;
     font-size: 15px;
     font-weight: 600;
@@ -901,7 +901,7 @@
     line-height: 1.3;
 }
 
-._dialogBody_1w2ez_266 {
+._dialogBody_dj8t8_266 {
     margin: 0;
     font-size: 13px;
     font-weight: 400;
@@ -910,14 +910,14 @@
     padding-left: 40px;
 }
 
-._dialogButtons_1w2ez_275 {
+._dialogButtons_dj8t8_275 {
     display: flex;
     gap: 7px;
     justify-content: flex-end;
     padding-top: 6px;
 }
 
-._dialogCancel_1w2ez_282 {
+._dialogCancel_dj8t8_282 {
     font-family: inherit;
     padding: 7px 15px;
     font-size: 13px;
@@ -930,13 +930,13 @@
     transition: all 0.15s;
 }
 
-._dialogCancel_1w2ez_282:hover {
+._dialogCancel_dj8t8_282:hover {
     background: rgba(255, 255, 255, 0.12);
     border-color: rgba(255, 255, 255, 0.3);
     color: rgba(255, 255, 255, 0.85);
 }
 
-._dialogConfirm_1w2ez_301 {
+._dialogConfirm_dj8t8_301 {
     font-family: inherit;
     padding: 7px 15px;
     font-size: 13px;
@@ -951,17 +951,17 @@
     box-shadow: 0 2px 10px rgba(217, 86, 106, 0.35);
 }
 
-._dialogConfirm_1w2ez_301:hover {
+._dialogConfirm_dj8t8_301:hover {
     opacity: 0.88;
     transform: translateY(-1px);
 }
 
-._dialogConfirm_1w2ez_301:active {
+._dialogConfirm_dj8t8_301:active {
     transform: translateY(0);
 }
 
 /* ─── Network selector ───────────────────────────────────────────────────────── */
-._networkSelector_1w2ez_326 {
+._networkSelector_dj8t8_326 {
     display: flex;
     gap: 6px;
     justify-content: center;
@@ -971,7 +971,7 @@
     padding: 5px;
 }
 
-._networkButton_1w2ez_336 {
+._networkButton_dj8t8_336 {
     flex: 1;
     padding: 6px 0;
     font-size: 12px;
@@ -985,30 +985,30 @@
     letter-spacing: 0.3px;
 }
 
-._networkButton_1w2ez_336:hover {
+._networkButton_dj8t8_336:hover {
     color: white;
     background: rgba(255, 255, 255, 0.1);
 }
 
-._networkButtonActive_1w2ez_355 {
+._networkButtonActive_dj8t8_355 {
     background: rgba(255, 255, 255, 0.22);
     color: white;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
 /* ─── Wallet details ─────────────────────────────────────────────────────────── */
-._walletSection_1w2ez_362 {
+._walletSection_dj8t8_362 {
     position: relative;
 }
 
-._walletHistoryCard_1w2ez_366 {
+._walletHistoryCard_dj8t8_366 {
     position: absolute;
     top: -6px;
     right: -6px;
     z-index: 10;
 }
 
-._walletDetails_1w2ez_373 {
+._walletDetails_dj8t8_373 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1018,7 +1018,7 @@
     padding-top: 4px;
 }
 
-._detailLabel_1w2ez_383 {
+._detailLabel_dj8t8_383 {
     font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
@@ -1026,20 +1026,20 @@
     color: rgba(255, 255, 255, 0.5);
 }
 
-._detailRow_1w2ez_391 {
+._detailRow_dj8t8_391 {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
 }
 
-._detailValue_1w2ez_398 {
+._detailValue_dj8t8_398 {
     color: rgba(255, 255, 255, 0.85);
     font-size: 11px;
     font-family: 'Menlo', 'Courier New', monospace;
 }
 
-._walletWarning_1w2ez_404 {
+._walletWarning_dj8t8_404 {
     margin: 6px 0 0 0;
     padding: 6px 10px;
     font-size: 10px;
@@ -1051,7 +1051,7 @@
     border-radius: 8px;
 }
 
-._copyButton_1w2ez_416 {
+._copyButton_dj8t8_416 {
     background: none;
     border: none;
     color: rgba(255, 255, 255, 0.45);
@@ -1063,12 +1063,12 @@
     transition: color 0.15s;
 }
 
-._copyButton_1w2ez_416:hover {
+._copyButton_dj8t8_416:hover {
     color: white;
 }
 
 /* ─── Inner glass card ───────────────────────────────────────────────────────── */
-._innerCard_1w2ez_433 {
+._innerCard_dj8t8_433 {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 14px;
@@ -1076,7 +1076,7 @@
     text-align: center;
 }
 
-._innerLabel_1w2ez_441 {
+._innerLabel_dj8t8_441 {
     margin: 0 0 3px 0;
     font-size: 10px;
     font-weight: 700;
@@ -1085,7 +1085,7 @@
     color: rgba(255, 255, 255, 0.55);
 }
 
-._balanceAmount_1w2ez_450 {
+._balanceAmount_dj8t8_450 {
     margin: 0;
     font-family: 'Menlo', 'Courier New', monospace;
     font-size: 26px;
@@ -1094,7 +1094,7 @@
 }
 
 /* ─── Buttons ────────────────────────────────────────────────────────────────── */
-._amountRow_1w2ez_459 {
+._amountRow_dj8t8_459 {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -1102,7 +1102,7 @@
     gap: 6px;
 }
 
-@keyframes _slideToCenter_1w2ez_1 {
+@keyframes _slideToCenter_dj8t8_1 {
     from {
         transform: translateX(144px);
     }
@@ -1111,11 +1111,11 @@
     }
 }
 
-._withdrawCentered_1w2ez_476 {
-    animation: _slideToCenter_1w2ez_1 0.4s cubic-bezier(0.25, 1, 0.5, 1) both;
+._withdrawCentered_dj8t8_476 {
+    animation: _slideToCenter_dj8t8_1 0.4s cubic-bezier(0.25, 1, 0.5, 1) both;
 }
 
-._amountButton_1w2ez_480 {
+._amountButton_dj8t8_480 {
     font-size: 12px;
     font-weight: 600;
     padding: 5px 11px;
@@ -1127,18 +1127,18 @@
     transition: all 0.15s;
 }
 
-._amountButton_1w2ez_480:hover:not(:disabled) {
+._amountButton_dj8t8_480:hover:not(:disabled) {
     background: rgba(255, 255, 255, 0.28);
     border-color: rgba(255, 255, 255, 0.8);
 }
 
-._amountButton_1w2ez_480:disabled {
+._amountButton_dj8t8_480:disabled {
     opacity: 0.4;
     cursor: not-allowed;
 }
 
 
-._buttonRow_1w2ez_503 {
+._buttonRow_dj8t8_503 {
     display: flex;
     gap: 8px;
     justify-content: center;
@@ -1146,14 +1146,14 @@
 }
 
 
-._depositHint_1w2ez_511 {
+._depositHint_dj8t8_511 {
     margin: 5px 0 0 0;
     font-size: 11px;
     color: rgba(255, 255, 255, 0.45);
     text-align: center;
 }
 
-._outlineButton_1w2ez_518 {
+._outlineButton_dj8t8_518 {
     font-size: 14px;
     padding: 7px 18px;
     font-weight: 600;
@@ -1165,16 +1165,16 @@
     transition: background 0.15s;
 }
 
-._outlineButton_1w2ez_518:hover:not(:disabled) {
+._outlineButton_dj8t8_518:hover:not(:disabled) {
     background: rgba(255, 255, 255, 0.15);
 }
 
-._outlineButton_1w2ez_518:disabled {
+._outlineButton_dj8t8_518:disabled {
     opacity: 0.4;
     cursor: not-allowed;
 }
 
-._pinkOutlineButton_1w2ez_539 {
+._pinkOutlineButton_dj8t8_539 {
     font-size: 14px;
     padding: 7px 18px;
     font-weight: 600;
@@ -1186,17 +1186,17 @@
     transition: background 0.15s;
 }
 
-._pinkOutlineButton_1w2ez_539:hover:not(:disabled) {
+._pinkOutlineButton_dj8t8_539:hover:not(:disabled) {
     background: rgba(255, 255, 255, 1);
 }
 
-._pinkOutlineButton_1w2ez_539:disabled {
+._pinkOutlineButton_dj8t8_539:disabled {
     opacity: 0.4;
     cursor: not-allowed;
 }
 
 /* ─── Status badge ───────────────────────────────────────────────────────────── */
-._statusBadge_1w2ez_561 {
+._statusBadge_dj8t8_561 {
     padding: 10px 14px;
     border-radius: 12px;
     font-size: 13px;
@@ -1206,38 +1206,38 @@
     -webkit-backdrop-filter: blur(12px);
 }
 
-._severity_success_1w2ez_571 {
+._severity_success_dj8t8_571 {
     background: rgba(22, 182, 80, 0.42);
     border: 1px solid rgba(74, 222, 128, 0.45);
     color: white;
 }
 
-._severity_error_1w2ez_577 {
+._severity_error_dj8t8_577 {
     background: rgba(230, 34, 34, 0.484);
     border: 1px solid rgba(248, 113, 113, 0.45);
     color: white;
 }
 
-._severity_warning_1w2ez_583 {
+._severity_warning_dj8t8_583 {
     background: rgba(225, 117, 21, 0.407);
     border: 1px solid rgba(251, 146, 60, 0.45);
     color: white;
 }
 
-._severity_info_1w2ez_589 {
+._severity_info_dj8t8_589 {
     background: rgba(29, 78, 216, 0.3);
     border: 1px solid rgba(147, 197, 253, 0.50);
     color: white;
 }
 
-._severity_yellow_1w2ez_595 {
+._severity_yellow_dj8t8_595 {
     background: rgba(255, 151, 6, 0.3);
     border: 1px solid rgba(250, 204, 21, 0.45);
     color: white;
 }
 
 /* ─── Blast button ───────────────────────────────────────────────────────────── */
-@keyframes _blastPulse_1w2ez_1 {
+@keyframes _blastPulse_dj8t8_1 {
     0%, 100% {
         box-shadow: 0 4px 24px rgba(217, 86, 106, 0.5);
     }
@@ -1248,7 +1248,7 @@
 }
 
 
-._actionContainer_1w2ez_613 {
+._actionContainer_dj8t8_613 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1256,7 +1256,7 @@
     margin: 8px 0;
 }
 
-._lockButton_1w2ez_621 {
+._lockButton_dj8t8_621 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1271,24 +1271,24 @@
     flex-shrink: 0;
 }
 
-._lockButton_1w2ez_621:hover {
+._lockButton_dj8t8_621:hover {
     background: rgba(255, 255, 255, 0.22);
     color: white;
     border-color: rgba(255, 255, 255, 0.6);
 }
 
-._lockButtonActive_1w2ez_642 {
+._lockButtonActive_dj8t8_642 {
     background: rgba(255, 255, 255, 0.22);
     border-color: rgba(255, 255, 255, 0.8);
     color: white;
 }
 
-._lockButtonActive_1w2ez_642:hover {
+._lockButtonActive_dj8t8_642:hover {
     background: rgba(255, 255, 255, 0.32);
     color: white;
 }
 
-._spamButton_1w2ez_653 {
+._spamButton_dj8t8_653 {
     user-select: none;
     -webkit-user-select: none;
     flex: 1;
@@ -1304,7 +1304,7 @@
     overflow: hidden;
 }
 
-@keyframes _shine_1w2ez_1 {
+@keyframes _shine_dj8t8_1 {
     0% {
         transform: translateX(-100%) skewX(-20deg);
     }
@@ -1314,8 +1314,8 @@
     }
 }
 
-._spamButtonReady_1w2ez_679::after,
-._spamButtonActive_1w2ez_680::after {
+._spamButtonReady_dj8t8_679::after,
+._spamButtonActive_dj8t8_680::after {
     content: '';
     position: absolute;
     top: 0;
@@ -1323,27 +1323,27 @@
     width: 35%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    animation: _shine_1w2ez_1 2.2s ease-in-out infinite;
+    animation: _shine_dj8t8_1 2.2s ease-in-out infinite;
 }
 
-._spamButtonReady_1w2ez_679 {
+._spamButtonReady_dj8t8_679 {
     background: linear-gradient(135deg, #f485a8, #d9566a);
     color: white;
     box-shadow: 0 4px 20px rgba(217, 86, 106, 0.45);
     transition: box-shadow 0.15s;
 }
 
-._spamButtonReady_1w2ez_679:hover {
+._spamButtonReady_dj8t8_679:hover {
     box-shadow: 0 4px 30px rgba(217, 86, 106, 0.65);
 }
 
-._spamButtonActive_1w2ez_680 {
+._spamButtonActive_dj8t8_680 {
     background: linear-gradient(135deg, #f485a8, #c44058);
     color: white;
-    animation: _blastPulse_1w2ez_1 1.4s ease-in-out infinite;
+    animation: _blastPulse_dj8t8_1 1.4s ease-in-out infinite;
 }
 
-._spamButtonDisabled_1w2ez_708 {
+._spamButtonDisabled_dj8t8_708 {
     background: rgba(255, 255, 255, 0.18);
     color: rgba(255, 255, 255, 0.4);
     cursor: not-allowed;
@@ -1351,7 +1351,7 @@
 }
 
 /* ─── Stats row ──────────────────────────────────────────────────────────────── */
-._statsRow_1w2ez_716 {
+._statsRow_dj8t8_716 {
     display: flex;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1359,18 +1359,18 @@
     overflow: hidden;
 }
 
-._statCell_1w2ez_724 {
+._statCell_dj8t8_724 {
     flex: 1;
     padding: 10px 6px;
     text-align: center;
     border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-._statCell_1w2ez_724:last-child {
+._statCell_dj8t8_724:last-child {
     border-right: none;
 }
 
-._statLabel_1w2ez_735 {
+._statLabel_dj8t8_735 {
     margin: 0 0 2px 0;
     font-size: 9px;
     font-weight: 700;
@@ -1379,36 +1379,30 @@
     color: rgba(255, 255, 255, 0.55);
 }
 
-._statValue_1w2ez_744 {
+._statValue_dj8t8_744 {
     margin: 0;
     font-size: 20px;
     font-weight: 700;
     font-family: 'Menlo', 'Courier New', monospace;
     color: white;
 }
-/* Phones: room for wallet button + language flag above the logo */
-@media (max-width: 500px) {
-    ._content_1w2ez_157 {
-        padding-top: 76px;
-    }
-}
 
 /* ── Creamies Kiosk look: darker blue sky, softer glass, dark-blue inner fields, pink active pill ── */
-._container_1w2ez_2 { background: linear-gradient(180deg, #13519b, #2f9ff0); background-attachment: fixed; }
-._card_1w2ez_193 { background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .26); border-radius: 18px; box-shadow: 0 10px 30px rgba(4, 30, 70, .22); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
-._networkSelector_1w2ez_326 { padding: 4px; gap: 2px; border-radius: 999px; background: rgba(8, 40, 82, .22); border: 1px solid rgba(255, 255, 255, .16); box-shadow: inset 0 1px 2px rgba(0, 0, 0, .15); }
-._networkButton_1w2ez_336 { border-radius: 999px; color: rgba(255, 255, 255, .78); font-weight: 600; }
-._networkButton_1w2ez_336:hover { background: rgba(255, 255, 255, .08); }
-._networkButtonActive_1w2ez_355, ._networkButtonActive_1w2ez_355:hover { background: #ec6f9d; color: #fff; box-shadow: 0 2px 8px rgba(200, 61, 108, .35); }
-._innerCard_1w2ez_433, ._statsRow_1w2ez_716 { background: rgba(8, 40, 82, .18); border: 1px solid rgba(255, 255, 255, .18); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08); }
-._amountButton_1w2ez_480 { border: 1px solid rgba(255, 255, 255, .45); background: rgba(255, 255, 255, .14); }
-._amountButton_1w2ez_480:hover:not(:disabled) { background: rgba(255, 255, 255, .22); }
-._historyPanel_1w2ez_42, ._dialog_1w2ez_208 { background: #1a5fae; border: 1px solid rgba(255, 255, 255, .45); box-shadow: 0 14px 36px rgba(2, 20, 50, .45); }
-._dialogOverlay_1w2ez_208 { background: rgba(6, 34, 70, .62); }
+._container_dj8t8_2 { background: linear-gradient(180deg, #13519b, #2f9ff0); background-attachment: fixed; }
+._card_dj8t8_193 { background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .26); border-radius: 18px; box-shadow: 0 10px 30px rgba(4, 30, 70, .22); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+._networkSelector_dj8t8_326 { padding: 4px; gap: 2px; border-radius: 999px; background: rgba(8, 40, 82, .22); border: 1px solid rgba(255, 255, 255, .16); box-shadow: inset 0 1px 2px rgba(0, 0, 0, .15); }
+._networkButton_dj8t8_336 { border-radius: 999px; color: rgba(255, 255, 255, .78); font-weight: 600; }
+._networkButton_dj8t8_336:hover { background: rgba(255, 255, 255, .08); }
+._networkButtonActive_dj8t8_355, ._networkButtonActive_dj8t8_355:hover { background: #ec6f9d; color: #fff; box-shadow: 0 2px 8px rgba(200, 61, 108, .35); }
+._innerCard_dj8t8_433, ._statsRow_dj8t8_716 { background: rgba(8, 40, 82, .18); border: 1px solid rgba(255, 255, 255, .18); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08); }
+._amountButton_dj8t8_480 { border: 1px solid rgba(255, 255, 255, .45); background: rgba(255, 255, 255, .14); }
+._amountButton_dj8t8_480:hover:not(:disabled) { background: rgba(255, 255, 255, .22); }
+._historyPanel_dj8t8_42, ._dialog_dj8t8_208 { background: #1a5fae; border: 1px solid rgba(255, 255, 255, .45); box-shadow: 0 14px 36px rgba(2, 20, 50, .45); }
+._dialogOverlay_dj8t8_208 { background: rgba(6, 34, 70, .62); }
 
-._networkButton_1w2ez_336:disabled, ._networkButton_1w2ez_336:disabled:hover { opacity: .4; cursor: not-allowed; background: transparent; }
+._networkButton_dj8t8_336:disabled, ._networkButton_dj8t8_336:disabled:hover { opacity: .4; cursor: not-allowed; background: transparent; }
 
 /* Keep the last content clear of the floating footer */
-._routesWrapper_1w2ez_14 {
+._routesWrapper_dj8t8_14 {
     padding-bottom: 56px;
 }
