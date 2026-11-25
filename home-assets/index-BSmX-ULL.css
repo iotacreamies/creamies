@@ -11,7 +11,7 @@
   .cr-footer:has(.cr-powered) { justify-content: flex-start; }
   .cr-powered { position: static; transform: none; margin-left: auto; }
 }
-.cr-powered img { display: block; height: 40px; width: auto; margin: -11px -20px -11px -7px; } /* the SVG has wide empty margins left and right */
+.cr-powered img { display: block; height: 40px; width: auto; margin: -11px -20px -11px -5px; } /* the SVG has wide empty margins left and right */
 
 /* Imprint and privacy pages */
 .cr-legal { position: relative; box-sizing: border-box; width: 100%; padding: 64px 24px 40px; color: #fff; text-align: center; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; line-height: 1.55; }
