@@ -27575,7 +27575,7 @@
 .cr-footer a { color: rgba(255, 255, 255, .78); text-decoration: none; padding: 5px 12px; font-size: 15px; transition: color .2s; }
 .cr-footer a:hover, .cr-footer a:focus-visible { color: #fff; }
 .cr-footer a:focus-visible { outline: none; }
-.cr-footer { align-items: center; }
+.cr-footer { align-items: center; overflow-x: clip; } /* the IOTA logo's empty SVG margin must not widen the page */
 .cr-powered { position: absolute; right: 24px; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; gap: 0; color: #fff; opacity: .55; font-size: 12px; } /* far right; text and logo a bit see-through; links stay centred */
 @media (max-width: 560px) { /* no room for centred links + right block: links left, "powered by" right */
   .cr-footer:has(.cr-powered) { justify-content: flex-start; }
