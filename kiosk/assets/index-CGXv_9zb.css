@@ -821,7 +821,8 @@ dd { margin: 0; font-weight: 700; }
 @media (max-width: 640px) {
   .filters { display: grid !important; grid-template-columns: 1fr; }
   .filters-head, .filters .switch, .filters .dd, .filters .search { grid-column: 1 / -1; }
-  .filters .dd, .filter-select { width: 100%; font-size: 14px; padding-right: 12px; }
+  .filters .dd, .filter-select { width: 100%; font-size: 14px; }
+  .filter-select { padding-right: 12px; } /* only the field itself, not its wrapper (it made the field 12 px short) */
   .field-chip { padding: 0 8px; font-size: 10px; }
   .search, .search input { width: 100%; grid-column: 1 / -1; }
   header { padding: 10px 16px; position: static; }
