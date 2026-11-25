@@ -612,7 +612,7 @@
 .cr-lang-menu button:hover { background: rgba(255, 255, 255, .12); }
 .cr-lang-menu button.on { background: rgba(255, 255, 255, .18); }
 /* ─── Page ─────────────────────────────────────────────────────────────────── */
-._container_aykih_2 {
+._container_1fodr_2 {
     position: absolute;
     inset: 0;
     background: linear-gradient(0deg, rgba(0, 174, 255, 1) 0%, rgba(0, 82, 153, 1) 100%);
@@ -624,12 +624,12 @@
     overflow: hidden;
 }
 
-._routesWrapper_aykih_14 {
+._routesWrapper_1fodr_14 {
     flex: 1;
     overflow-y: auto;
 }
 
-._connectRow_aykih_19 {
+._connectRow_1fodr_19 {
     position: absolute;
     top: 16px;
     right: 16px;
@@ -640,7 +640,7 @@
 }
 
 /* ─── Wallet history ─────────────────────────────────────────────────────────── */
-._historyButton_aykih_30 {
+._historyButton_1fodr_30 {
     width: 28px;
     height: 28px;
     border-radius: 50%;
@@ -656,12 +656,12 @@
     padding: 0;
 }
 
-._historyButton_aykih_30:hover {
+._historyButton_1fodr_30:hover {
     background: rgba(255, 255, 255, 0.15);
     color: white;
 }
 
-._historyPanel_aykih_51 {
+._historyPanel_1fodr_51 {
     position: absolute;
     top: calc(100% + 10px);
     right: 0;
@@ -678,7 +678,7 @@
     z-index: 50;
 }
 
-._historyHeader_aykih_68 {
+._historyHeader_1fodr_68 {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -692,7 +692,7 @@
     flex-shrink: 0;
 }
 
-._historyClear_aykih_82 {
+._historyClear_1fodr_82 {
     background: none;
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 6px;
@@ -706,12 +706,12 @@
     letter-spacing: 0;
 }
 
-._historyClear_aykih_82:hover {
+._historyClear_1fodr_82:hover {
     border-color: rgba(255, 255, 255, 0.5);
     color: white;
 }
 
-._historyList_aykih_101 {
+._historyList_1fodr_101 {
     overflow-y: auto;
     flex: 1;
     padding: 8px;
@@ -720,7 +720,7 @@
     gap: 6px;
 }
 
-._historyEmpty_aykih_110 {
+._historyEmpty_1fodr_110 {
     padding: 20px;
     text-align: center;
     font-size: 12px;
@@ -728,7 +728,7 @@
     margin: 0;
 }
 
-._historyEntry_aykih_118 {
+._historyEntry_1fodr_118 {
     background: rgba(255, 255, 255, 0.07);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -738,24 +738,24 @@
     gap: 5px;
 }
 
-._historyEntryCurrent_aykih_128 {
+._historyEntryCurrent_1fodr_128 {
     border-color: rgba(255, 255, 255, 0.28);
     background: rgba(255, 255, 255, 0.12);
 }
 
-._historyEntryDate_aykih_133 {
+._historyEntryDate_1fodr_133 {
     font-size: 10px;
     color: rgba(255, 255, 255, 0.45);
     margin-bottom: 2px;
 }
 
-._historyEntryRow_aykih_139 {
+._historyEntryRow_1fodr_139 {
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-._historyEntryLabel_aykih_145 {
+._historyEntryLabel_1fodr_145 {
     font-size: 9px;
     font-weight: 700;
     text-transform: uppercase;
@@ -765,7 +765,7 @@
     flex-shrink: 0;
 }
 
-._historyEntryValue_aykih_155 {
+._historyEntryValue_1fodr_155 {
     font-size: 10px;
     font-family: 'Menlo', 'Courier New', monospace;
     color: rgba(255, 255, 255, 0.8);
@@ -776,7 +776,7 @@
     white-space: nowrap;
 }
 
-._content_aykih_166 {
+._content_1fodr_166 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -787,7 +787,7 @@
 }
 
 /* ─── Title ──────────────────────────────────────────────────────────────────── */
-._titleWrapper_aykih_177 {
+._titleWrapper_1fodr_177 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -798,13 +798,13 @@
     z-index: 1;
 }
 
-._titleMeltdown_aykih_188 {
+._titleMeltdown_1fodr_188 {
     display: block;
     width: 100%;
     height: auto;
 }
 
-._titleLogo_aykih_194 {
+._titleLogo_1fodr_194 {
     display: block;
     width: 50%;
     height: auto;
@@ -812,7 +812,7 @@
 }
 
 /* ─── Glass card ─────────────────────────────────────────────────────────────── */
-._card_aykih_202 {
+._card_1fodr_202 {
     background: rgba(255, 255, 255, 0.18);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
@@ -827,7 +827,7 @@
 }
 
 /* ─── Confirm dialog ─────────────────────────────────────────────────────────── */
-._dialogOverlay_aykih_217 {
+._dialogOverlay_1fodr_217 {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
@@ -841,7 +841,7 @@
     box-sizing: border-box;
 }
 
-._dialog_aykih_217 {
+._dialog_1fodr_217 {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
     background: rgba(10, 18, 40, 0.97);
     backdrop-filter: blur(32px);
@@ -857,13 +857,13 @@
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
 }
 
-._dialogHeader_aykih_247 {
+._dialogHeader_1fodr_247 {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-._dialogIcon_aykih_253 {
+._dialogIcon_1fodr_253 {
     width: 30px;
     height: 30px;
     border-radius: 8px;
@@ -876,7 +876,7 @@
     color: rgb(251, 181, 60);
 }
 
-._dialogTitle_aykih_266 {
+._dialogTitle_1fodr_266 {
     margin: 0;
     font-size: 15px;
     font-weight: 600;
@@ -885,7 +885,7 @@
     line-height: 1.3;
 }
 
-._dialogBody_aykih_275 {
+._dialogBody_1fodr_275 {
     margin: 0;
     font-size: 13px;
     font-weight: 400;
@@ -894,14 +894,14 @@
     padding-left: 40px;
 }
 
-._dialogButtons_aykih_284 {
+._dialogButtons_1fodr_284 {
     display: flex;
     gap: 7px;
     justify-content: flex-end;
     padding-top: 6px;
 }
 
-._dialogCancel_aykih_291 {
+._dialogCancel_1fodr_291 {
     font-family: inherit;
     padding: 7px 15px;
     font-size: 13px;
@@ -914,13 +914,13 @@
     transition: all 0.15s;
 }
 
-._dialogCancel_aykih_291:hover {
+._dialogCancel_1fodr_291:hover {
     background: rgba(255, 255, 255, 0.12);
     border-color: rgba(255, 255, 255, 0.3);
     color: rgba(255, 255, 255, 0.85);
 }
 
-._dialogConfirm_aykih_310 {
+._dialogConfirm_1fodr_310 {
     font-family: inherit;
     padding: 7px 15px;
     font-size: 13px;
@@ -935,17 +935,17 @@
     box-shadow: 0 2px 10px rgba(217, 86, 106, 0.35);
 }
 
-._dialogConfirm_aykih_310:hover {
+._dialogConfirm_1fodr_310:hover {
     opacity: 0.88;
     transform: translateY(-1px);
 }
 
-._dialogConfirm_aykih_310:active {
+._dialogConfirm_1fodr_310:active {
     transform: translateY(0);
 }
 
 /* ─── Network selector ───────────────────────────────────────────────────────── */
-._networkSelector_aykih_335 {
+._networkSelector_1fodr_335 {
     display: flex;
     gap: 6px;
     justify-content: center;
@@ -955,7 +955,7 @@
     padding: 5px;
 }
 
-._networkButton_aykih_345 {
+._networkButton_1fodr_345 {
     flex: 1;
     padding: 6px 0;
     font-size: 12px;
@@ -969,30 +969,30 @@
     letter-spacing: 0.3px;
 }
 
-._networkButton_aykih_345:hover {
+._networkButton_1fodr_345:hover {
     color: white;
     background: rgba(255, 255, 255, 0.1);
 }
 
-._networkButtonActive_aykih_364 {
+._networkButtonActive_1fodr_364 {
     background: rgba(255, 255, 255, 0.22);
     color: white;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
 /* ─── Wallet details ─────────────────────────────────────────────────────────── */
-._walletSection_aykih_371 {
+._walletSection_1fodr_371 {
     position: relative;
 }
 
-._walletHistoryCard_aykih_375 {
+._walletHistoryCard_1fodr_375 {
     position: absolute;
     top: -6px;
     right: -6px;
     z-index: 10;
 }
 
-._walletDetails_aykih_382 {
+._walletDetails_1fodr_382 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1002,7 +1002,7 @@
     padding-top: 4px;
 }
 
-._detailLabel_aykih_392 {
+._detailLabel_1fodr_392 {
     font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
@@ -1010,20 +1010,20 @@
     color: rgba(255, 255, 255, 0.5);
 }
 
-._detailRow_aykih_400 {
+._detailRow_1fodr_400 {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
 }
 
-._detailValue_aykih_407 {
+._detailValue_1fodr_407 {
     color: rgba(255, 255, 255, 0.85);
     font-size: 11px;
     font-family: 'Menlo', 'Courier New', monospace;
 }
 
-._walletWarning_aykih_413 {
+._walletWarning_1fodr_413 {
     margin: 6px 0 0 0;
     padding: 6px 10px;
     font-size: 10px;
@@ -1035,7 +1035,7 @@
     border-radius: 8px;
 }
 
-._copyButton_aykih_425 {
+._copyButton_1fodr_425 {
     background: none;
     border: none;
     color: rgba(255, 255, 255, 0.45);
@@ -1047,12 +1047,12 @@
     transition: color 0.15s;
 }
 
-._copyButton_aykih_425:hover {
+._copyButton_1fodr_425:hover {
     color: white;
 }
 
 /* ─── Inner glass card ───────────────────────────────────────────────────────── */
-._innerCard_aykih_442 {
+._innerCard_1fodr_442 {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 14px;
@@ -1060,7 +1060,7 @@
     text-align: center;
 }
 
-._innerLabel_aykih_450 {
+._innerLabel_1fodr_450 {
     margin: 0 0 3px 0;
     font-size: 10px;
     font-weight: 700;
@@ -1069,7 +1069,7 @@
     color: rgba(255, 255, 255, 0.55);
 }
 
-._balanceAmount_aykih_459 {
+._balanceAmount_1fodr_459 {
     margin: 0;
     font-family: 'Menlo', 'Courier New', monospace;
     font-size: 26px;
@@ -1078,7 +1078,7 @@
 }
 
 /* ─── Buttons ────────────────────────────────────────────────────────────────── */
-._amountRow_aykih_468 {
+._amountRow_1fodr_468 {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -1086,7 +1086,7 @@
     gap: 6px;
 }
 
-@keyframes _slideToCenter_aykih_1 {
+@keyframes _slideToCenter_1fodr_1 {
     from {
         transform: translateX(144px);
     }
@@ -1095,11 +1095,11 @@
     }
 }
 
-._withdrawCentered_aykih_485 {
-    animation: _slideToCenter_aykih_1 0.4s cubic-bezier(0.25, 1, 0.5, 1) both;
+._withdrawCentered_1fodr_485 {
+    animation: _slideToCenter_1fodr_1 0.4s cubic-bezier(0.25, 1, 0.5, 1) both;
 }
 
-._amountButton_aykih_489 {
+._amountButton_1fodr_489 {
     font-size: 12px;
     font-weight: 600;
     padding: 5px 11px;
@@ -1111,18 +1111,18 @@
     transition: all 0.15s;
 }
 
-._amountButton_aykih_489:hover:not(:disabled) {
+._amountButton_1fodr_489:hover:not(:disabled) {
     background: rgba(255, 255, 255, 0.28);
     border-color: rgba(255, 255, 255, 0.8);
 }
 
-._amountButton_aykih_489:disabled {
+._amountButton_1fodr_489:disabled {
     opacity: 0.4;
     cursor: not-allowed;
 }
 
 
-._buttonRow_aykih_512 {
+._buttonRow_1fodr_512 {
     display: flex;
     gap: 8px;
     justify-content: center;
@@ -1130,14 +1130,14 @@
 }
 
 
-._depositHint_aykih_520 {
+._depositHint_1fodr_520 {
     margin: 5px 0 0 0;
     font-size: 11px;
     color: rgba(255, 255, 255, 0.45);
     text-align: center;
 }
 
-._outlineButton_aykih_527 {
+._outlineButton_1fodr_527 {
     font-size: 14px;
     padding: 7px 18px;
     font-weight: 600;
@@ -1149,16 +1149,16 @@
     transition: background 0.15s;
 }
 
-._outlineButton_aykih_527:hover:not(:disabled) {
+._outlineButton_1fodr_527:hover:not(:disabled) {
     background: rgba(255, 255, 255, 0.15);
 }
 
-._outlineButton_aykih_527:disabled {
+._outlineButton_1fodr_527:disabled {
     opacity: 0.4;
     cursor: not-allowed;
 }
 
-._pinkOutlineButton_aykih_548 {
+._pinkOutlineButton_1fodr_548 {
     font-size: 14px;
     padding: 7px 18px;
     font-weight: 600;
@@ -1170,17 +1170,17 @@
     transition: background 0.15s;
 }
 
-._pinkOutlineButton_aykih_548:hover:not(:disabled) {
+._pinkOutlineButton_1fodr_548:hover:not(:disabled) {
     background: rgba(255, 255, 255, 1);
 }
 
-._pinkOutlineButton_aykih_548:disabled {
+._pinkOutlineButton_1fodr_548:disabled {
     opacity: 0.4;
     cursor: not-allowed;
 }
 
 /* ─── Status badge ───────────────────────────────────────────────────────────── */
-._statusBadge_aykih_570 {
+._statusBadge_1fodr_570 {
     padding: 10px 14px;
     border-radius: 12px;
     font-size: 13px;
@@ -1190,38 +1190,38 @@
     -webkit-backdrop-filter: blur(12px);
 }
 
-._severity_success_aykih_580 {
+._severity_success_1fodr_580 {
     background: rgba(22, 182, 80, 0.42);
     border: 1px solid rgba(74, 222, 128, 0.45);
     color: white;
 }
 
-._severity_error_aykih_586 {
+._severity_error_1fodr_586 {
     background: rgba(230, 34, 34, 0.484);
     border: 1px solid rgba(248, 113, 113, 0.45);
     color: white;
 }
 
-._severity_warning_aykih_592 {
+._severity_warning_1fodr_592 {
     background: rgba(225, 117, 21, 0.407);
     border: 1px solid rgba(251, 146, 60, 0.45);
     color: white;
 }
 
-._severity_info_aykih_598 {
+._severity_info_1fodr_598 {
     background: rgba(29, 78, 216, 0.3);
     border: 1px solid rgba(147, 197, 253, 0.50);
     color: white;
 }
 
-._severity_yellow_aykih_604 {
+._severity_yellow_1fodr_604 {
     background: rgba(255, 151, 6, 0.3);
     border: 1px solid rgba(250, 204, 21, 0.45);
     color: white;
 }
 
 /* ─── Blast button ───────────────────────────────────────────────────────────── */
-@keyframes _blastPulse_aykih_1 {
+@keyframes _blastPulse_1fodr_1 {
     0%, 100% {
         box-shadow: 0 4px 24px rgba(217, 86, 106, 0.5);
     }
@@ -1232,7 +1232,7 @@
 }
 
 
-._actionContainer_aykih_622 {
+._actionContainer_1fodr_622 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1240,7 +1240,7 @@
     margin: 8px 0;
 }
 
-._lockButton_aykih_630 {
+._lockButton_1fodr_630 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1255,24 +1255,24 @@
     flex-shrink: 0;
 }
 
-._lockButton_aykih_630:hover {
+._lockButton_1fodr_630:hover {
     background: rgba(255, 255, 255, 0.22);
     color: white;
     border-color: rgba(255, 255, 255, 0.6);
 }
 
-._lockButtonActive_aykih_651 {
+._lockButtonActive_1fodr_651 {
     background: rgba(255, 255, 255, 0.22);
     border-color: rgba(255, 255, 255, 0.8);
     color: white;
 }
 
-._lockButtonActive_aykih_651:hover {
+._lockButtonActive_1fodr_651:hover {
     background: rgba(255, 255, 255, 0.32);
     color: white;
 }
 
-._spamButton_aykih_662 {
+._spamButton_1fodr_662 {
     user-select: none;
     -webkit-user-select: none;
     flex: 1;
@@ -1288,7 +1288,7 @@
     overflow: hidden;
 }
 
-@keyframes _shine_aykih_1 {
+@keyframes _shine_1fodr_1 {
     0% {
         transform: translateX(-100%) skewX(-20deg);
     }
@@ -1298,8 +1298,8 @@
     }
 }
 
-._spamButtonReady_aykih_688::after,
-._spamButtonActive_aykih_689::after {
+._spamButtonReady_1fodr_688::after,
+._spamButtonActive_1fodr_689::after {
     content: '';
     position: absolute;
     top: 0;
@@ -1307,27 +1307,27 @@
     width: 35%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    animation: _shine_aykih_1 2.2s ease-in-out infinite;
+    animation: _shine_1fodr_1 2.2s ease-in-out infinite;
 }
 
-._spamButtonReady_aykih_688 {
+._spamButtonReady_1fodr_688 {
     background: linear-gradient(135deg, #f485a8, #d9566a);
     color: white;
     box-shadow: 0 4px 20px rgba(217, 86, 106, 0.45);
     transition: box-shadow 0.15s;
 }
 
-._spamButtonReady_aykih_688:hover {
+._spamButtonReady_1fodr_688:hover {
     box-shadow: 0 4px 30px rgba(217, 86, 106, 0.65);
 }
 
-._spamButtonActive_aykih_689 {
+._spamButtonActive_1fodr_689 {
     background: linear-gradient(135deg, #f485a8, #c44058);
     color: white;
-    animation: _blastPulse_aykih_1 1.4s ease-in-out infinite;
+    animation: _blastPulse_1fodr_1 1.4s ease-in-out infinite;
 }
 
-._spamButtonDisabled_aykih_717 {
+._spamButtonDisabled_1fodr_717 {
     background: rgba(255, 255, 255, 0.18);
     color: rgba(255, 255, 255, 0.4);
     cursor: not-allowed;
@@ -1335,7 +1335,7 @@
 }
 
 /* ─── Stats row ──────────────────────────────────────────────────────────────── */
-._statsRow_aykih_725 {
+._statsRow_1fodr_725 {
     display: flex;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1343,18 +1343,18 @@
     overflow: hidden;
 }
 
-._statCell_aykih_733 {
+._statCell_1fodr_733 {
     flex: 1;
     padding: 10px 6px;
     text-align: center;
     border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-._statCell_aykih_733:last-child {
+._statCell_1fodr_733:last-child {
     border-right: none;
 }
 
-._statLabel_aykih_744 {
+._statLabel_1fodr_744 {
     margin: 0 0 2px 0;
     font-size: 9px;
     font-weight: 700;
@@ -1363,7 +1363,7 @@
     color: rgba(255, 255, 255, 0.55);
 }
 
-._statValue_aykih_753 {
+._statValue_1fodr_753 {
     margin: 0;
     font-size: 20px;
     font-weight: 700;
@@ -1372,36 +1372,37 @@
 }
 /* Phones: room for wallet button + language flag above the logo */
 @media (max-width: 500px) {
-    ._content_aykih_166 {
+    ._content_1fodr_166 {
         padding-top: 76px;
     }
 }
 
 /* ── Creamies Kiosk look: darker blue sky, softer glass, dark-blue inner fields, pink active pill ── */
-._container_aykih_2 { background: linear-gradient(180deg, #13519b, #2f9ff0); background-attachment: fixed; }
-._card_aykih_202 { background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .26); border-radius: 18px; box-shadow: 0 10px 30px rgba(4, 30, 70, .22); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
-._networkSelector_aykih_335 { padding: 4px; gap: 2px; border-radius: 999px; background: rgba(8, 40, 82, .22); border: 1px solid rgba(255, 255, 255, .16); box-shadow: inset 0 1px 2px rgba(0, 0, 0, .15); }
-._networkButton_aykih_345 { border-radius: 999px; color: rgba(255, 255, 255, .78); font-weight: 600; }
-._networkButton_aykih_345:hover { background: rgba(255, 255, 255, .08); }
-._networkButtonActive_aykih_364, ._networkButtonActive_aykih_364:hover { background: #ec6f9d; color: #fff; box-shadow: 0 2px 8px rgba(200, 61, 108, .35); }
-._innerCard_aykih_442, ._statsRow_aykih_725 { background: rgba(8, 40, 82, .18); border: 1px solid rgba(255, 255, 255, .18); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08); }
-._amountButton_aykih_489 { border: 1px solid rgba(255, 255, 255, .45); background: rgba(255, 255, 255, .14); }
-._amountButton_aykih_489:hover:not(:disabled) { background: rgba(255, 255, 255, .22); }
-._historyPanel_aykih_51, ._dialog_aykih_217 { background: #1a5fae; border: 1px solid rgba(255, 255, 255, .45); box-shadow: 0 14px 36px rgba(2, 20, 50, .45); }
-._dialogOverlay_aykih_217 { background: rgba(6, 34, 70, .62); }
+._container_1fodr_2 { background: linear-gradient(180deg, #13519b, #2f9ff0); background-attachment: fixed; }
+._card_1fodr_202 { background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .26); border-radius: 18px; box-shadow: 0 10px 30px rgba(4, 30, 70, .22); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+._networkSelector_1fodr_335 { padding: 4px; gap: 2px; border-radius: 999px; background: rgba(8, 40, 82, .22); border: 1px solid rgba(255, 255, 255, .16); box-shadow: inset 0 1px 2px rgba(0, 0, 0, .15); }
+._networkButton_1fodr_345 { border-radius: 999px; color: rgba(255, 255, 255, .78); font-weight: 600; }
+._networkButton_1fodr_345:hover { background: rgba(255, 255, 255, .08); }
+._networkButtonActive_1fodr_364, ._networkButtonActive_1fodr_364:hover { background: #ec6f9d; color: #fff; box-shadow: 0 2px 8px rgba(200, 61, 108, .35); }
+._innerCard_1fodr_442, ._statsRow_1fodr_725 { background: rgba(8, 40, 82, .18); border: 1px solid rgba(255, 255, 255, .18); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08); }
+._amountButton_1fodr_489 { border: 1px solid rgba(255, 255, 255, .45); background: rgba(255, 255, 255, .14); }
+._amountButton_1fodr_489:hover:not(:disabled) { background: rgba(255, 255, 255, .22); }
+._historyPanel_1fodr_51, ._dialog_1fodr_217 { background: #1a5fae; border: 1px solid rgba(255, 255, 255, .45); box-shadow: 0 14px 36px rgba(2, 20, 50, .45); }
+._dialogOverlay_1fodr_217 { background: rgba(6, 34, 70, .62); }
 
 /* Wallet button like on the Kiosk: round glass button, 44 px */
-._connectRow_aykih_19 button[data-dapp-kit] { height: 44px; min-height: 0 !important; padding: 0 16px !important; border-radius: 999px !important; background: rgba(255, 255, 255, .14) !important; border: 1px solid rgba(255, 255, 255, .45) !important; box-shadow: none !important; transition: background .15s; }
-._connectRow_aykih_19 button[data-dapp-kit]:hover { background: rgba(255, 255, 255, .22) !important; }
-._connectRow_aykih_19 button[data-dapp-kit], ._connectRow_aykih_19 button[data-dapp-kit] * { color: #fff !important; font-size: 14px !important; font-weight: 600 !important; }
-._networkButton_aykih_345:disabled, ._networkButton_aykih_345:disabled:hover { opacity: .4; cursor: not-allowed; background: transparent; }
+._connectRow_1fodr_19 button[data-dapp-kit] { height: 44px; min-height: 0 !important; padding: 0 16px !important; border-radius: 999px !important; background: rgba(255, 255, 255, .14) !important; border: 1px solid rgba(255, 255, 255, .45) !important; box-shadow: none !important; transition: background .15s; }
+._connectRow_1fodr_19 button[data-dapp-kit]:hover { background: rgba(255, 255, 255, .22) !important; }
+._connectRow_1fodr_19 button[data-dapp-kit], ._connectRow_1fodr_19 button[data-dapp-kit] * { color: #fff !important; font-size: 14px !important; font-weight: 600 !important; }
+._networkButton_1fodr_345:disabled, ._networkButton_1fodr_345:disabled:hover { opacity: .4; cursor: not-allowed; background: transparent; }
 
 /* Keep the last content clear of the floating footer */
-._routesWrapper_aykih_14 {
+._routesWrapper_1fodr_14 {
     padding-bottom: 56px;
 }
 
 /* Legal pages scroll: keep the language button clear of the scrollbar */
-._connectRowLegal_aykih_792 {
-    right: 28px;
+._connectRowLegal_1fodr_792 {
+    position: fixed; /* privacy scrolls: stay in view like the close button */
+    right: max(16px, calc(28px - (100vw - 100%))); /* 28px from the window edge, at least 16px from a classic scrollbar */
 }

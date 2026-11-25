@@ -48,7 +48,7 @@ main { flex: 1; }
 a:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; }
 
 .top-right { position: absolute; top: 16px; right: 16px; z-index: 10; }
-.top-right.legal { right: 28px; }
+.top-right.legal { position: fixed; right: max(16px, calc(28px - (100vw - 100%))); } /* privacy scrolls: stays in view like the close button; 28px from the window edge (overlay scrollbar), at least 16px from a classic one */
 
 .home { max-width: 1180px; margin: 0 auto; padding: 56px 24px 64px; text-align: center; }
 .home h1 { margin: 0; }

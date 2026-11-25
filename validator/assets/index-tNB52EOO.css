@@ -27919,7 +27919,7 @@
 
 /* Language switch top right, legal pages scroll inside the full-height layout */
 .cr-top-right { position: absolute; top: 16px; right: 16px; z-index: 10; }
-.cr-top-right.legal { right: 28px; } /* legal pages scroll: clear of the scrollbar */
+.cr-top-right.legal { position: fixed; right: max(16px, calc(28px - (100vw - 100%))); } /* privacy scrolls: stays in view like the close button; 28px from the window edge (overlay scrollbar), at least 16px from a classic one */
 .legal-scroll { flex: 1; overflow-y: auto; width: 100%; }
 
 /* ── Creamies Kiosk look: darker blue sky, softer glass, dark-blue inner fields, pink active pill ── */
