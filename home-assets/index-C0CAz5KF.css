@@ -120,62 +120,122 @@ a.app:hover { transform: translateY(-3px); background: var(--panel-hover); box-s
 .art-text { font: 800 10px ui-rounded, "SF Pro Rounded", system-ui, sans-serif; letter-spacing: .08em; }
 a.app:hover .art { transform: scale(1.05); }
 
-/* Kiosk: cones slide along the counter, the sale tag swings, coins hop */
+/* Shared bits: sparkles twinkle, eyes blink, fighters breathe, snow falls (these scale around their own centre) */
+.twinkle, .blink, .k-spin, .k-glint, .v-beat, .g-heart-l, .g-heart-r, .g-dmg-l, .g-dmg-r, .g-burst-l, .g-burst-r { transform-box: fill-box; transform-origin: center; }
+.twinkle { animation: twinkle 2.6s ease-in-out infinite; }
+@keyframes twinkle { 0%, 100% { transform: scale(.3) rotate(0deg); opacity: .2; } 50% { transform: scale(1) rotate(45deg); opacity: 1; } }
+.blink { animation: blink 3.6s linear infinite; }
+@keyframes blink { 0%, 90%, 96%, 100% { transform: scaleY(1); } 93% { transform: scaleY(.1); } }
+.bob { animation: bob 1.4s ease-in-out infinite; }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2.5px); } }
+.snow { animation: snow 6s linear infinite; opacity: 0; }
+@keyframes snow { 0% { transform: translate(0, 0); opacity: 0; } 10% { opacity: .7; } 50% { transform: translate(6px, 106px); } 90% { opacity: .7; } 100% { transform: translate(-2px, 212px); opacity: 0; } }
+
+/* Kiosk: cones hop along the counter, the sale tag swings, coins hop and spin, the lights chase, the counter shines */
 .k-cone { animation: k-slide 7.8s linear infinite; }
 @keyframes k-slide { from { transform: translateX(225px); } to { transform: translateX(-25px); } }
+.k-bob { animation: k-bob .65s cubic-bezier(.3, 0, .7, 1) infinite alternate; }
+@keyframes k-bob { from { transform: translateY(0); } to { transform: translateY(-6px); } }
 .k-tag { transform-origin: 100px 60px; animation: k-swing 2.8s ease-in-out infinite; }
 @keyframes k-swing { 0%, 100% { transform: rotate(-9deg); } 50% { transform: rotate(9deg); } }
 .k-coin { animation: k-hop 2.4s ease-in-out infinite; }
 .k-coin2 { animation-delay: -1.2s; }
 @keyframes k-hop { 0%, 55%, 100% { transform: translateY(0); } 25% { transform: translateY(-18px); } }
+.k-spin { animation: k-spin 2.4s ease-in-out infinite; }
+@keyframes k-spin { 0%, 10% { transform: scaleX(1); } 20% { transform: scaleX(.12); } 30% { transform: scaleX(-1); } 40% { transform: scaleX(.12); } 50%, 100% { transform: scaleX(1); } }
+.k-glint { animation: k-glint 2.4s ease-out infinite; opacity: 0; }
+@keyframes k-glint { 0%, 18% { transform: scale(0) rotate(0deg); opacity: 0; } 26% { transform: scale(1.2) rotate(45deg); opacity: 1; } 40%, 100% { transform: scale(0) rotate(90deg); opacity: 0; } }
+.k-bulb { animation: k-bulb 1.44s linear infinite; }
+@keyframes k-bulb { 0%, 100% { opacity: .6; } 12% { opacity: 1; } 30% { opacity: .6; } }
+.k-shine { animation: k-shine 3.5s ease-in-out infinite; }
+@keyframes k-shine { 0%, 40% { transform: skewX(-25deg) translateX(0); } 100% { transform: skewX(-25deg) translateX(260px); } }
 
-/* Validator: the node ring turns, nodes blink, the core sends waves and its check mark pops */
+/* Validator: node ring turns, satellites orbit the other way, pulses run out and answers run back,
+   the core beats, sends waves and its check mark pops */
 .v-ring { transform-origin: 100px 104px; animation: v-turn 26s linear infinite; }
+.v-orbit { transform-origin: 100px 104px; animation: v-turn 18s linear infinite reverse; }
+.v-spin { transform-origin: 100px 104px; animation: v-turn 6s linear infinite; }
 @keyframes v-turn { to { transform: rotate(360deg); } }
 .v-blink { animation: v-blink 2.1s ease-in-out infinite; }
 @keyframes v-blink { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
 .v-wave { transform-origin: 100px 104px; animation: v-wave 2.6s ease-out infinite; }
 @keyframes v-wave { from { transform: scale(1); opacity: .7; } to { transform: scale(2.1); opacity: 0; } }
+.v-beat { animation: v-beat 1.3s ease-out infinite; }
+@keyframes v-beat { 0%, 45%, 100% { transform: scale(1); } 10% { transform: scale(1.09); } 22% { transform: scale(.98); } 32% { transform: scale(1.05); } }
 .v-check { stroke-dasharray: 34; animation: v-check 3.2s ease-in-out infinite; }
 @keyframes v-check { 0% { stroke-dashoffset: 34; } 25%, 85% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -34; } }
 
-/* Meltdown: drips stretch, drops fall, transactions rush past, the TPS needle shakes in the red */
+/* Meltdown: the scoop wobbles and steams, drips stretch, drops fall, transactions rush past;
+   the TPS needle pushes into the red, which flares up (and MAX flashes) while the scene shudders.
+   Needle, red zone and quake share one 3.4 s cycle. */
+.m-wobble { transform-origin: 100px 90px; animation: m-wobble 1.6s ease-in-out infinite; }
+@keyframes m-wobble { 0%, 100% { transform: rotate(-2.5deg) scaleY(1); } 25% { transform: rotate(0deg) scaleY(.97); } 50% { transform: rotate(2.5deg) scaleY(1); } 75% { transform: rotate(0deg) scaleY(1.02); } }
+.m-heat { animation: m-heat 2.4s ease-out infinite; opacity: 0; }
+@keyframes m-heat { 0% { transform: translateY(0) scaleX(1); opacity: 0; } 25% { opacity: .9; } 100% { transform: translateY(-22px) scaleX(1.4); opacity: 0; } }
 .m-drip { transform-origin: 100px 78px; animation: m-drip 2.8s ease-in-out infinite; }
 @keyframes m-drip { 0%, 100% { transform: scaleY(.55); } 50% { transform: scaleY(1.25); } }
 .m-drop { animation: m-drop 1.8s ease-in infinite; }
 @keyframes m-drop { 0% { transform: translateY(0); opacity: 0; } 15% { opacity: 1; } 100% { transform: translateY(46px); opacity: 0; } }
-.m-streak { animation: m-streak 1.3s linear infinite; opacity: .8; }
-@keyframes m-streak { from { transform: translateX(215px); } to { transform: translateX(-40px); } }
+.m-streak { animation: m-streak 1.3s linear infinite; }
+@keyframes m-streak { from { transform: translateX(215px); } to { transform: translateX(-60px); } }
 .m-needle { transform-origin: 100px 180px; animation: m-needle 3.4s ease-in-out infinite; }
 @keyframes m-needle {
   0% { transform: rotate(-70deg); } 45% { transform: rotate(58deg); }
   50% { transform: rotate(66deg); } 55% { transform: rotate(56deg); } 60% { transform: rotate(68deg); } 65% { transform: rotate(60deg); }
   80% { transform: rotate(64deg); } 100% { transform: rotate(-70deg); }
 }
+.m-danger { animation: m-danger 3.4s linear infinite; opacity: 0; }
+@keyframes m-danger { 0%, 40% { opacity: 0; } 46% { opacity: 1; } 51% { opacity: .3; } 56% { opacity: 1; } 61% { opacity: .3; } 66% { opacity: 1; } 71% { opacity: .3; } 77% { opacity: 1; } 86%, 100% { opacity: 0; } }
+.m-quake { animation: m-quake 3.4s linear infinite; }
+@keyframes m-quake {
+  0%, 45%, 80%, 100% { transform: translate(0, 0); }
+  48% { transform: translate(1.4px, -.6px); } 51% { transform: translate(-1.4px, .6px); } 54% { transform: translate(1px, .8px); }
+  57% { transform: translate(-1.2px, -.8px); } 60% { transform: translate(1.4px, .4px); } 63% { transform: translate(-1px, -.6px); }
+  66% { transform: translate(1.2px, .6px); } 70% { transform: translate(-1.2px, .4px); } 74% { transform: translate(.8px, -.6px); } 77% { transform: translate(-.6px, .4px); }
+}
 
-/* Game (shooter): pink fires, the shot flies straight across, splat + shake on the mint one, it loses a heart;
-   then mint fires back. One 2.8 s cycle, left shot in the first half, right shot in the second. */
+/* Game (shooter): pink fires (kicks back), the glowing shot flies straight across, splat + crumbs + shake on
+   the mint one, a heart pops and "-1" floats up; then mint fires back. One 2.8 s cycle, left shot in the
+   first half, right shot in the second. */
 .art-game [class^="g-"] { animation-duration: 2.8s; animation-iteration-count: infinite; animation-timing-function: linear; }
 .g-shot-l { animation-name: g-shot-l; opacity: 0; }
 @keyframes g-shot-l { 0% { transform: translateX(0); opacity: 1; } 14% { transform: translateX(62px); opacity: 1; } 14.1%, 100% { transform: translateX(62px); opacity: 0; } }
 .g-shot-r { animation-name: g-shot-r; opacity: 0; }
 @keyframes g-shot-r { 0%, 49.9% { transform: translateX(0); opacity: 0; } 50% { transform: translateX(0); opacity: 1; } 64% { transform: translateX(-62px); opacity: 1; } 64.1%, 100% { transform: translateX(-62px); opacity: 0; } }
 .g-flash-l { transform-origin: 82px 136px; animation-name: g-flash-l; opacity: 0; }
-@keyframes g-flash-l { 0% { transform: scale(1.6); opacity: 1; } 6%, 100% { transform: scale(.2); opacity: 0; } }
+@keyframes g-flash-l { 0% { transform: scale(1.4) rotate(0deg); opacity: 1; } 7%, 100% { transform: scale(.2) rotate(40deg); opacity: 0; } }
 .g-flash-r { transform-origin: 118px 136px; animation-name: g-flash-r; opacity: 0; }
-@keyframes g-flash-r { 0%, 49.9% { opacity: 0; } 50% { transform: scale(1.6); opacity: 1; } 56%, 100% { transform: scale(.2); opacity: 0; } }
+@keyframes g-flash-r { 0%, 49.9% { opacity: 0; } 50% { transform: scale(1.4) rotate(0deg); opacity: 1; } 57%, 100% { transform: scale(.2) rotate(-40deg); opacity: 0; } }
+.g-recoil-l { animation-name: g-recoil-l; }
+@keyframes g-recoil-l { 0% { transform: translateX(-6px); } 9%, 100% { transform: translateX(0); } }
+.g-recoil-r { animation-name: g-recoil-r; }
+@keyframes g-recoil-r { 0%, 49.9% { transform: translateX(0); } 50% { transform: translateX(6px); } 59%, 100% { transform: translateX(0); } }
 .g-splat-r { animation-name: g-splat-r; opacity: 0; }
-@keyframes g-splat-r { 0%, 13.9% { transform: scale(.2); opacity: 0; } 14% { transform: scale(.4); opacity: 1; } 20% { transform: scale(1.15); opacity: 1; } 34%, 100% { transform: scale(1.2); opacity: 0; } }
+@keyframes g-splat-r { 0%, 13.9% { transform: scale(.2); opacity: 0; } 14% { transform: scale(.5); opacity: 1; } 19% { transform: scale(1.55); opacity: 1; } 34%, 100% { transform: scale(1.6); opacity: 0; } }
 .g-splat-l { animation-name: g-splat-l; opacity: 0; }
-@keyframes g-splat-l { 0%, 63.9% { transform: scale(.2); opacity: 0; } 64% { transform: scale(.4); opacity: 1; } 70% { transform: scale(1.15); opacity: 1; } 84%, 100% { transform: scale(1.2); opacity: 0; } }
+@keyframes g-splat-l { 0%, 63.9% { transform: scale(.2); opacity: 0; } 64% { transform: scale(.5); opacity: 1; } 69% { transform: scale(1.55); opacity: 1; } 84%, 100% { transform: scale(1.6); opacity: 0; } }
+.g-burst-r { animation-name: g-burst-r; opacity: 0; }
+@keyframes g-burst-r { 0%, 13.9% { transform: translate(0, 0); opacity: 0; } 14% { transform: translate(0, 0); opacity: 1; } 30% { transform: translate(var(--dx), var(--dy)) scale(.4); opacity: 0; } 100% { opacity: 0; } }
+.g-burst-l { animation-name: g-burst-l; opacity: 0; }
+@keyframes g-burst-l { 0%, 63.9% { transform: translate(0, 0); opacity: 0; } 64% { transform: translate(0, 0); opacity: 1; } 80% { transform: translate(var(--dx), var(--dy)) scale(.4); opacity: 0; } 100% { opacity: 0; } }
 .g-hit-r { animation-name: g-hit-r; }
 @keyframes g-hit-r { 0%, 14%, 24%, 100% { transform: translateX(0); } 16% { transform: translateX(5px); } 18% { transform: translateX(-3px); } 20% { transform: translateX(3px); } 22% { transform: translateX(-1px); } }
 .g-hit-l { animation-name: g-hit-l; }
 @keyframes g-hit-l { 0%, 64%, 74%, 100% { transform: translateX(0); } 66% { transform: translateX(-5px); } 68% { transform: translateX(3px); } 70% { transform: translateX(-3px); } 72% { transform: translateX(1px); } }
+.g-shake { animation-name: g-shake; }
+@keyframes g-shake {
+  0%, 14%, 22%, 64%, 72%, 100% { transform: translate(0, 0); }
+  15.5% { transform: translate(1.6px, -1px); } 17.5% { transform: translate(-1.6px, 1px); } 19.5% { transform: translate(1px, .6px); }
+  65.5% { transform: translate(-1.6px, -1px); } 67.5% { transform: translate(1.6px, 1px); } 69.5% { transform: translate(-1px, .6px); }
+}
 .g-heart-r { animation-name: g-heart-r; }
-@keyframes g-heart-r { 0%, 14% { opacity: 1; } 18%, 92% { opacity: .18; } 100% { opacity: 1; } }
+@keyframes g-heart-r { 0%, 14% { transform: scale(1); opacity: 1; } 17% { transform: scale(1.8); opacity: 1; } 24%, 92% { transform: scale(.75); opacity: .18; } 100% { transform: scale(1); opacity: 1; } }
 .g-heart-l { animation-name: g-heart-l; }
-@keyframes g-heart-l { 0%, 64% { opacity: 1; } 68%, 92% { opacity: .18; } 100% { opacity: 1; } }
+@keyframes g-heart-l { 0%, 64% { transform: scale(1); opacity: 1; } 67% { transform: scale(1.8); opacity: 1; } 74%, 92% { transform: scale(.75); opacity: .18; } 100% { transform: scale(1); opacity: 1; } }
+.g-dmg-r { animation-name: g-dmg-r; opacity: 0; }
+@keyframes g-dmg-r { 0%, 14% { transform: translateY(0) scale(.6); opacity: 0; } 17% { transform: translateY(-2px) scale(1.2); opacity: 1; } 40% { transform: translateY(-16px) scale(1); opacity: 0; } 100% { opacity: 0; } }
+.g-dmg-l { animation-name: g-dmg-l; opacity: 0; }
+@keyframes g-dmg-l { 0%, 64% { transform: translateY(0) scale(.6); opacity: 0; } 67% { transform: translateY(-2px) scale(1.2); opacity: 1; } 90% { transform: translateY(-16px) scale(1); opacity: 0; } 100% { opacity: 0; } }
 
 @media (prefers-reduced-motion: reduce) {
   .art, .art * { animation: none !important; transition: none !important; }
