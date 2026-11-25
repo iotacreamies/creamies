@@ -161,9 +161,29 @@ a.app:hover .art { transform: scale(1.05); }
   80% { transform: rotate(64deg); } 100% { transform: rotate(-70deg); }
 }
 
-/* Game: the two cones bob */
-.g-bob { animation: g-bob 1.2s ease-in-out infinite; }
-@keyframes g-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+/* Game (shooter): pink fires, the shot flies straight across, splat + shake on the mint one, it loses a heart;
+   then mint fires back. One 2.8 s cycle, left shot in the first half, right shot in the second. */
+.art-game [class^="g-"] { animation-duration: 2.8s; animation-iteration-count: infinite; animation-timing-function: linear; }
+.g-shot-l { animation-name: g-shot-l; opacity: 0; }
+@keyframes g-shot-l { 0% { transform: translateX(0); opacity: 1; } 14% { transform: translateX(62px); opacity: 1; } 14.1%, 100% { transform: translateX(62px); opacity: 0; } }
+.g-shot-r { animation-name: g-shot-r; opacity: 0; }
+@keyframes g-shot-r { 0%, 49.9% { transform: translateX(0); opacity: 0; } 50% { transform: translateX(0); opacity: 1; } 64% { transform: translateX(-62px); opacity: 1; } 64.1%, 100% { transform: translateX(-62px); opacity: 0; } }
+.g-flash-l { transform-origin: 82px 136px; animation-name: g-flash-l; opacity: 0; }
+@keyframes g-flash-l { 0% { transform: scale(1.6); opacity: 1; } 6%, 100% { transform: scale(.2); opacity: 0; } }
+.g-flash-r { transform-origin: 118px 136px; animation-name: g-flash-r; opacity: 0; }
+@keyframes g-flash-r { 0%, 49.9% { opacity: 0; } 50% { transform: scale(1.6); opacity: 1; } 56%, 100% { transform: scale(.2); opacity: 0; } }
+.g-splat-r { animation-name: g-splat-r; opacity: 0; }
+@keyframes g-splat-r { 0%, 13.9% { transform: scale(.2); opacity: 0; } 14% { transform: scale(.4); opacity: 1; } 20% { transform: scale(1.15); opacity: 1; } 34%, 100% { transform: scale(1.2); opacity: 0; } }
+.g-splat-l { animation-name: g-splat-l; opacity: 0; }
+@keyframes g-splat-l { 0%, 63.9% { transform: scale(.2); opacity: 0; } 64% { transform: scale(.4); opacity: 1; } 70% { transform: scale(1.15); opacity: 1; } 84%, 100% { transform: scale(1.2); opacity: 0; } }
+.g-hit-r { animation-name: g-hit-r; }
+@keyframes g-hit-r { 0%, 14%, 24%, 100% { transform: translateX(0); } 16% { transform: translateX(5px); } 18% { transform: translateX(-3px); } 20% { transform: translateX(3px); } 22% { transform: translateX(-1px); } }
+.g-hit-l { animation-name: g-hit-l; }
+@keyframes g-hit-l { 0%, 64%, 74%, 100% { transform: translateX(0); } 66% { transform: translateX(-5px); } 68% { transform: translateX(3px); } 70% { transform: translateX(-3px); } 72% { transform: translateX(1px); } }
+.g-heart-r { animation-name: g-heart-r; }
+@keyframes g-heart-r { 0%, 14% { opacity: 1; } 18%, 92% { opacity: .18; } 100% { opacity: 1; } }
+.g-heart-l { animation-name: g-heart-l; }
+@keyframes g-heart-l { 0%, 64% { opacity: 1; } 68%, 92% { opacity: .18; } 100% { opacity: 1; } }
 
 @media (prefers-reduced-motion: reduce) {
   .art, .art * { animation: none !important; transition: none !important; }
