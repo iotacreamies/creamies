@@ -6,12 +6,13 @@
 .cr-footer a:hover, .cr-footer a:focus-visible { color: #fff; }
 .cr-footer a:focus-visible { outline: none; }
 .cr-footer { align-items: center; overflow-x: clip; } /* the IOTA logo's empty SVG margin must not widen the page */
-.cr-powered { position: absolute; right: 24px; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; gap: 0; color: #fff; opacity: .55; font-size: 12px; } /* far right; text and logo a bit see-through; links stay centred */
+.cr-powered { position: absolute; right: 24px; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; gap: 0; color: #fff; opacity: .55; font-size: 12px; white-space: nowrap; } /* far right; text and logo a bit see-through; links stay centred */
 @media (max-width: 560px) { /* no room for centred links + right block: links left, "powered by" right */
   .cr-footer:has(.cr-powered) { justify-content: flex-start; }
   .cr-powered { position: static; transform: none; margin-left: auto; }
+  .cr-powered-text { display: none; } /* phones: just the IOTA logo */
 }
-.cr-powered img { display: block; height: 40px; width: auto; margin: -11px -20px -11px -5px; } /* the SVG has wide empty margins left and right */
+.cr-powered img { display: block; height: 40px; width: auto; margin: -11px -12px -11px -5px; } /* the SVG has wide empty margins left and right */
 
 /* Imprint and privacy pages */
 .cr-legal { position: relative; box-sizing: border-box; width: 100%; padding: 64px 24px 40px; color: #fff; text-align: center; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; line-height: 1.55; }
@@ -102,14 +103,14 @@ a.app:hover { transform: translateY(-3px); background: var(--panel-hover); box-s
 .app.off .app-art .art { filter: grayscale(1); opacity: .55; }
 .app.off .app-text { opacity: .6; }
 
-/* Phones: still 2×2, smaller text */
+/* Phones: one tile per row (the page scrolls), animation on top, text below */
 @media (max-width: 600px) {
-  .home { padding: 10px; }
-  .apps { gap: 10px; grid-template-rows: repeat(2, minmax(220px, 1fr)); }
+  .home { padding: 12px; }
+  .apps { gap: 12px; grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-auto-rows: 270px; }
   .app { border-radius: 20px; }
   .app-text { padding: 2px 10px 14px; }
-  .app-text h2 { font-size: 15px; }
-  .app-text p { font-size: 12px; line-height: 1.35; }
+  .app-text h2 { font-size: 18px; }
+  .app-text p { font-size: 14px; line-height: 1.35; }
   a.app:hover { transform: none; }
 }
 /* Animated tile scenes (Art.tsx). Elements rotate/scale around points in the 200×200 view box. */
