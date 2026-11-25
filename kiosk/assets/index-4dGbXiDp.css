@@ -548,6 +548,7 @@
 .cr-brand { display: flex; align-items: center; gap: 14px; margin: 0; --logo-h: 48px; }
 .cr-brand img { display: block; width: auto; height: var(--logo-h); position: relative; top: calc(var(--logo-h) * .134); filter: drop-shadow(0 4px 10px rgba(10, 40, 90, .35)); }
 .cr-brand span { line-height: 1.1; padding-left: 14px; border-left: 1px solid rgba(255, 255, 255, .45); font-size: 13px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #fff; white-space: nowrap; }
+.cr-brand span.cr-solo { padding-left: 0; border-left: 0; } /* app name alone, without logo */
 .cr-header-actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }
 .cr-header button[data-dapp-kit] { height: 44px; min-height: 0 !important; padding: 0 16px !important; border-radius: 999px !important; background: rgba(255, 255, 255, .14) !important; border: 1px solid rgba(255, 255, 255, .45) !important; box-shadow: none !important; transition: background .15s; }
 .cr-header button[data-dapp-kit]:hover { background: rgba(255, 255, 255, .22) !important; }
@@ -559,7 +560,7 @@
 }
 /* Very narrow: the app name next to the logo goes (the page title shows it), so logo and buttons fit in one row */
 @media (max-width: 420px) {
-  .cr-brand span { display: none; }
+  .cr-brand span:not(.cr-solo) { display: none; }
 }
 /* Blue sky and pink candy, the colours of the Ice Arena game and the Creamies web pages.
    Layout: banner, header (title, tabs, wallet), stats, switch, filters, grid. Keep it that way. */
