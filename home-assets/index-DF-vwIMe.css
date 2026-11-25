@@ -75,7 +75,7 @@ html { background: var(--sky-bot); }
 * { box-sizing: border-box; }
 body { margin: 0; min-height: 100vh; background: linear-gradient(180deg, var(--sky-top), var(--sky-bot)) fixed; color: #fff; font: 15px/1.45 ui-rounded, "SF Pro Rounded", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
 #root { min-height: 100vh; display: flex; flex-direction: column; }
-main { flex: 1; }
+main { flex: 1; display: flex; flex-direction: column; } /* tiles centred in the space between header and footer */
 .cr-footer { position: sticky; bottom: 0; z-index: 4; }
 a:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; }
 
@@ -83,20 +83,31 @@ a:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; }
 .cr-header { position: sticky; top: 0; }
 :root { --cr-close-top: 86px; }
 
-.home { max-width: 1180px; margin: 0 auto; padding: 56px 24px 64px; text-align: center; }
-.home h1 { margin: 0; }
-.home h1 img { display: block; width: min(560px, 82vw); height: auto; margin: 0 auto; filter: drop-shadow(0 10px 24px rgba(10, 40, 90, .35)); }
-.tagline { margin: 4px 0 40px; color: var(--muted); font-size: 17px; }
+/* Four big tiles (2×2) filling the whole space between header and footer.
+   Each tile is a size container: wide tiles put the scene left and the text right, tall ones stack them. */
+.home { flex: 1; display: flex; width: 100%; padding: 16px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-.apps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: left; }
-.app { display: flex; flex-direction: column; overflow: hidden; border-radius: 22px; background: var(--panel); border: 1px solid var(--line); box-shadow: 0 10px 30px rgba(4, 30, 70, .22); color: #fff; text-decoration: none; transition: transform .18s, background .18s, box-shadow .18s; }
-a.app:hover { transform: translateY(-4px); background: var(--panel-hover); box-shadow: 0 16px 36px rgba(4, 30, 70, .3); }
-.app-art { position: relative; aspect-ratio: 1; overflow: hidden; background: radial-gradient(circle at 50% 40%, rgba(255, 255, 255, .34), rgba(255, 255, 255, .08) 70%); }
-.app-art .art { position: absolute; inset: 0; } /* animated scene fills the square */
-.app-text { flex: 1; padding: 16px 18px 6px; }
-.app-text h2 { margin: 0 0 6px; font-size: 19px; letter-spacing: -.01em; }
-.app-text p { margin: 0; color: var(--muted); }
-.app-go { align-self: flex-start; margin: 10px 18px 18px; padding: 7px 16px; border-radius: 999px; background: var(--pill); font-weight: 700; font-size: 14px; box-shadow: 0 2px 8px rgba(200, 61, 108, .35); }
+.apps { flex: 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(220px, 1fr)); gap: 16px; }
+.app { container-type: size; position: relative; overflow: hidden; border-radius: 26px; background: var(--panel); border: 1px solid var(--line); box-shadow: 0 10px 30px rgba(4, 30, 70, .22); color: #fff; text-decoration: none; transition: transform .18s, background .18s, box-shadow .18s; }
+a.app:hover { transform: translateY(-3px); background: var(--panel-hover); box-shadow: 0 16px 36px rgba(4, 30, 70, .3); }
+
+/* wide tile: square scene on the left, text on the right */
+.app-art { position: absolute; left: 0; top: 0; width: min(100cqh, 56cqw); height: 100cqh; background: radial-gradient(circle at 50% 45%, rgba(255, 255, 255, .3), rgba(255, 255, 255, 0) 68%); }
+.app-art .art { position: absolute; inset: 6%; width: 88%; height: 88%; }
+.app-text { position: absolute; top: 0; bottom: 0; right: 0; left: min(100cqh, 56cqw); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 10px; padding: 24px clamp(18px, 6cqw, 48px) 24px 8px; }
+.app-text h2 { margin: 0; font-size: clamp(19px, 4.6cqw, 34px); line-height: 1.1; letter-spacing: -.015em; }
+.app-text p { margin: 0; color: var(--muted); font-size: clamp(14px, 2.3cqw, 18px); max-width: 26ch; }
+.app-go { margin-top: 8px; padding: 9px 20px; border-radius: 999px; background: var(--pill); font-weight: 700; font-size: clamp(13px, 2cqw, 16px); box-shadow: 0 2px 8px rgba(200, 61, 108, .35); }
+
+/* tall or square tile: scene on top, text below */
+@container (max-aspect-ratio: 6/5) {
+  .app-art { width: 100cqw; height: min(62cqh, 100cqw); }
+  .app-text { left: 0; top: min(62cqh, 100cqw); justify-content: flex-start; gap: 6px; padding: 4px 20px 18px; }
+  .app-text h2 { font-size: clamp(17px, 7cqw, 26px); }
+  .app-text p { font-size: clamp(13px, 4cqw, 16px); }
+  .app-go { margin-top: auto; }
+}
 
 /* Not released yet */
 .app.off { cursor: default; }
@@ -104,28 +115,11 @@ a.app:hover { transform: translateY(-4px); background: var(--panel-hover); box-s
 .app.off .app-text { opacity: .6; }
 .app.off .app-go { background: rgba(8, 40, 82, .32); color: var(--muted); box-shadow: none; border: 1px solid rgba(255, 255, 255, .16); }
 
-@media (max-width: 860px) {
-  .apps { gap: 14px; }
-  .app-text { padding: 14px 14px 4px; }
-  .app-text h2 { font-size: 17px; }
-  .app-text p { font-size: 14px; }
-  .app-go { margin: 10px 14px 14px; }
-}
-@media (max-width: 760px) {
-  .apps { grid-template-columns: repeat(2, 1fr); max-width: 560px; margin: 0 auto; }
-}
-/* Phones: one row per app, picture on the left */
+/* Phones: one tile per row, still filling the screen */
 @media (max-width: 600px) {
-  .home { padding: 64px 16px 48px; }
-  .tagline { margin-bottom: 28px; font-size: 15.5px; }
-  .apps { grid-template-columns: 1fr; gap: 14px; }
-  .app { display: grid; grid-template-columns: 104px 1fr; grid-template-rows: 1fr auto; border-radius: 18px; }
-  .app-art { grid-row: 1 / 3; aspect-ratio: auto; min-height: 120px; }
-  .apps { max-width: none; }
-  .app-text { padding: 14px 14px 0; }
-  .app-text h2 { font-size: 17px; margin-bottom: 3px; }
-  .app-text p { font-size: 14px; }
-  .app-go { justify-self: start; margin: 10px 14px 14px; padding: 5px 13px; font-size: 13px; }
+  .home { padding: 12px; }
+  .apps { grid-template-columns: minmax(0, 1fr); grid-template-rows: repeat(4, minmax(150px, 1fr)); gap: 12px; }
+  .app { border-radius: 20px; }
   a.app:hover { transform: none; }
 }
 /* Animated tile scenes (Art.tsx). Elements rotate/scale around points in the 200×200 view box. */
