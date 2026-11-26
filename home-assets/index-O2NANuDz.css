@@ -1,7 +1,7 @@
 /* Shared by the Creamies pages (Home, Kiosk, Validator, Meltdown) – used by all Creamies web apps through a symlink src/shared in each app. */
 
 /* Footer */
-.cr-footer { display: flex; justify-content: center; gap: 4px; padding: 10px 16px; border-top: 1px solid rgba(255, 255, 255, .26); background: rgba(19, 81, 155, .5); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; }
+.cr-footer { display: flex; justify-content: center; gap: 4px; padding: 10px 16px; border-top: 1px solid rgba(255, 255, 255, .26); background: rgba(19, 81, 155, .22); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; }
 .cr-footer a { color: rgba(255, 255, 255, .78); text-decoration: none; padding: 5px 12px; font-size: 15px; transition: color .2s; }
 .cr-footer a:hover, .cr-footer a:focus-visible { color: #fff; }
 .cr-footer a:focus-visible { outline: none; }
@@ -12,6 +12,7 @@
   .cr-powered { position: static; transform: none; margin-left: auto; }
   .cr-powered-text { display: none; } /* phones: just the IOTA logo */
 }
+.cr-powered { opacity: 1; } /* "powered by" and the IOTA logo always fully white */
 .cr-powered img { display: block; height: 40px; width: auto; margin: -11px -12px -11px -5px; } /* the SVG has wide empty margins left and right */
 
 /* Imprint and privacy pages */
@@ -86,18 +87,26 @@ a:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; }
 .cr-brand img { top: calc(var(--logo-h) * .134 - 3px); } /* CREAM logo a touch higher, so it lines up with DASHBOARD */
 
 /* Four big tiles (2×2) filling the whole space between header and footer: animation on top, text below. */
-.home { flex: 1; display: flex; width: 100%; padding: 16px; }
+.home { flex: 1; display: flex; width: 100%; max-width: 1180px; margin: 0 auto; padding: 16px; } /* on big monitors the tiles stop growing sideways */
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 .apps { flex: 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(240px, 1fr)); gap: 16px; }
-.app { display: flex; flex-direction: column; overflow: hidden; border-radius: 26px; background: var(--panel); border: 1px solid var(--line); box-shadow: 0 10px 30px rgba(4, 30, 70, .22); color: #fff; text-decoration: none; text-align: center; transition: transform .18s, background .18s, box-shadow .18s; }
+.app { position: relative; display: flex; flex-direction: column; overflow: hidden; border-radius: 26px; background: var(--panel); border: 1px solid var(--line); box-shadow: 0 10px 30px rgba(4, 30, 70, .22); color: #fff; text-decoration: none; text-align: center; transition: transform .18s, background .18s, box-shadow .18s; }
 a.app:hover { transform: translateY(-3px); background: var(--panel-hover); box-shadow: 0 16px 36px rgba(4, 30, 70, .3); }
 .app-art { position: relative; flex: 1; min-height: 0; }
 .app-art .art { position: absolute; inset: 4% 0 0; width: 100%; height: 96%; background: radial-gradient(circle closest-side, rgba(255, 255, 255, .26), rgba(255, 255, 255, 0)); } /* square scene, centred in whatever space is left; the glow fades out fully inside the box */
 .app-text { flex: none; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 20px 20px; }
 .app-text h2 { margin: 0; font-size: clamp(17px, 2.2vw, 26px); line-height: 1.15; letter-spacing: -.015em; }
+/* Titles: logo + word side by side; the logos' drips hang below, so they sit a little low */
+.app-text h2 { display: flex; align-items: center; justify-content: center; gap: .5em; flex-wrap: wrap; }
+/* words styled like the app name in the header: bold, upper case, wide letter spacing; divider as tall as that text */
+.app-text h2 span { font-size: .78em; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; line-height: 1.1; white-space: nowrap; }
+.app-sep { width: 1px; height: .86em; background: rgba(255, 255, 255, .45); }
+.app-logo { display: block; height: 1.65em; width: auto; transform: translateY(.18em); }
+.app-logo-cream { height: 1.45em; }
+.app-logo-meltdown { height: 1.8em; transform: translateY(.24em); }
 .app-text p { margin: 0; color: var(--muted); font-size: clamp(13px, 1.25vw, 16px); max-width: 40ch; }
-.app-soon { margin-top: 6px; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; color: var(--muted); background: rgba(8, 40, 82, .32); border: 1px solid rgba(255, 255, 255, .16); }
+.app-soon { position: absolute; top: 14px; right: 14px; z-index: 1; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; color: var(--muted); background: rgba(8, 40, 82, .32); border: 1px solid rgba(255, 255, 255, .16); }
 
 /* Not released yet */
 .app.off { cursor: default; }
@@ -114,69 +123,101 @@ a.app:hover { transform: translateY(-3px); background: var(--panel-hover); box-s
   .app-text p { font-size: 14px; line-height: 1.35; }
   a.app:hover { transform: none; }
 }
-/* Animated tile scenes (Art.tsx). Elements rotate/scale around points in the 200×200 view box. */
-.art { display: block; width: 100%; height: 100%; transition: transform .35s ease; }
+/* Animated tile scenes (Art.tsx). Elements rotate/scale around points in the 200×200 view box;
+   ".fb" elements scale around their own centre instead. Slow, eased motion throughout. */
+.art { --ease: cubic-bezier(.45, 0, .25, 1); display: block; width: 100%; height: 100%; overflow: visible; transition: transform .7s cubic-bezier(.2, .7, .2, 1); }
 .art * { transform-box: view-box; }
-.art-text { font: 800 10px ui-rounded, "SF Pro Rounded", system-ui, sans-serif; letter-spacing: .08em; }
-a.app:hover .art { transform: scale(1.05); }
+.art .fb { transform-box: fill-box; transform-origin: center; }
+.art-text { font-family: ui-rounded, "SF Pro Rounded", system-ui, sans-serif; font-weight: 800; letter-spacing: .08em; } /* size comes from each fontSize attribute */
+a.app:hover .art { transform: scale(1.04); }
 
-/* Kiosk: cones slide along the counter, the sale tag swings, coins hop */
-.k-cone { animation: k-slide 7.8s linear infinite; }
-@keyframes k-slide { from { transform: translateX(225px); } to { transform: translateX(-25px); } }
-.k-tag { transform-origin: 100px 60px; animation: k-swing 2.8s ease-in-out infinite; }
-@keyframes k-swing { 0%, 100% { transform: rotate(-9deg); } 50% { transform: rotate(9deg); } }
-.k-coin { animation: k-hop 2.4s ease-in-out infinite; }
-.k-coin2 { animation-delay: -1.2s; }
-@keyframes k-hop { 0%, 55%, 100% { transform: translateY(0); } 25% { transform: translateY(-18px); } }
+/* Kiosk: the card stack floats, the Creamie on the card changes every 3 s with a sheen, sparkles twinkle */
+.k-float { animation: k-float 6s var(--ease) infinite alternate; }
+@keyframes k-float { from { transform: translateY(2px); } to { transform: translateY(-5px); } }
+.k-floor { transform-origin: 100px 176px; animation: k-floor 6s var(--ease) infinite alternate; }
+@keyframes k-floor { from { transform: scaleX(1); opacity: 1; } to { transform: scaleX(.86); opacity: .65; } }
+.k-fan-l, .k-fan-r { transform-origin: 100px 150px; animation: k-fan-l 6s var(--ease) infinite alternate; }
+.k-fan-r { animation-name: k-fan-r; }
+@keyframes k-fan-l { from { transform: rotate(0) translateX(0); } to { transform: rotate(-3deg) translateX(-2px); } }
+@keyframes k-fan-r { from { transform: rotate(0) translateX(0); } to { transform: rotate(3deg) translateX(2px); } }
+.k-slide { opacity: 0; animation: k-show 9s ease-in-out infinite; }
+@keyframes k-show { 0% { opacity: 0; } 6%, 33.3% { opacity: 1; } 40%, 100% { opacity: 0; } }
+.k-pop { transform-origin: 100px 100px; animation: k-pop 9s var(--ease) infinite; }
+@keyframes k-pop {
+  0% { transform: translateY(7px) scale(.93); }
+  9%, 33.3% { transform: translateY(0) scale(1); }
+  40%, 100% { transform: translateY(-5px) scale(.97); }
+}
+.k-shine { animation: k-shine 3s cubic-bezier(.6, 0, .3, 1) .25s infinite; transform: translateX(-30px); }
+@keyframes k-shine { 0% { transform: translateX(-30px); } 45%, 100% { transform: translateX(160px); } }
+.k-spark { animation: k-spark 3.6s ease-in-out infinite; }
+@keyframes k-spark { 0%, 100% { transform: scale(0) rotate(0); opacity: 0; } 50% { transform: scale(1) rotate(90deg); opacity: .95; } }
 
-/* Validator: the node ring turns, nodes blink, the core sends waves and its check mark pops */
-.v-ring { transform-origin: 100px 104px; animation: v-turn 26s linear infinite; }
-@keyframes v-turn { to { transform: rotate(360deg); } }
-.v-blink { animation: v-blink 2.1s ease-in-out infinite; }
-@keyframes v-blink { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
-.v-wave { transform-origin: 100px 104px; animation: v-wave 2.6s ease-out infinite; }
-@keyframes v-wave { from { transform: scale(1); opacity: .7; } to { transform: scale(2.1); opacity: 0; } }
-.v-check { stroke-dasharray: 34; animation: v-check 3.2s ease-in-out infinite; }
-@keyframes v-check { 0% { stroke-dashoffset: 34; } 25%, 85% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -34; } }
+/* Validator: the core breathes and draws its check, pulses roll out, the badge's dot pings (orbits are SMIL) */
+.v-core { transform-origin: 100px 96px; animation: v-breathe 4s var(--ease) infinite alternate; }
+@keyframes v-breathe { from { transform: scale(1); } to { transform: scale(1.035); } }
+.v-glow { animation: v-glow 4s var(--ease) infinite alternate; }
+@keyframes v-glow { from { opacity: .7; } to { opacity: 1; } }
+.v-pulse { opacity: 0; transform-origin: 100px 96px; animation: v-pulse 4s cubic-bezier(.15, .6, .3, 1) infinite; }
+@keyframes v-pulse { 0% { transform: scale(1); opacity: .6; } 100% { transform: scale(2.5); opacity: 0; } }
+.v-check { stroke-dasharray: 34; animation: v-check 6s var(--ease) infinite; }
+@keyframes v-check {
+  0%, 8% { stroke-dashoffset: 34; opacity: 1; }
+  26%, 86% { stroke-dashoffset: 0; opacity: 1; }
+  96%, 100% { stroke-dashoffset: 0; opacity: 0; }
+}
+.v-live { animation: v-live 2s cubic-bezier(.2, .6, .3, 1) infinite; }
+@keyframes v-live { from { transform: scale(1); opacity: .8; } to { transform: scale(2.8); opacity: 0; } }
 
-/* Meltdown: drips stretch, drops fall, transactions rush past, the TPS needle shakes in the red */
-.m-drip { transform-origin: 100px 78px; animation: m-drip 2.8s ease-in-out infinite; }
-@keyframes m-drip { 0%, 100% { transform: scaleY(.55); } 50% { transform: scaleY(1.25); } }
-.m-drop { animation: m-drop 1.8s ease-in infinite; }
-@keyframes m-drop { 0% { transform: translateY(0); opacity: 0; } 15% { opacity: 1; } 100% { transform: translateY(46px); opacity: 0; } }
-.m-streak { animation: m-streak 1.3s linear infinite; opacity: .8; }
-@keyframes m-streak { from { transform: translateX(215px); } to { transform: translateX(-40px); } }
-.m-needle { transform-origin: 100px 180px; animation: m-needle 3.4s ease-in-out infinite; }
-@keyframes m-needle {
-  0% { transform: rotate(-70deg); } 45% { transform: rotate(58deg); }
-  50% { transform: rotate(66deg); } 55% { transform: rotate(56deg); } 60% { transform: rotate(68deg); } 65% { transform: rotate(60deg); }
-  80% { transform: rotate(64deg); } 100% { transform: rotate(-70deg); }
+/* Meltdown: one 8 s cycle – the TPS climbs into the red, jitters at the top, falls back.
+   Fill, glowing head, heat and drips share the same keyframe times and easings, so they stay in sync. */
+.m-fill { stroke-dasharray: 100 200; animation: m-fill 8s ease-in-out infinite; }
+@keyframes m-fill {
+  0% { stroke-dashoffset: 88; animation-timing-function: cubic-bezier(.55, 0, .3, 1); }
+  50% { stroke-dashoffset: 7; } 54% { stroke-dashoffset: 10; } 58% { stroke-dashoffset: 5; } 62% { stroke-dashoffset: 9; }
+  66% { stroke-dashoffset: 6; animation-timing-function: linear; }
+  80% { stroke-dashoffset: 6; animation-timing-function: cubic-bezier(.5, 0, .25, 1); }
+  100% { stroke-dashoffset: 88; }
+}
+.m-head { transform-origin: 100px 110px; animation: m-head 8s ease-in-out infinite; }
+@keyframes m-head {
+  0% { transform: rotate(28.8deg); animation-timing-function: cubic-bezier(.55, 0, .3, 1); }
+  50% { transform: rotate(223.2deg); } 54% { transform: rotate(216deg); } 58% { transform: rotate(228deg); } 62% { transform: rotate(218.4deg); }
+  66% { transform: rotate(225.6deg); animation-timing-function: linear; }
+  80% { transform: rotate(225.6deg); animation-timing-function: cubic-bezier(.5, 0, .25, 1); }
+  100% { transform: rotate(28.8deg); }
+}
+.m-heat { animation: m-heat 8s ease-in-out infinite; }
+@keyframes m-heat {
+  0% { opacity: .12; animation-timing-function: cubic-bezier(.55, 0, .3, 1); }
+  50% { opacity: .85; animation-timing-function: linear; }
+  80% { opacity: .85; animation-timing-function: cubic-bezier(.5, 0, .25, 1); }
+  100% { opacity: .12; }
+}
+.m-stem { transform-origin: 100px 91px; animation: m-stem 8s ease-in-out infinite; }
+@keyframes m-stem {
+  0% { transform: scaleY(1); animation-timing-function: cubic-bezier(.55, 0, .3, 1); }
+  50% { transform: scaleY(2.4); animation-timing-function: linear; }
+  80% { transform: scaleY(2.4); animation-timing-function: cubic-bezier(.5, 0, .25, 1); }
+  100% { transform: scaleY(1); }
+}
+.m-bulb { animation: m-bulb 8s ease-in-out infinite; }
+@keyframes m-bulb {
+  0% { transform: translateY(0); animation-timing-function: cubic-bezier(.55, 0, .3, 1); }
+  50% { transform: translateY(calc(var(--len) * 1.4px)); animation-timing-function: linear; }
+  80% { transform: translateY(calc(var(--len) * 1.4px)); animation-timing-function: cubic-bezier(.5, 0, .25, 1); }
+  100% { transform: translateY(0); }
+}
+.m-drop { opacity: 0; animation: m-drop 8s infinite; }
+@keyframes m-drop {
+  0%, 52% { transform: translateY(0); opacity: 0; }
+  53% { transform: translateY(0); opacity: 1; animation-timing-function: cubic-bezier(.5, 0, 1, 1); }
+  64%, 100% { transform: translateY(22px); opacity: 0; }
 }
 
-/* Game (shooter): pink fires, the shot flies straight across, splat + shake on the mint one, it loses a heart;
-   then mint fires back. One 2.8 s cycle, left shot in the first half, right shot in the second. */
-.art-game [class^="g-"] { animation-duration: 2.8s; animation-iteration-count: infinite; animation-timing-function: linear; }
-.g-shot-l { animation-name: g-shot-l; opacity: 0; }
-@keyframes g-shot-l { 0% { transform: translateX(0); opacity: 1; } 14% { transform: translateX(62px); opacity: 1; } 14.1%, 100% { transform: translateX(62px); opacity: 0; } }
-.g-shot-r { animation-name: g-shot-r; opacity: 0; }
-@keyframes g-shot-r { 0%, 49.9% { transform: translateX(0); opacity: 0; } 50% { transform: translateX(0); opacity: 1; } 64% { transform: translateX(-62px); opacity: 1; } 64.1%, 100% { transform: translateX(-62px); opacity: 0; } }
-.g-flash-l { transform-origin: 82px 136px; animation-name: g-flash-l; opacity: 0; }
-@keyframes g-flash-l { 0% { transform: scale(1.6); opacity: 1; } 6%, 100% { transform: scale(.2); opacity: 0; } }
-.g-flash-r { transform-origin: 118px 136px; animation-name: g-flash-r; opacity: 0; }
-@keyframes g-flash-r { 0%, 49.9% { opacity: 0; } 50% { transform: scale(1.6); opacity: 1; } 56%, 100% { transform: scale(.2); opacity: 0; } }
-.g-splat-r { animation-name: g-splat-r; opacity: 0; }
-@keyframes g-splat-r { 0%, 13.9% { transform: scale(.2); opacity: 0; } 14% { transform: scale(.4); opacity: 1; } 20% { transform: scale(1.15); opacity: 1; } 34%, 100% { transform: scale(1.2); opacity: 0; } }
-.g-splat-l { animation-name: g-splat-l; opacity: 0; }
-@keyframes g-splat-l { 0%, 63.9% { transform: scale(.2); opacity: 0; } 64% { transform: scale(.4); opacity: 1; } 70% { transform: scale(1.15); opacity: 1; } 84%, 100% { transform: scale(1.2); opacity: 0; } }
-.g-hit-r { animation-name: g-hit-r; }
-@keyframes g-hit-r { 0%, 14%, 24%, 100% { transform: translateX(0); } 16% { transform: translateX(5px); } 18% { transform: translateX(-3px); } 20% { transform: translateX(3px); } 22% { transform: translateX(-1px); } }
-.g-hit-l { animation-name: g-hit-l; }
-@keyframes g-hit-l { 0%, 64%, 74%, 100% { transform: translateX(0); } 66% { transform: translateX(-5px); } 68% { transform: translateX(3px); } 70% { transform: translateX(-3px); } 72% { transform: translateX(1px); } }
-.g-heart-r { animation-name: g-heart-r; }
-@keyframes g-heart-r { 0%, 14% { opacity: 1; } 18%, 92% { opacity: .18; } 100% { opacity: 1; } }
-.g-heart-l { animation-name: g-heart-l; }
-@keyframes g-heart-l { 0%, 64% { opacity: 1; } 68%, 92% { opacity: .18; } 100% { opacity: 1; } }
+/* Game: the keyframes are computed in Art.tsx (gameCss) so shots and hits line up with the running fighters. */
 
 @media (prefers-reduced-motion: reduce) {
   .art, .art * { animation: none !important; transition: none !important; }
+  .k-slide.k-first { opacity: 1; } /* still image: show the first Creamie */
 }

@@ -579,7 +579,7 @@
 /* Shared by the Creamies pages (Home, Kiosk, Validator, Meltdown) – used by all Creamies web apps through a symlink src/shared in each app. */
 
 /* Footer */
-.cr-footer { display: flex; justify-content: center; gap: 4px; padding: 10px 16px; border-top: 1px solid rgba(255, 255, 255, .26); background: rgba(19, 81, 155, .5); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; }
+.cr-footer { display: flex; justify-content: center; gap: 4px; padding: 10px 16px; border-top: 1px solid rgba(255, 255, 255, .26); background: rgba(19, 81, 155, .22); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; }
 .cr-footer a { color: rgba(255, 255, 255, .78); text-decoration: none; padding: 5px 12px; font-size: 15px; transition: color .2s; }
 .cr-footer a:hover, .cr-footer a:focus-visible { color: #fff; }
 .cr-footer a:focus-visible { outline: none; }
@@ -590,6 +590,7 @@
   .cr-powered { position: static; transform: none; margin-left: auto; }
   .cr-powered-text { display: none; } /* phones: just the IOTA logo */
 }
+.cr-powered { opacity: 1; } /* "powered by" and the IOTA logo always fully white */
 .cr-powered img { display: block; height: 40px; width: auto; margin: -11px -12px -11px -5px; } /* the SVG has wide empty margins left and right */
 
 /* Imprint and privacy pages */
@@ -645,7 +646,7 @@
   .cr-brand:has(.cr-home) span:not(.cr-solo) { display: none; } /* only when the start-page button needs the room */
 }
 /* ─── Page ─────────────────────────────────────────────────────────────────── */
-._container_c7shs_2 {
+._container_1b9dx_2 {
     position: absolute;
     inset: 0;
     background: linear-gradient(0deg, rgba(0, 174, 255, 1) 0%, rgba(0, 82, 153, 1) 100%);
@@ -657,14 +658,14 @@
     overflow: hidden;
 }
 
-._routesWrapper_c7shs_14 {
+._routesWrapper_1b9dx_14 {
     flex: 1;
     overflow-y: auto;
 }
 
 
 /* ─── Wallet history ─────────────────────────────────────────────────────────── */
-._historyButton_c7shs_21 {
+._historyButton_1b9dx_21 {
     width: 28px;
     height: 28px;
     border-radius: 50%;
@@ -680,12 +681,12 @@
     padding: 0;
 }
 
-._historyButton_c7shs_21:hover {
+._historyButton_1b9dx_21:hover {
     background: rgba(255, 255, 255, 0.15);
     color: white;
 }
 
-._historyPanel_c7shs_42 {
+._historyPanel_1b9dx_42 {
     position: absolute;
     top: calc(100% + 10px);
     right: 0;
@@ -702,7 +703,7 @@
     z-index: 50;
 }
 
-._historyHeader_c7shs_59 {
+._historyHeader_1b9dx_59 {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -716,7 +717,7 @@
     flex-shrink: 0;
 }
 
-._historyClear_c7shs_73 {
+._historyClear_1b9dx_73 {
     background: none;
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 6px;
@@ -730,12 +731,12 @@
     letter-spacing: 0;
 }
 
-._historyClear_c7shs_73:hover {
+._historyClear_1b9dx_73:hover {
     border-color: rgba(255, 255, 255, 0.5);
     color: white;
 }
 
-._historyList_c7shs_92 {
+._historyList_1b9dx_92 {
     overflow-y: auto;
     flex: 1;
     padding: 8px;
@@ -744,7 +745,7 @@
     gap: 6px;
 }
 
-._historyEmpty_c7shs_101 {
+._historyEmpty_1b9dx_101 {
     padding: 20px;
     text-align: center;
     font-size: 12px;
@@ -752,7 +753,7 @@
     margin: 0;
 }
 
-._historyEntry_c7shs_109 {
+._historyEntry_1b9dx_109 {
     background: rgba(255, 255, 255, 0.07);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -762,24 +763,24 @@
     gap: 5px;
 }
 
-._historyEntryCurrent_c7shs_119 {
+._historyEntryCurrent_1b9dx_119 {
     border-color: rgba(255, 255, 255, 0.28);
     background: rgba(255, 255, 255, 0.12);
 }
 
-._historyEntryDate_c7shs_124 {
+._historyEntryDate_1b9dx_124 {
     font-size: 10px;
     color: rgba(255, 255, 255, 0.45);
     margin-bottom: 2px;
 }
 
-._historyEntryRow_c7shs_130 {
+._historyEntryRow_1b9dx_130 {
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-._historyEntryLabel_c7shs_136 {
+._historyEntryLabel_1b9dx_136 {
     font-size: 9px;
     font-weight: 700;
     text-transform: uppercase;
@@ -789,7 +790,7 @@
     flex-shrink: 0;
 }
 
-._historyEntryValue_c7shs_146 {
+._historyEntryValue_1b9dx_146 {
     font-size: 10px;
     font-family: 'Menlo', 'Courier New', monospace;
     color: rgba(255, 255, 255, 0.8);
@@ -800,7 +801,7 @@
     white-space: nowrap;
 }
 
-._content_c7shs_157 {
+._content_1b9dx_157 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -811,7 +812,7 @@
 }
 
 /* ─── Title ──────────────────────────────────────────────────────────────────── */
-._titleWrapper_c7shs_168 {
+._titleWrapper_1b9dx_168 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -822,14 +823,14 @@
     z-index: 1;
 }
 
-._titleMeltdown_c7shs_179 {
+._titleMeltdown_1b9dx_179 {
     display: block;
     width: 100%;
     height: auto;
 }
 
 /* ─── Glass card ─────────────────────────────────────────────────────────────── */
-._card_c7shs_186 {
+._card_1b9dx_186 {
     background: rgba(255, 255, 255, 0.18);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
@@ -844,7 +845,7 @@
 }
 
 /* ─── Confirm dialog ─────────────────────────────────────────────────────────── */
-._dialogOverlay_c7shs_201 {
+._dialogOverlay_1b9dx_201 {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
@@ -858,7 +859,7 @@
     box-sizing: border-box;
 }
 
-._dialog_c7shs_201 {
+._dialog_1b9dx_201 {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
     background: rgba(10, 18, 40, 0.97);
     backdrop-filter: blur(32px);
@@ -874,13 +875,13 @@
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
 }
 
-._dialogHeader_c7shs_231 {
+._dialogHeader_1b9dx_231 {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-._dialogIcon_c7shs_237 {
+._dialogIcon_1b9dx_237 {
     width: 30px;
     height: 30px;
     border-radius: 8px;
@@ -893,7 +894,7 @@
     color: rgb(251, 181, 60);
 }
 
-._dialogTitle_c7shs_250 {
+._dialogTitle_1b9dx_250 {
     margin: 0;
     font-size: 15px;
     font-weight: 600;
@@ -902,7 +903,7 @@
     line-height: 1.3;
 }
 
-._dialogBody_c7shs_259 {
+._dialogBody_1b9dx_259 {
     margin: 0;
     font-size: 13px;
     font-weight: 400;
@@ -911,14 +912,14 @@
     padding-left: 40px;
 }
 
-._dialogButtons_c7shs_268 {
+._dialogButtons_1b9dx_268 {
     display: flex;
     gap: 7px;
     justify-content: flex-end;
     padding-top: 6px;
 }
 
-._dialogCancel_c7shs_275 {
+._dialogCancel_1b9dx_275 {
     font-family: inherit;
     padding: 7px 15px;
     font-size: 13px;
@@ -931,13 +932,13 @@
     transition: all 0.15s;
 }
 
-._dialogCancel_c7shs_275:hover {
+._dialogCancel_1b9dx_275:hover {
     background: rgba(255, 255, 255, 0.12);
     border-color: rgba(255, 255, 255, 0.3);
     color: rgba(255, 255, 255, 0.85);
 }
 
-._dialogConfirm_c7shs_294 {
+._dialogConfirm_1b9dx_294 {
     font-family: inherit;
     padding: 7px 15px;
     font-size: 13px;
@@ -952,17 +953,17 @@
     box-shadow: 0 2px 10px rgba(217, 86, 106, 0.35);
 }
 
-._dialogConfirm_c7shs_294:hover {
+._dialogConfirm_1b9dx_294:hover {
     opacity: 0.88;
     transform: translateY(-1px);
 }
 
-._dialogConfirm_c7shs_294:active {
+._dialogConfirm_1b9dx_294:active {
     transform: translateY(0);
 }
 
 /* ─── Network selector ───────────────────────────────────────────────────────── */
-._networkSelector_c7shs_319 {
+._networkSelector_1b9dx_319 {
     display: flex;
     gap: 6px;
     justify-content: center;
@@ -972,7 +973,7 @@
     padding: 5px;
 }
 
-._networkButton_c7shs_329 {
+._networkButton_1b9dx_329 {
     flex: 1;
     padding: 6px 0;
     font-size: 12px;
@@ -986,30 +987,30 @@
     letter-spacing: 0.3px;
 }
 
-._networkButton_c7shs_329:hover {
+._networkButton_1b9dx_329:hover {
     color: white;
     background: rgba(255, 255, 255, 0.1);
 }
 
-._networkButtonActive_c7shs_348 {
+._networkButtonActive_1b9dx_348 {
     background: rgba(255, 255, 255, 0.22);
     color: white;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
 /* ─── Wallet details ─────────────────────────────────────────────────────────── */
-._walletSection_c7shs_355 {
+._walletSection_1b9dx_355 {
     position: relative;
 }
 
-._walletHistoryCard_c7shs_359 {
+._walletHistoryCard_1b9dx_359 {
     position: absolute;
     top: -6px;
     right: -6px;
     z-index: 10;
 }
 
-._walletDetails_c7shs_366 {
+._walletDetails_1b9dx_366 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1019,7 +1020,7 @@
     padding-top: 4px;
 }
 
-._detailLabel_c7shs_376 {
+._detailLabel_1b9dx_376 {
     font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
@@ -1027,20 +1028,20 @@
     color: rgba(255, 255, 255, 0.5);
 }
 
-._detailRow_c7shs_384 {
+._detailRow_1b9dx_384 {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
 }
 
-._detailValue_c7shs_391 {
+._detailValue_1b9dx_391 {
     color: rgba(255, 255, 255, 0.85);
     font-size: 11px;
     font-family: 'Menlo', 'Courier New', monospace;
 }
 
-._walletWarning_c7shs_397 {
+._walletWarning_1b9dx_397 {
     margin: 6px 0 0 0;
     padding: 6px 10px;
     font-size: 10px;
@@ -1052,7 +1053,7 @@
     border-radius: 8px;
 }
 
-._copyButton_c7shs_409 {
+._copyButton_1b9dx_409 {
     background: none;
     border: none;
     color: rgba(255, 255, 255, 0.45);
@@ -1064,12 +1065,12 @@
     transition: color 0.15s;
 }
 
-._copyButton_c7shs_409:hover {
+._copyButton_1b9dx_409:hover {
     color: white;
 }
 
 /* ─── Inner glass card ───────────────────────────────────────────────────────── */
-._innerCard_c7shs_426 {
+._innerCard_1b9dx_426 {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 14px;
@@ -1077,7 +1078,7 @@
     text-align: center;
 }
 
-._innerLabel_c7shs_434 {
+._innerLabel_1b9dx_434 {
     margin: 0 0 3px 0;
     font-size: 10px;
     font-weight: 700;
@@ -1086,7 +1087,7 @@
     color: rgba(255, 255, 255, 0.55);
 }
 
-._balanceAmount_c7shs_443 {
+._balanceAmount_1b9dx_443 {
     margin: 0;
     font-family: 'Menlo', 'Courier New', monospace;
     font-size: 26px;
@@ -1095,7 +1096,7 @@
 }
 
 /* ─── Buttons ────────────────────────────────────────────────────────────────── */
-._amountRow_c7shs_452 {
+._amountRow_1b9dx_452 {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -1103,7 +1104,7 @@
     gap: 6px;
 }
 
-@keyframes _slideToCenter_c7shs_1 {
+@keyframes _slideToCenter_1b9dx_1 {
     from {
         transform: translateX(144px);
     }
@@ -1112,11 +1113,11 @@
     }
 }
 
-._withdrawCentered_c7shs_469 {
-    animation: _slideToCenter_c7shs_1 0.4s cubic-bezier(0.25, 1, 0.5, 1) both;
+._withdrawCentered_1b9dx_469 {
+    animation: _slideToCenter_1b9dx_1 0.4s cubic-bezier(0.25, 1, 0.5, 1) both;
 }
 
-._amountButton_c7shs_473 {
+._amountButton_1b9dx_473 {
     font-size: 12px;
     font-weight: 600;
     padding: 5px 11px;
@@ -1128,18 +1129,18 @@
     transition: all 0.15s;
 }
 
-._amountButton_c7shs_473:hover:not(:disabled) {
+._amountButton_1b9dx_473:hover:not(:disabled) {
     background: rgba(255, 255, 255, 0.28);
     border-color: rgba(255, 255, 255, 0.8);
 }
 
-._amountButton_c7shs_473:disabled {
+._amountButton_1b9dx_473:disabled {
     opacity: 0.4;
     cursor: not-allowed;
 }
 
 
-._buttonRow_c7shs_496 {
+._buttonRow_1b9dx_496 {
     display: flex;
     gap: 8px;
     justify-content: center;
@@ -1147,14 +1148,14 @@
 }
 
 
-._depositHint_c7shs_504 {
+._depositHint_1b9dx_504 {
     margin: 5px 0 0 0;
     font-size: 11px;
     color: rgba(255, 255, 255, 0.45);
     text-align: center;
 }
 
-._outlineButton_c7shs_511 {
+._outlineButton_1b9dx_511 {
     font-size: 14px;
     padding: 7px 18px;
     font-weight: 600;
@@ -1166,16 +1167,16 @@
     transition: background 0.15s;
 }
 
-._outlineButton_c7shs_511:hover:not(:disabled) {
+._outlineButton_1b9dx_511:hover:not(:disabled) {
     background: rgba(255, 255, 255, 0.15);
 }
 
-._outlineButton_c7shs_511:disabled {
+._outlineButton_1b9dx_511:disabled {
     opacity: 0.4;
     cursor: not-allowed;
 }
 
-._pinkOutlineButton_c7shs_532 {
+._pinkOutlineButton_1b9dx_532 {
     font-size: 14px;
     padding: 7px 18px;
     font-weight: 600;
@@ -1187,17 +1188,17 @@
     transition: background 0.15s;
 }
 
-._pinkOutlineButton_c7shs_532:hover:not(:disabled) {
+._pinkOutlineButton_1b9dx_532:hover:not(:disabled) {
     background: rgba(255, 255, 255, 1);
 }
 
-._pinkOutlineButton_c7shs_532:disabled {
+._pinkOutlineButton_1b9dx_532:disabled {
     opacity: 0.4;
     cursor: not-allowed;
 }
 
 /* ─── Status badge ───────────────────────────────────────────────────────────── */
-._statusBadge_c7shs_554 {
+._statusBadge_1b9dx_554 {
     padding: 10px 14px;
     border-radius: 12px;
     font-size: 13px;
@@ -1207,38 +1208,38 @@
     -webkit-backdrop-filter: blur(12px);
 }
 
-._severity_success_c7shs_564 {
+._severity_success_1b9dx_564 {
     background: rgba(22, 182, 80, 0.42);
     border: 1px solid rgba(74, 222, 128, 0.45);
     color: white;
 }
 
-._severity_error_c7shs_570 {
+._severity_error_1b9dx_570 {
     background: rgba(230, 34, 34, 0.484);
     border: 1px solid rgba(248, 113, 113, 0.45);
     color: white;
 }
 
-._severity_warning_c7shs_576 {
+._severity_warning_1b9dx_576 {
     background: rgba(225, 117, 21, 0.407);
     border: 1px solid rgba(251, 146, 60, 0.45);
     color: white;
 }
 
-._severity_info_c7shs_582 {
+._severity_info_1b9dx_582 {
     background: rgba(29, 78, 216, 0.3);
     border: 1px solid rgba(147, 197, 253, 0.50);
     color: white;
 }
 
-._severity_yellow_c7shs_588 {
+._severity_yellow_1b9dx_588 {
     background: rgba(255, 151, 6, 0.3);
     border: 1px solid rgba(250, 204, 21, 0.45);
     color: white;
 }
 
 /* ─── Blast button ───────────────────────────────────────────────────────────── */
-@keyframes _blastPulse_c7shs_1 {
+@keyframes _blastPulse_1b9dx_1 {
     0%, 100% {
         box-shadow: 0 4px 24px rgba(217, 86, 106, 0.5);
     }
@@ -1249,7 +1250,7 @@
 }
 
 
-._actionContainer_c7shs_606 {
+._actionContainer_1b9dx_606 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1257,7 +1258,7 @@
     margin: 8px 0;
 }
 
-._lockButton_c7shs_614 {
+._lockButton_1b9dx_614 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1272,24 +1273,24 @@
     flex-shrink: 0;
 }
 
-._lockButton_c7shs_614:hover {
+._lockButton_1b9dx_614:hover {
     background: rgba(255, 255, 255, 0.22);
     color: white;
     border-color: rgba(255, 255, 255, 0.6);
 }
 
-._lockButtonActive_c7shs_635 {
+._lockButtonActive_1b9dx_635 {
     background: rgba(255, 255, 255, 0.22);
     border-color: rgba(255, 255, 255, 0.8);
     color: white;
 }
 
-._lockButtonActive_c7shs_635:hover {
+._lockButtonActive_1b9dx_635:hover {
     background: rgba(255, 255, 255, 0.32);
     color: white;
 }
 
-._spamButton_c7shs_646 {
+._spamButton_1b9dx_646 {
     user-select: none;
     -webkit-user-select: none;
     flex: 1;
@@ -1305,7 +1306,7 @@
     overflow: hidden;
 }
 
-@keyframes _shine_c7shs_1 {
+@keyframes _shine_1b9dx_1 {
     0% {
         transform: translateX(-100%) skewX(-20deg);
     }
@@ -1315,8 +1316,8 @@
     }
 }
 
-._spamButtonReady_c7shs_672::after,
-._spamButtonActive_c7shs_673::after {
+._spamButtonReady_1b9dx_672::after,
+._spamButtonActive_1b9dx_673::after {
     content: '';
     position: absolute;
     top: 0;
@@ -1324,27 +1325,27 @@
     width: 35%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    animation: _shine_c7shs_1 2.2s ease-in-out infinite;
+    animation: _shine_1b9dx_1 2.2s ease-in-out infinite;
 }
 
-._spamButtonReady_c7shs_672 {
+._spamButtonReady_1b9dx_672 {
     background: linear-gradient(135deg, #f485a8, #d9566a);
     color: white;
     box-shadow: 0 4px 20px rgba(217, 86, 106, 0.45);
     transition: box-shadow 0.15s;
 }
 
-._spamButtonReady_c7shs_672:hover {
+._spamButtonReady_1b9dx_672:hover {
     box-shadow: 0 4px 30px rgba(217, 86, 106, 0.65);
 }
 
-._spamButtonActive_c7shs_673 {
+._spamButtonActive_1b9dx_673 {
     background: linear-gradient(135deg, #f485a8, #c44058);
     color: white;
-    animation: _blastPulse_c7shs_1 1.4s ease-in-out infinite;
+    animation: _blastPulse_1b9dx_1 1.4s ease-in-out infinite;
 }
 
-._spamButtonDisabled_c7shs_701 {
+._spamButtonDisabled_1b9dx_701 {
     background: rgba(255, 255, 255, 0.18);
     color: rgba(255, 255, 255, 0.4);
     cursor: not-allowed;
@@ -1352,7 +1353,7 @@
 }
 
 /* ─── Stats row ──────────────────────────────────────────────────────────────── */
-._statsRow_c7shs_709 {
+._statsRow_1b9dx_709 {
     display: flex;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1360,18 +1361,18 @@
     overflow: hidden;
 }
 
-._statCell_c7shs_717 {
+._statCell_1b9dx_717 {
     flex: 1;
     padding: 10px 6px;
     text-align: center;
     border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-._statCell_c7shs_717:last-child {
+._statCell_1b9dx_717:last-child {
     border-right: none;
 }
 
-._statLabel_c7shs_728 {
+._statLabel_1b9dx_728 {
     margin: 0 0 2px 0;
     font-size: 9px;
     font-weight: 700;
@@ -1380,7 +1381,7 @@
     color: rgba(255, 255, 255, 0.55);
 }
 
-._statValue_c7shs_737 {
+._statValue_1b9dx_737 {
     margin: 0;
     font-size: 20px;
     font-weight: 700;
@@ -1388,22 +1389,22 @@
     color: white;
 }
 
-/* ── Creamies Kiosk look: darker blue sky, softer glass, dark-blue inner fields, pink active pill ── */
-._container_c7shs_2 { background: linear-gradient(180deg, #13519b, #2f9ff0); background-attachment: fixed; }
-._card_c7shs_186 { background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .26); border-radius: 18px; box-shadow: 0 10px 30px rgba(4, 30, 70, .22); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
-._networkSelector_c7shs_319 { padding: 4px; gap: 2px; border-radius: 999px; background: rgba(8, 40, 82, .22); border: 1px solid rgba(255, 255, 255, .16); box-shadow: inset 0 1px 2px rgba(0, 0, 0, .15); }
-._networkButton_c7shs_329 { border-radius: 999px; color: rgba(255, 255, 255, .78); font-weight: 600; }
-._networkButton_c7shs_329:hover { background: rgba(255, 255, 255, .08); }
-._networkButtonActive_c7shs_348, ._networkButtonActive_c7shs_348:hover { background: #ec6f9d; color: #fff; box-shadow: 0 2px 8px rgba(200, 61, 108, .35); }
-._innerCard_c7shs_426, ._statsRow_c7shs_709 { background: rgba(8, 40, 82, .18); border: 1px solid rgba(255, 255, 255, .18); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08); }
-._amountButton_c7shs_473 { border: 1px solid rgba(255, 255, 255, .45); background: rgba(255, 255, 255, .14); }
-._amountButton_c7shs_473:hover:not(:disabled) { background: rgba(255, 255, 255, .22); }
-._historyPanel_c7shs_42, ._dialog_c7shs_201 { background: #1a5fae; border: 1px solid rgba(255, 255, 255, .45); box-shadow: 0 14px 36px rgba(2, 20, 50, .45); }
-._dialogOverlay_c7shs_201 { background: rgba(6, 34, 70, .62); }
+/* ── Creamies Kiosk look (inner fields and network slider a bit lighter than the Kiosk): blue sky, softer glass, dark-blue inner fields, pink active pill ── */
+._container_1b9dx_2 { background: linear-gradient(180deg, #13519b, #2f9ff0); background-attachment: fixed; }
+._card_1b9dx_186 { background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .26); border-radius: 18px; box-shadow: 0 10px 30px rgba(4, 30, 70, .22); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+._networkSelector_1b9dx_319 { padding: 4px; gap: 2px; border-radius: 999px; background: rgba(8, 40, 82, .08); border: 1px solid rgba(255, 255, 255, .16); box-shadow: inset 0 1px 2px rgba(0, 0, 0, .15); }
+._networkButton_1b9dx_329 { border-radius: 999px; color: rgba(255, 255, 255, .78); font-weight: 600; }
+._networkButton_1b9dx_329:hover { background: rgba(255, 255, 255, .08); }
+._networkButtonActive_1b9dx_348, ._networkButtonActive_1b9dx_348:hover { background: #ec6f9d; color: #fff; box-shadow: 0 2px 8px rgba(200, 61, 108, .35); }
+._innerCard_1b9dx_426, ._statsRow_1b9dx_709 { background: rgba(8, 40, 82, .08); border: 1px solid rgba(255, 255, 255, .18); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08); }
+._amountButton_1b9dx_473 { border: 1px solid rgba(255, 255, 255, .45); background: rgba(255, 255, 255, .14); }
+._amountButton_1b9dx_473:hover:not(:disabled) { background: rgba(255, 255, 255, .22); }
+._historyPanel_1b9dx_42, ._dialog_1b9dx_201 { background: #1a5fae; border: 1px solid rgba(255, 255, 255, .45); box-shadow: 0 14px 36px rgba(2, 20, 50, .45); }
+._dialogOverlay_1b9dx_201 { background: rgba(6, 34, 70, .62); }
 
-._networkButton_c7shs_329:disabled, ._networkButton_c7shs_329:disabled:hover { opacity: .4; cursor: not-allowed; background: transparent; }
+._networkButton_1b9dx_329:disabled, ._networkButton_1b9dx_329:disabled:hover { opacity: .4; cursor: not-allowed; background: transparent; }
 
 /* Keep the last content clear of the floating footer */
-._routesWrapper_c7shs_14 {
+._routesWrapper_1b9dx_14 {
     padding-bottom: 56px;
 }
