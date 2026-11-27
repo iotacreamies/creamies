@@ -7,12 +7,12 @@
 .cr-footer a:focus-visible { outline: none; }
 .cr-footer { align-items: center; overflow-x: clip; } /* the IOTA logo's empty SVG margin must not widen the page */
 .cr-powered { position: absolute; right: 24px; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; gap: 0; color: #fff; opacity: .55; font-size: 12px; white-space: nowrap; } /* far right; text and logo a bit see-through; links stay centred */
-@media (max-width: 560px) { /* no room for centred links + right block: links left, "powered by" right */
+@media (max-width: 560px) { /* no room for centred links + right block: links left, "operating on" right */
   .cr-footer:has(.cr-powered) { justify-content: flex-start; }
   .cr-powered { position: static; transform: none; margin-left: auto; }
   .cr-powered-text { display: none; } /* phones: just the IOTA logo */
 }
-.cr-powered { opacity: 1; } /* "powered by" and the IOTA logo always fully white */
+.cr-powered { opacity: 1; } /* "operating on" and the IOTA logo always fully white */
 .cr-powered img { display: block; height: 40px; width: auto; margin: -11px -12px -11px -5px; } /* the SVG has wide empty margins left and right */
 
 /* Imprint and privacy pages: one frosted card, text left aligned for easy reading */
