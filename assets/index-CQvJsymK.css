@@ -1,4 +1,4 @@
-/* Shared by the Creamies pages (Home, Kiosk, Validator, Meltdown) – used by all Creamies web apps through a symlink src/shared in each app. */
+/* Shared by the Creamies pages (Home, Kiosk, Validator, Meltdown) – used by all Creamies web apps through the import alias @shared (see vite.config). */
 
 /* Footer */
 .cr-footer { display: flex; justify-content: center; gap: 4px; padding: 10px 16px; border-top: 1px solid rgba(255, 255, 255, .26); background: rgba(19, 81, 155, .22); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; }
@@ -15,22 +15,42 @@
 .cr-powered { opacity: 1; } /* "powered by" and the IOTA logo always fully white */
 .cr-powered img { display: block; height: 40px; width: auto; margin: -11px -12px -11px -5px; } /* the SVG has wide empty margins left and right */
 
-/* Imprint and privacy pages */
-.cr-legal { position: relative; box-sizing: border-box; width: 100%; padding: 64px 24px 40px; color: #fff; text-align: center; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; line-height: 1.55; }
-/* Imprint: text centred vertically, close button at the same spot as on the privacy page */
-.cr-legal.cr-imprint .cr-legal-inner { display: flex; flex-direction: column; justify-content: center; min-height: calc(70vh - 64px); }
-.cr-legal-inner { max-width: 760px; margin: 0 auto; }
-.cr-legal h2 { margin: 0 0 22px; font-size: 26px; }
-.cr-legal p { margin: 0 0 16px; }
-.cr-legal b { display: inline-block; margin-bottom: 4px; padding: 3px 10px; border-radius: 20px; background: rgba(255, 255, 255, .22); }
-.cr-legal section { margin-top: 30px; }
-.cr-legal section.cr-sub { margin-top: 22px; }
-.cr-legal .cr-heading { display: inline-block; margin-bottom: 12px; padding: 4px 12px; border-radius: 20px; background: rgba(255, 255, 255, .22); font-weight: 700; }
-.cr-legal .cr-sub .cr-heading { background: rgba(255, 255, 255, .14); font-weight: 600; }
-.cr-legal-note { opacity: .75; font-size: 14px; }
-/* Close button stays in view while the text scrolls (pages can move it below a fixed header via --cr-close-top) */
-.cr-legal-close { position: sticky; top: var(--cr-close-top, 16px); z-index: 2; margin: -48px 0 8px -8px; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; color: #fff; text-decoration: none; font-size: 16px; background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .3); }
+/* Imprint and privacy pages: one frosted card, text left aligned for easy reading */
+.cr-legal { box-sizing: border-box; width: 100%; padding: 32px 20px 48px; color: #fff; text-align: left; font-family: ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height: 1.65; }
+.cr-legal *, .cr-legal *::before, .cr-legal *::after { box-sizing: border-box; }
+.cr-legal.cr-imprint { display: flex; flex-direction: column; justify-content: center; min-height: 70vh; }
+.cr-legal-card { width: 100%; max-width: 680px; margin: 0 auto; padding: 26px 32px 30px; border-radius: 22px; background: linear-gradient(180deg, rgba(255, 255, 255, .17), rgba(255, 255, 255, .09)); border: 1px solid rgba(255, 255, 255, .28); box-shadow: 0 24px 60px rgba(6, 32, 72, .28), inset 0 1px 0 rgba(255, 255, 255, .22); }
+.cr-imprint .cr-legal-card { max-width: 420px; }
+.cr-legal-head { margin-bottom: 20px; padding-right: 48px; }
+.cr-legal h2 { margin: 0; font-size: 21px; line-height: 1.3; font-weight: 700; overflow-wrap: anywhere; hyphens: auto; color: #fff; }
+.cr-legal p.cr-legal-note { margin: 4px 0 0; font-size: 12.5px; color: rgba(255, 255, 255, .75); }
+.cr-legal p { margin: 0 0 11px; font-size: 13.5px; color: rgba(255, 255, 255, .9); overflow-wrap: break-word; }
+.cr-legal section { margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, .18); }
+.cr-legal section:first-of-type { margin-top: 0; padding-top: 0; border-top: 0; }
+.cr-legal section > :last-child { margin-bottom: 0; }
+.cr-legal .cr-heading { display: flex; align-items: flex-start; gap: 10px; margin: 0 0 10px; font-size: 15px; line-height: 1.35; font-weight: 700; color: #fff; }
+.cr-num { flex: none; display: grid; place-items: center; min-width: 22px; height: 22px; margin-top: -1px; padding: 0 6px; border-radius: 999px; background: #e870a3; color: #fff; font-size: 11.5px; font-weight: 800; font-variant-numeric: tabular-nums; }
+/* sub sections (3.1, 3.2 …) sit indented in their own panels */
+.cr-legal section.cr-sub { margin-top: 12px; padding: 14px 16px; border: 1px solid rgba(255, 255, 255, .16); border-radius: 14px; background: rgba(10, 52, 110, .2); }
+.cr-legal .cr-sub .cr-heading { font-size: 14px; }
+.cr-legal .cr-label { display: block; margin-bottom: 1px; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #ffbcdc; }
+.cr-legal p.cr-box { padding: 10px 14px; border-radius: 10px; background: rgba(255, 255, 255, .1); border-left: 3px solid #ffbcdc; line-height: 1.55; }
+/* Imprint: one row per fact */
+.cr-facts { display: grid; grid-template-columns: 1fr; gap: 8px; margin: 0; }
+.cr-facts > div { padding: 10px 14px; border-radius: 12px; background: rgba(255, 255, 255, .1); border: 1px solid rgba(255, 255, 255, .16); }
+.cr-facts dt { margin-bottom: 1px; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #ffbcdc; }
+.cr-facts dd { margin: 0; font-weight: 400; font-size: 14px; overflow-wrap: anywhere; }
+.cr-facts a { color: #fff; text-underline-offset: 3px; }
+/* Close button: top right of the card, stays in view while scrolling (pages can move it below a fixed header via --cr-close-top) */
+.cr-legal-close { float: right; position: sticky; top: var(--cr-close-top, 16px); z-index: 2; display: grid; place-items: center; width: 34px; height: 34px; margin: -4px -10px 0 12px; border-radius: 50%; color: #fff; text-decoration: none; font-size: 14px; background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
 .cr-legal-close:hover { background: rgba(255, 255, 255, .26); }
+.cr-legal-close:focus-visible, .cr-facts a:focus-visible { outline: 2px solid #ffbcdc; outline-offset: 2px; }
+@media (max-width: 600px) {
+  .cr-legal { padding: 16px 12px 32px; }
+  .cr-legal-card { padding: 20px 16px 22px; border-radius: 18px; }
+  .cr-legal section.cr-sub { padding: 16px 14px; }
+  .cr-legal-close { margin-right: -4px; }
+}
 
 /* Language switch: round flag button with a small menu */
 .cr-lang { position: relative; }
