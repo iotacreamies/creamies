@@ -87,6 +87,15 @@
 @media (max-width: 420px) {
   .cr-brand:has(.cr-home) span:not(.cr-solo) { display: none; } /* only when the start-page button needs the room */
 }
+
+/* Connect Wallet button (ConnectWallet.tsx): wallet symbol + text; on phones only "Connect" */
+.cr-connect { display: inline-flex; align-items: center; gap: 8px; }
+.cr-wallet-icon { flex: none; }
+.cr-connect-short { display: none; }
+@media (max-width: 640px) {
+  .cr-connect-full { display: none; }
+  .cr-connect-short { display: inline; }
+}
 /* Creamies start page – same blue sky and pink candy as the Kiosk. */
 :root {
   --sky-top: #13519b; --sky-bot: #2f9ff0;
@@ -126,6 +135,7 @@ a.app:hover { transform: translateY(-3px); background: var(--panel-hover); box-s
 .app-logo-cream { height: 1.93em; transform: translateY(.07em); } /* the drips pull the logo down optically, so it sits a little higher than the word */
 .app-logo-meltdown { height: 2.1em; transform: translateY(.11em); } /* same letter height as CREAM */
 .app-logo-pewpew { height: 2.3em; transform: translateY(.2em); }
+.app-logo-kiosk { height: 1.93em; transform: translateY(.07em); }
 .app-text p { margin: 0; color: var(--muted); font-size: clamp(13px, 1.25vw, 16px); max-width: 40ch; }
 .app-soon { position: absolute; top: 14px; right: 14px; z-index: 1; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; color: var(--muted); background: rgba(8, 40, 82, .32); border: 1px solid rgba(255, 255, 255, .16); }
 
@@ -143,6 +153,7 @@ a.app:hover { transform: translateY(-3px); background: var(--panel-hover); box-s
   .app-text h2 { font-size: 18px; }
   .app-text p { font-size: 14px; line-height: 1.35; }
   a.app:hover { transform: none; }
+  .app-art .v-badge { transform-origin: 100px 172px; transform: translateY(-4px) scale(1.45); } /* MAINNET badge was too small to read on phones */
 }
 /* Animated tile scenes (Art.tsx). Elements rotate/scale around points in the 200×200 view box;
    ".fb" elements scale around their own centre instead. Slow, eased motion throughout. */

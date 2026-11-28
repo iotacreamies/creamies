@@ -27657,6 +27657,15 @@
 @media (max-width: 420px) {
   .cr-brand:has(.cr-home) span:not(.cr-solo) { display: none; } /* only when the start-page button needs the room */
 }
+
+/* Connect Wallet button (ConnectWallet.tsx): wallet symbol + text; on phones only "Connect" */
+.cr-connect { display: inline-flex; align-items: center; gap: 8px; }
+.cr-wallet-icon { flex: none; }
+.cr-connect-short { display: none; }
+@media (max-width: 640px) {
+  .cr-connect-full { display: none; }
+  .cr-connect-short { display: inline; }
+}
 /* The page itself scrolls (no inner scroll box): touch scrolling works in iOS Safari too */
 html { background: #2f9ff0; } /* overscroll at the bottom shows the page colour */
 .app-container {

@@ -591,6 +591,15 @@
 @media (max-width: 420px) {
   .cr-brand:has(.cr-home) span:not(.cr-solo) { display: none; } /* only when the start-page button needs the room */
 }
+
+/* Connect Wallet button (ConnectWallet.tsx): wallet symbol + text; on phones only "Connect" */
+.cr-connect { display: inline-flex; align-items: center; gap: 8px; }
+.cr-wallet-icon { flex: none; }
+.cr-connect-short { display: none; }
+@media (max-width: 640px) {
+  .cr-connect-full { display: none; }
+  .cr-connect-short { display: inline; }
+}
 /* Blue sky and pink candy, the colours of the Ice Arena game and the Creamies web pages.
    Layout: banner, header (title, tabs, wallet), stats, switch, filters, grid. Keep it that way. */
 :root {
@@ -619,10 +628,14 @@ header {
 }
 h1 { font-size: 21px; margin: 0; letter-spacing: -.01em; color: var(--pink); white-space: nowrap; }
 .brand { display: flex; align-items: center; gap: 14px; }
-.brand img { height: 38px; width: auto; display: block; filter: drop-shadow(0 4px 10px rgba(10, 40, 90, .35)); }
+.brand img { height: 38px; width: auto; display: block; filter: drop-shadow(0 2px 4px rgba(10, 40, 90, .22)); }
 .brand { --logo-h: 48px; }
 .brand img { height: var(--logo-h) !important; position: relative; top: calc(var(--logo-h) * .134); }
 .brand span { line-height: 1.1; padding-left: 14px; border-left: 1px solid var(--line-strong); font-size: 13px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #fff; }
+/* CREAMIES | KIOSK-logo: the word comes first, the divider sits after it */
+.brand-first span { padding-left: 0; border-left: 0; padding-right: 14px; border-right: 1px solid var(--line-strong); }
+.brand-first { --logo-h: 40px; }
+.brand-first img { top: calc(var(--logo-h) * .08); } /* a touch higher: the drips pull the logo down optically */
 /* Menu: a rounded glass track, the active tab is a candy-pink pill inside it */
 nav { display: flex; gap: 2px; margin-right: auto; padding: 4px; border-radius: 999px; background: rgba(8, 40, 82, .32); border: 1px solid rgba(255, 255, 255, .16); box-shadow: inset 0 1px 2px rgba(0, 0, 0, .15); }
 nav button { border: 0; border-radius: 999px; background: transparent; padding: 8px 20px; cursor: pointer; color: var(--muted); font-weight: 600; letter-spacing: .01em; white-space: nowrap; transition: color .15s, background .15s, box-shadow .15s; }
@@ -650,11 +663,19 @@ header .header-actions { grid-area: actions; justify-self: end; }
 nav.tabs { align-self: center; width: max-content; max-width: calc(100% - 32px); box-sizing: border-box; margin: 20px auto 0;
   /* stays in view below the sticky header while the page scrolls; glass so cards behind stay readable */
   position: sticky; top: calc(var(--header-h, 72px) + 10px); z-index: 4; background: rgba(19, 81, 155, .72); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2); box-shadow: 0 6px 18px rgba(4, 30, 70, .25); }
-/* Narrow: wallet and language get their own centred row */
+/* Phones: one row – start button, KIOSK logo (without "Creamies"), Connect + language */
 @media (max-width: 640px) {
-  header { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); grid-template-areas: "start brand ." "actions actions actions"; }
-  header .header-actions { justify-self: center; }
+  header { grid-template-columns: auto 1fr auto; grid-template-areas: "start brand actions"; gap: 10px; }
+  header .header-actions { gap: 8px; }
+  .brand-first span { display: none; }
   .cr-lang-menu { left: auto; right: 0; }
+}
+/* Very narrow phones (e.g. 320 px): tighter spacing so the row still fits */
+@media (max-width: 360px) {
+  header { padding-left: 10px !important; padding-right: 10px !important; gap: 6px; }
+  header .header-actions { gap: 6px; }
+  header button[data-dapp-kit] { padding: 0 11px !important; }
+  .brand-first { --logo-h: 27px; }
 }
 
 /* Page fills at least the screen, so the footer sits at the bottom on short pages too */
@@ -847,13 +868,15 @@ dd { margin: 0; font-weight: 700; }
   .filter-select { padding-right: 12px; } /* only the field itself, not its wrapper (it made the field 12 px short) */
   .field-chip { padding: 0 8px; font-size: 10px; }
   .search, .search input { width: 100%; grid-column: 1 / -1; }
-  header { padding: 10px 16px; position: static; }
+  header { padding: 10px 16px; } /* stays at the top on phones too */
   main { padding: 18px 16px 48px; }
-  nav.tabs { width: calc(100% - 32px); margin-top: 16px; top: 8px; } /* header scrolls away on phones, the menu stays */
+  nav.tabs { width: calc(100% - 32px); margin-top: 16px; top: calc(var(--header-h, 110px) + 8px); } /* menu stays just below the header */
   nav.tabs button { flex: 1; padding: 8px 6px; }
   .brand { --logo-h: 36px; }
   .brand { gap: 11px; }
   .brand span { padding-left: 11px; font-size: 11px; letter-spacing: .16em; }
+  .brand-first span { padding-left: 0; padding-right: 11px; }
+  .brand-first { --logo-h: 31px; }
   .stats > span { font-size: 13px; }
   .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .card > span { padding: 0 10px; }
