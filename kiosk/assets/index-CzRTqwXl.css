@@ -573,7 +573,7 @@
 .cr-home:focus-visible { outline: 2px solid #fcc5e5; outline-offset: 2px; }
 
 /* Header bar (Validator, Meltdown) – same look as the Kiosk header */
-.cr-header { position: relative; z-index: 20; flex: none; box-sizing: border-box; width: 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; padding: 12px max(24px, calc((100% - 1180px) / 2 + 24px)); background: rgba(19, 81, 155, .72); border-bottom: 1px solid rgba(255, 255, 255, .26); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2); font-family: ui-rounded, "SF Pro Rounded", system-ui, sans-serif; }
+.cr-header { position: sticky; top: 0; z-index: 20; flex: none; box-sizing: border-box; width: 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; padding: 12px max(24px, calc((100% - 1180px) / 2 + 24px)); background: rgba(19, 81, 155, .72); border-bottom: 1px solid rgba(255, 255, 255, .26); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2); font-family: ui-rounded, "SF Pro Rounded", system-ui, sans-serif; }
 .cr-brand { display: flex; align-items: center; gap: 14px; margin: 0; --logo-h: 48px; }
 .cr-brand img { display: block; width: auto; height: var(--logo-h); position: relative; top: calc(var(--logo-h) * .134); filter: drop-shadow(0 2px 4px rgba(10, 40, 90, .22)); } /* small soft shadow, like the logos on the start page */
 .cr-brand span { line-height: 1.1; padding-left: 14px; border-left: 1px solid rgba(255, 255, 255, .45); font-size: 13px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #fff; white-space: nowrap; }
