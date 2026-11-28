@@ -29,22 +29,22 @@
 .cr-legal section:first-of-type { margin-top: 0; padding-top: 0; border-top: 0; }
 .cr-legal section > :last-child { margin-bottom: 0; }
 .cr-legal .cr-heading { display: flex; align-items: flex-start; gap: 10px; margin: 0 0 10px; font-size: 15px; line-height: 1.35; font-weight: 700; color: #fff; }
-.cr-num { flex: none; display: grid; place-items: center; min-width: 22px; height: 22px; margin-top: -1px; padding: 0 6px; border-radius: 999px; background: #e870a3; color: #fff; font-size: 11.5px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.cr-num { flex: none; display: grid; place-items: center; min-width: 22px; height: 22px; margin-top: -1px; padding: 0 6px; border-radius: 999px; background: #e375b5; color: #fff; font-size: 11.5px; font-weight: 800; font-variant-numeric: tabular-nums; }
 /* sub sections (3.1, 3.2 …) sit indented in their own panels */
 .cr-legal section.cr-sub { margin-top: 12px; padding: 14px 16px; border: 1px solid rgba(255, 255, 255, .16); border-radius: 14px; background: rgba(10, 52, 110, .2); }
 .cr-legal .cr-sub .cr-heading { font-size: 14px; }
-.cr-legal .cr-label { display: block; margin-bottom: 1px; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #ffbcdc; }
-.cr-legal p.cr-box { padding: 10px 14px; border-radius: 10px; background: rgba(255, 255, 255, .1); border-left: 3px solid #ffbcdc; line-height: 1.55; }
+.cr-legal .cr-label { display: block; margin-bottom: 1px; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #fcbfe3; }
+.cr-legal p.cr-box { padding: 10px 14px; border-radius: 10px; background: rgba(255, 255, 255, .1); border-left: 3px solid #fcbfe3; line-height: 1.55; }
 /* Imprint: one row per fact */
 .cr-facts { display: grid; grid-template-columns: 1fr; gap: 8px; margin: 0; }
 .cr-facts > div { padding: 10px 14px; border-radius: 12px; background: rgba(255, 255, 255, .1); border: 1px solid rgba(255, 255, 255, .16); }
-.cr-facts dt { margin-bottom: 1px; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #ffbcdc; }
+.cr-facts dt { margin-bottom: 1px; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #fcbfe3; }
 .cr-facts dd { margin: 0; font-weight: 400; font-size: 14px; overflow-wrap: anywhere; }
 .cr-facts a { color: #fff; text-underline-offset: 3px; }
 /* Close button: top right of the card, stays in view while scrolling (pages can move it below a fixed header via --cr-close-top) */
 .cr-legal-close { float: right; position: sticky; top: var(--cr-close-top, 16px); z-index: 2; display: grid; place-items: center; width: 34px; height: 34px; margin: -4px -10px 0 12px; border-radius: 50%; color: #fff; text-decoration: none; font-size: 14px; background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
 .cr-legal-close:hover { background: rgba(255, 255, 255, .26); }
-.cr-legal-close:focus-visible, .cr-facts a:focus-visible { outline: 2px solid #ffbcdc; outline-offset: 2px; }
+.cr-legal-close:focus-visible, .cr-facts a:focus-visible { outline: 2px solid #fcbfe3; outline-offset: 2px; }
 @media (max-width: 600px) {
   .cr-legal { padding: 16px 12px 32px; }
   .cr-legal-card { padding: 20px 16px 22px; border-radius: 18px; }
@@ -66,12 +66,12 @@
 /* Button back to the start page: same round glass as the language button */
 .cr-home { display: grid; place-items: center; flex: none; box-sizing: border-box; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .45); background: rgba(255, 255, 255, .14); color: #fff; text-decoration: none; transition: background .15s; }
 .cr-home:hover { background: rgba(255, 255, 255, .22); }
-.cr-home:focus-visible { outline: 2px solid #ffc2d6; outline-offset: 2px; }
+.cr-home:focus-visible { outline: 2px solid #fcc5e5; outline-offset: 2px; }
 
 /* Header bar (Validator, Meltdown) – same look as the Kiosk header */
 .cr-header { position: relative; z-index: 20; flex: none; box-sizing: border-box; width: 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; padding: 12px max(24px, calc((100% - 1180px) / 2 + 24px)); background: rgba(19, 81, 155, .72); border-bottom: 1px solid rgba(255, 255, 255, .26); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2); font-family: ui-rounded, "SF Pro Rounded", system-ui, sans-serif; }
 .cr-brand { display: flex; align-items: center; gap: 14px; margin: 0; --logo-h: 48px; }
-.cr-brand img { display: block; width: auto; height: var(--logo-h); position: relative; top: calc(var(--logo-h) * .134); filter: drop-shadow(0 4px 10px rgba(10, 40, 90, .35)); }
+.cr-brand img { display: block; width: auto; height: var(--logo-h); position: relative; top: calc(var(--logo-h) * .134); filter: drop-shadow(0 2px 4px rgba(10, 40, 90, .22)); } /* small soft shadow, like the logos on the start page */
 .cr-brand span { line-height: 1.1; padding-left: 14px; border-left: 1px solid rgba(255, 255, 255, .45); font-size: 13px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #fff; white-space: nowrap; }
 .cr-brand span.cr-solo { padding-left: 0; border-left: 0; } /* app name alone, without logo */
 .cr-header-actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }
@@ -91,7 +91,7 @@
 :root {
   --sky-top: #13519b; --sky-bot: #2f9ff0;
   --panel: rgba(255, 255, 255, .14); --panel-hover: rgba(255, 255, 255, .2); --line: rgba(255, 255, 255, .26);
-  --muted: rgba(255, 255, 255, .78); --pink: #ffc2d6; --pill: #ec6f9d;
+  --muted: rgba(255, 255, 255, .78); --pink: #fcc5e5; --pill: #e675b7;
 }
 html { background: var(--sky-bot); }
 * { box-sizing: border-box; }
@@ -115,16 +115,17 @@ a:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; }
 a.app:hover { transform: translateY(-3px); background: var(--panel-hover); box-shadow: 0 16px 36px rgba(4, 30, 70, .3); }
 .app-art { position: relative; flex: 1; min-height: 0; }
 .app-art .art { position: absolute; inset: 4% 0 0; width: 100%; height: 96%; background: radial-gradient(circle closest-side, rgba(255, 255, 255, .26), rgba(255, 255, 255, 0)); } /* square scene, centred in whatever space is left; the glow fades out fully inside the box */
-.app-text { flex: none; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 20px 20px; }
+.app-text { flex: none; display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 6px 20px 20px; }
 .app-text h2 { margin: 0; font-size: clamp(17px, 2.2vw, 26px); line-height: 1.15; letter-spacing: -.015em; }
 /* Titles: logo + word side by side; the logos' drips hang below, so they sit a little low */
-.app-text h2 { display: flex; align-items: center; justify-content: center; gap: .5em; flex-wrap: wrap; }
+.app-text h2 { display: flex; align-items: center; justify-content: center; gap: .5em; flex-wrap: wrap; height: 2.6em; } /* same height in every tile, so the titles of tiles side by side sit on one line (taller logos would push the centre up) */
 /* words styled like the app name in the header: bold, upper case, wide letter spacing; divider as tall as that text */
 .app-text h2 span { font-size: .78em; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; line-height: 1.1; white-space: nowrap; }
 .app-sep { width: 1px; height: .86em; background: rgba(255, 255, 255, .45); }
-.app-logo { display: block; height: 1.65em; width: auto; transform: translateY(.18em); }
-.app-logo-cream { height: 1.45em; }
-.app-logo-meltdown { height: 1.8em; transform: translateY(.24em); }
+.app-logo { display: block; height: 1.95em; width: auto; transform: translateY(.18em); filter: drop-shadow(0 2px 4px rgba(10, 40, 90, .22)); } /* small soft shadow */
+.app-logo-cream { height: 1.93em; transform: translateY(.07em); } /* the drips pull the logo down optically, so it sits a little higher than the word */
+.app-logo-meltdown { height: 2.1em; transform: translateY(.11em); } /* same letter height as CREAM */
+.app-logo-pewpew { height: 2.3em; transform: translateY(.2em); }
 .app-text p { margin: 0; color: var(--muted); font-size: clamp(13px, 1.25vw, 16px); max-width: 40ch; }
 .app-soon { position: absolute; top: 14px; right: 14px; z-index: 1; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; color: var(--muted); background: rgba(8, 40, 82, .32); border: 1px solid rgba(255, 255, 255, .16); }
 
